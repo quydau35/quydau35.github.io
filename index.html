@@ -1,46 +1,60 @@
-<html>
+<!DOCTYPE html>
+<!--Made By Boujjou Achraf-->
+<!--Forked by quydau35-->
+<html lang="en">
 
 <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>quydau35</title>
+
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <script src="prefixfree.js"></script>
+    <style>
+        /*basic reset */
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: black;
+        }
+
+        canvas {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
+    <canvas id="c"></canvas>
+    <script src="matrix.js"></script>
 
-    <div id="outside">
-
-        <p id="outside-title">
-            Chúc mừng sinh nhật chị Mây nha!
-        </p>
-
-        <img id="outside-pic" src="avatar.jpg">
-
-        <p>
-            <button onclick="open_card()">Mở quà!</button>
-        </p>
-
-    </div>
-
-    <div id="inside">
-
-        <p id="inside-title">
-            Chúc mừng sinh nhật!
-        </p>
-
-        <img id="inside-pic" src="happy_birthday.gif">
-
-        <p id="message">
-            Chúc chị Mây tuổi mới hay ăn chóng lớn! Ủa lộn... Chúc chị Mây tuổi mới thật nhiều niềm vui, nhiều học trò
-            ngoan và tổ ấm của chị tràn đầy tình yêu thương!
-        </p>
-
-        <p>
-            <button onclick="close_card()">Đóng lại</button>
-        </p>
-
-    </div>
-
+    <section class="hero-area-fix">
+        <div class="hero-area" id="water">
+            <div class="container">
+                <div class="row">
+                    <div class="hero-text">
+                        <h1>wanna find me?</h1>
+                        <div id="typed-strings">
+                            <!-- <h3>I'm a web developer.</h3> -->
+                            <h3>I'm a frontend enthusiast.</h3>
+                            <!-- <h3>I know who you are.</h3> -->
+                            <h3>Contact me at quydau35@gmail.com</h3>
+                        </div>
+                        <h3><span id="typed"></span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="jquery-2.2.4.min.js"></script>
+    <script src="jquery.ripples-min.js"></script>
+    <script src="typed.min.js"></script>
+    <script src="custom.js"></script>
 </body>
 
 </html>
