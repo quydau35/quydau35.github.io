@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>setup API documentation</title>
+<meta name="description" content="Module này hướng dãn cách cài đặt và chuẩn bị hệ thống python cơ bản.
+Cài đặt trên MacOS
+Cài đặt trên Windows
+Cài đặt trên Linux
+Setup environment …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>setup</code></h1>
+</header>
+<section id="section-intro">
+<p>Module này hướng dãn cách cài đặt và chuẩn bị hệ thống python cơ bản.
+Cài đặt trên MacOS
+Cài đặt trên Windows
+Cài đặt trên Linux
+Setup environment</p>
+<p>Cài đặt Pip</p>
+<p>Cài đặt modules</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Module này hướng dãn cách cài đặt và chuẩn bị hệ thống python cơ bản.
+Cài đặt trên MacOS
+Cài đặt trên Windows
+Cài đặt trên Linux
+Setup environment
+
+Cài đặt Pip
+
+Cài đặt modules
+&#34;&#34;&#34;
+
+class mac_os():
+    &#34;&#34;&#34;
+    Tải về python 3.7 tại https://www.python.org/downloads/release/python-379/ bản ”macOS 64-bit/32-
+bit installer” và cài đặt như bất kỳ phần mềm nào khác.
+    Tải Visual Studio Code tại https://code.visualstudio.com/download/ . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search &#34;Python&#34; extension và cài cho Visual Studio Code.
+    Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào &#34;Terminal &gt; New Terminal&#34; hoặc dùng phím tắt [Command+Shift+`]
+    Nhập vào terminal command sau: ```python3 --version``` hoặc ```python3.7 --version``` Nếu xuất hiện output như vầy là đã cài python thành công:
+    ```
+    Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+    [GCC x.x.x] on darwin
+    Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+    &gt;&gt;&gt;
+    ```
+    Nhập tiếp vào terminal ```quit()``` để thoát python3 console.
+    &#34;&#34;&#34;
+
+class windows():
+    &#34;&#34;&#34;
+    Tải về python 3.7 tại https://www.python.org/downloads/release/python-379/ bản ”Windows x86-64 embeddable zip file” và cài đặt như bất kỳ phần mềm nào khác, tốt nhất nên cài ở ổ đĩa khác ổ đĩa hệ thống (khác C:\\ hoặc C:\Program....\\ vì nó thường đòi quyền Administrator, phiền lắm!). Lưu ý lúc cài nếu thấy hỏi có cài Pip module không thì nhớ tick vào nó nhé.
+    Tải Visual Studio Code tại https://code.visualstudio.com/download/ . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search &#34;Python&#34; extension và cài cho Visual Studio Code.
+    Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào &#34;Terminal &gt; New Terminal&#34; hoặc dùng phím tắt [Command+Shift+`]
+    Nhập vào terminal command sau: ```python3 --version``` hoặc ```python3.7 --version``` Nếu xuất hiện output như vầy là đã cài python thành công:
+    ```
+    Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+    [GCC x.x.x] on Windows
+    Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+    &gt;&gt;&gt;
+    ```
+    Nhập tiếp vào terminal ```quit()``` để thoát python3 console.
+    Trong trường hợp gọi python bằng terminal không thành công, khả năng cao là khi cài đặt, python executable files không được đưa vào Path.
+    Bật Start &gt; Run (hoặc Ctrl+X) rồi chạy ```sysdm.cpl``` để bật System Properties. Chọn tab Advanced và bâm vào Environment Variables.
+    Dưới mục System Variables, chọn ```Path``` variable và Edit nó.
+    Thêm vào đường dẫn chứa thư mục đã cài python (ví dụ ```D:\\ Python37``` chẳng hạn).
+    Tắt hết các terminal/cmd/powershell đi và bật lại để check python được cài chưa.
+    &#34;&#34;&#34;
+
+class Linux():
+    &#34;&#34;&#34;
+    Tải về python 3.7 tại https://www.python.org/downloads/release/python-379/ bản ”Windows x86-64 embeddable zip file” và cài đặt như bất kỳ phần mềm nào khác.
+    Tải Visual Studio Code tại https://code.visualstudio.com/download/ . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search &#34;Python&#34; extension và cài cho Visual Studio Code.
+    Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào &#34;Terminal &gt; New Terminal&#34; hoặc dùng phím tắt [Command+Shift+`]
+    Nhập vào terminal command sau: ```python3 --version``` hoặc ```python3.7 --version``` Nếu xuất hiện output như vầy là đã cài python thành công:
+    ```
+    Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+    [GCC x.x.x] on Windows
+    Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+    &gt;&gt;&gt;
+    ```
+    Nhập tiếp vào terminal ```quit()``` để thoát python3 console.
+    &#34;&#34;&#34;
+
+class pip():
+    &#34;&#34;&#34;
+    python-pip (pip, PyPip) là một module manager được xây dựng để quản lý các modules tích hợp cho python.
+    Trên MacOS, mặc định có thể cài pip từ việc cài python3 (quá lời, vừa có python vừa khuyến mãi pip luôn!):
+    ```
+    sudo brew install python3
+    ```
+    Trên Linux (Ubuntu/Debian chẳng hạn) phải cài thêm, sau khi cài python3:
+    ```
+    sudo apt-get install python3-pip
+    ```
+    Trên Windows (10), đôi khi cũng phải cài thêm. Tải file này về: https://bootstrap.pypa.io/get-pip.py thư mục cài python rồi bật cmd lên, sử dụng lệnh ```cd``` để di chuyển đến thư mục vừa tải file đó về  (ví dụ ```cd D:\\ Python37```) rồi nhập vào terminal
+    ```
+    python get-pip.py
+    ```
+    &#34;&#34;&#34;
+
+class modules():
+    &#34;&#34;&#34;
+    Sau khi đã cài hết python3, pip thì mới dùng pip để cài các modules. Có 4 modules thường xuyên dùng trong ngành data science: ```pandas, numpy, matplotlib, scipy```.
+    Để cài cat bốn, nhập vào terminal (terminal của MacOS, linux, visual studio code hoặc cmd, powershell đều được):
+    ```
+    pip install pandas numpy scipy matplotlib
+    ```
+    Enjoy!
+    Nếu có trục trặc, check lại python3 đã cài chưa, pip đã cài chưa, path đã được setup chưa, hoặc các modules này đều đã được cài từ trước.
+    &#34;&#34;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-classes">Classes</h2>
+<dl>
+<dt id="setup.Linux"><code class="flex name class">
+<span>class <span class="ident">Linux</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tải về python 3.7 tại <a href="https://www.python.org/downloads/release/python-379/">https://www.python.org/downloads/release/python-379/</a> bản ”Windows x86-64 embeddable zip file” và cài đặt như bất kỳ phần mềm nào khác.
+Tải Visual Studio Code tại <a href="https://code.visualstudio.com/download/">https://code.visualstudio.com/download/</a> . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search "Python" extension và cài cho Visual Studio Code.
+Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào "Terminal &gt; New Terminal" hoặc dùng phím tắt [Command+Shift+`]
+Nhập vào terminal command sau: <code>python3 --version</code> hoặc <code>python3.7 --version</code> Nếu xuất hiện output như vầy là đã cài python thành công:</p>
+<pre><code>Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+[GCC x.x.x] on Windows
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre>
+<p>Nhập tiếp vào terminal <code>quit()</code> để thoát python3 console.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class Linux():
+    &#34;&#34;&#34;
+    Tải về python 3.7 tại https://www.python.org/downloads/release/python-379/ bản ”Windows x86-64 embeddable zip file” và cài đặt như bất kỳ phần mềm nào khác.
+    Tải Visual Studio Code tại https://code.visualstudio.com/download/ . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search &#34;Python&#34; extension và cài cho Visual Studio Code.
+    Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào &#34;Terminal &gt; New Terminal&#34; hoặc dùng phím tắt [Command+Shift+`]
+    Nhập vào terminal command sau: ```python3 --version``` hoặc ```python3.7 --version``` Nếu xuất hiện output như vầy là đã cài python thành công:
+    ```
+    Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+    [GCC x.x.x] on Windows
+    Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+    &gt;&gt;&gt;
+    ```
+    Nhập tiếp vào terminal ```quit()``` để thoát python3 console.
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="setup.mac_os"><code class="flex name class">
+<span>class <span class="ident">mac_os</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tải về python 3.7 tại <a href="https://www.python.org/downloads/release/python-379/">https://www.python.org/downloads/release/python-379/</a> bản ”macOS 64-bit/32-
+bit installer” và cài đặt như bất kỳ phần mềm nào khác.
+Tải Visual Studio Code tại <a href="https://code.visualstudio.com/download/">https://code.visualstudio.com/download/</a> . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search "Python" extension và cài cho Visual Studio Code.
+Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào "Terminal &gt; New Terminal" hoặc dùng phím tắt [Command+Shift+`]
+Nhập vào terminal command sau: <code>python3 --version</code> hoặc <code>python3.7 --version</code> Nếu xuất hiện output như vầy là đã cài python thành công:
+<code>Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+[GCC x.x.x] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+&gt;&gt;&gt;</code>
+Nhập tiếp vào terminal <code>quit()</code> để thoát python3 console.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class mac_os():
+    &#34;&#34;&#34;
+    Tải về python 3.7 tại https://www.python.org/downloads/release/python-379/ bản ”macOS 64-bit/32-
+bit installer” và cài đặt như bất kỳ phần mềm nào khác.
+    Tải Visual Studio Code tại https://code.visualstudio.com/download/ . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search &#34;Python&#34; extension và cài cho Visual Studio Code.
+    Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào &#34;Terminal &gt; New Terminal&#34; hoặc dùng phím tắt [Command+Shift+`]
+    Nhập vào terminal command sau: ```python3 --version``` hoặc ```python3.7 --version``` Nếu xuất hiện output như vầy là đã cài python thành công:
+    ```
+    Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+    [GCC x.x.x] on darwin
+    Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+    &gt;&gt;&gt;
+    ```
+    Nhập tiếp vào terminal ```quit()``` để thoát python3 console.
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="setup.modules"><code class="flex name class">
+<span>class <span class="ident">modules</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Sau khi đã cài hết python3, pip thì mới dùng pip để cài các modules. Có 4 modules thường xuyên dùng trong ngành data science: <code>pandas, numpy, matplotlib, scipy</code>.
+Để cài cat bốn, nhập vào terminal (terminal của MacOS, linux, visual studio code hoặc cmd, powershell đều được):</p>
+<pre><code>pip install pandas numpy scipy matplotlib
+</code></pre>
+<p>Enjoy!
+Nếu có trục trặc, check lại python3 đã cài chưa, pip đã cài chưa, path đã được setup chưa, hoặc các modules này đều đã được cài từ trước.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class modules():
+    &#34;&#34;&#34;
+    Sau khi đã cài hết python3, pip thì mới dùng pip để cài các modules. Có 4 modules thường xuyên dùng trong ngành data science: ```pandas, numpy, matplotlib, scipy```.
+    Để cài cat bốn, nhập vào terminal (terminal của MacOS, linux, visual studio code hoặc cmd, powershell đều được):
+    ```
+    pip install pandas numpy scipy matplotlib
+    ```
+    Enjoy!
+    Nếu có trục trặc, check lại python3 đã cài chưa, pip đã cài chưa, path đã được setup chưa, hoặc các modules này đều đã được cài từ trước.
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="setup.pip"><code class="flex name class">
+<span>class <span class="ident">pip</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>python-pip (pip, PyPip) là một module manager được xây dựng để quản lý các modules tích hợp cho python.
+Trên MacOS, mặc định có thể cài pip từ việc cài python3 (quá lời, vừa có python vừa khuyến mãi pip luôn!):</p>
+<pre><code>sudo brew install python3
+</code></pre>
+<p>Trên Linux (Ubuntu/Debian chẳng hạn) phải cài thêm, sau khi cài python3:</p>
+<pre><code>sudo apt-get install python3-pip
+</code></pre>
+<p>Trên Windows (10), đôi khi cũng phải cài thêm. Tải file này về: <a href="https://bootstrap.pypa.io/get-pip.py">https://bootstrap.pypa.io/get-pip.py</a> thư mục cài python rồi bật cmd lên, sử dụng lệnh <code>cd</code> để di chuyển đến thư mục vừa tải file đó về
+(ví dụ <code>cd D:\ Python37</code>) rồi nhập vào terminal</p>
+<pre><code>python get-pip.py
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class pip():
+    &#34;&#34;&#34;
+    python-pip (pip, PyPip) là một module manager được xây dựng để quản lý các modules tích hợp cho python.
+    Trên MacOS, mặc định có thể cài pip từ việc cài python3 (quá lời, vừa có python vừa khuyến mãi pip luôn!):
+    ```
+    sudo brew install python3
+    ```
+    Trên Linux (Ubuntu/Debian chẳng hạn) phải cài thêm, sau khi cài python3:
+    ```
+    sudo apt-get install python3-pip
+    ```
+    Trên Windows (10), đôi khi cũng phải cài thêm. Tải file này về: https://bootstrap.pypa.io/get-pip.py thư mục cài python rồi bật cmd lên, sử dụng lệnh ```cd``` để di chuyển đến thư mục vừa tải file đó về  (ví dụ ```cd D:\\ Python37```) rồi nhập vào terminal
+    ```
+    python get-pip.py
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="setup.windows"><code class="flex name class">
+<span>class <span class="ident">windows</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Tải về python 3.7 tại <a href="https://www.python.org/downloads/release/python-379/">https://www.python.org/downloads/release/python-379/</a> bản ”Windows x86-64 embeddable zip file” và cài đặt như bất kỳ phần mềm nào khác, tốt nhất nên cài ở ổ đĩa khác ổ đĩa hệ thống (khác C:\ hoặc C:\Program....\ vì nó thường đòi quyền Administrator, phiền lắm!). Lưu ý lúc cài nếu thấy hỏi có cài Pip module không thì nhớ tick vào nó nhé.
+Tải Visual Studio Code tại <a href="https://code.visualstudio.com/download/">https://code.visualstudio.com/download/</a> . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search "Python" extension và cài cho Visual Studio Code.
+Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào "Terminal &gt; New Terminal" hoặc dùng phím tắt [Command+Shift+`]
+Nhập vào terminal command sau: <code>python3 --version</code> hoặc <code>python3.7 --version</code> Nếu xuất hiện output như vầy là đã cài python thành công:</p>
+<pre><code>Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+[GCC x.x.x] on Windows
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+&gt;&gt;&gt;
+</code></pre>
+<p>Nhập tiếp vào terminal <code>quit()</code> để thoát python3 console.
+Trong trường hợp gọi python bằng terminal không thành công, khả năng cao là khi cài đặt, python executable files không được đưa vào Path.
+Bật Start &gt; Run (hoặc Ctrl+X) rồi chạy <code>sysdm.cpl</code> để bật System Properties. Chọn tab Advanced và bâm vào Environment Variables.
+Dưới mục System Variables, chọn <code>Path</code> variable và Edit nó.
+Thêm vào đường dẫn chứa thư mục đã cài python (ví dụ <code>D:\ Python37</code> chẳng hạn).
+Tắt hết các terminal/cmd/powershell đi và bật lại để check python được cài chưa.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class windows():
+    &#34;&#34;&#34;
+    Tải về python 3.7 tại https://www.python.org/downloads/release/python-379/ bản ”Windows x86-64 embeddable zip file” và cài đặt như bất kỳ phần mềm nào khác, tốt nhất nên cài ở ổ đĩa khác ổ đĩa hệ thống (khác C:\\ hoặc C:\Program....\\ vì nó thường đòi quyền Administrator, phiền lắm!). Lưu ý lúc cài nếu thấy hỏi có cài Pip module không thì nhớ tick vào nó nhé.
+    Tải Visual Studio Code tại https://code.visualstudio.com/download/ . Cài đặt như mọi phần mềm khác và bật lên, bấm [Command+Shift+X] hoặc bấm vào Extensions bar, search &#34;Python&#34; extension và cài cho Visual Studio Code.
+    Trong cửa sổ Visual Studio Code, bật Terminal cho working directory hiện tại bằng cách bấm vào &#34;Terminal &gt; New Terminal&#34; hoặc dùng phím tắt [Command+Shift+`]
+    Nhập vào terminal command sau: ```python3 --version``` hoặc ```python3.7 --version``` Nếu xuất hiện output như vầy là đã cài python thành công:
+    ```
+    Python 3.7.9 (default, Jul 25 2020, 13:03:44)
+    [GCC x.x.x] on Windows
+    Type &#34;help&#34;, &#34;copyright&#34;, &#34;credits&#34; or &#34;license&#34; for more information.
+    &gt;&gt;&gt;
+    ```
+    Nhập tiếp vào terminal ```quit()``` để thoát python3 console.
+    Trong trường hợp gọi python bằng terminal không thành công, khả năng cao là khi cài đặt, python executable files không được đưa vào Path.
+    Bật Start &gt; Run (hoặc Ctrl+X) rồi chạy ```sysdm.cpl``` để bật System Properties. Chọn tab Advanced và bâm vào Environment Variables.
+    Dưới mục System Variables, chọn ```Path``` variable và Edit nó.
+    Thêm vào đường dẫn chứa thư mục đã cài python (ví dụ ```D:\\ Python37``` chẳng hạn).
+    Tắt hết các terminal/cmd/powershell đi và bật lại để check python được cài chưa.
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3><a href="#header-classes">Classes</a></h3>
+<ul>
+<li>
+<h4><code><a title="setup.Linux" href="#setup.Linux">Linux</a></code></h4>
+</li>
+<li>
+<h4><code><a title="setup.mac_os" href="#setup.mac_os">mac_os</a></code></h4>
+</li>
+<li>
+<h4><code><a title="setup.modules" href="#setup.modules">modules</a></code></h4>
+</li>
+<li>
+<h4><code><a title="setup.pip" href="#setup.pip">pip</a></code></h4>
+</li>
+<li>
+<h4><code><a title="setup.windows" href="#setup.windows">windows</a></code></h4>
+</li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
