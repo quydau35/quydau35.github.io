@@ -1,4 +1,6 @@
-#Three lines to make our compiler able to draw:
+"""
+Script cơ bản visualize Calorie tiêu thụ theo mạch đập trung bình, sử dụng linear regression
+"""
 import matplotlib
 matplotlib.use('Agg')
 
@@ -14,7 +16,10 @@ y = full_health_data["Calorie"]
 slope, intercept, r, p, std_err = stats.linregress(x, y)
 
 def myfunc(x):
- return slope * x + intercept
+    """
+    return data từ đồ thị tuyến tính ```y = ax + b``` với ```a = slope``` và ```b = intercept```
+    """
+    return slope * x + intercept
 
 mymodel = list(map(myfunc, x))
 print(mymodel)
