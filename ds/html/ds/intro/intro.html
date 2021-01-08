@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.2" />
-<title>intro API documentation</title>
+<title>ds.intro.intro API documentation</title>
 <meta name="description" content="Script cơ bản visualize Calorie tiêu thụ theo mạch đập trung bình, sử dụng linear regression" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,7 +19,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>intro</code></h1>
+<h1 class="title">Module <code>ds.intro.intro</code></h1>
 </header>
 <section id="section-intro">
 <p>Script cơ bản visualize Calorie tiêu thụ theo mạch đập trung bình, sử dụng linear regression</p>
@@ -36,8 +36,11 @@ matplotlib.use(&#39;Agg&#39;)
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
+import os
 
-full_health_data = pd.read_csv(&#34;data.csv&#34;, header=0, sep=&#34;,&#34;)
+file_name = &#34;data.csv&#34;
+file_path = os.path.join(os.path.dirname(__file__), file_name)
+full_health_data = pd.read_csv(file_path, header=0, sep=&#34;,&#34;)
 
 x = full_health_data[&#34;Average_Pulse&#34;]
 y = full_health_data[&#34;Calorie&#34;]
@@ -62,7 +65,8 @@ plt.ylabel (&#34;Calorie tiêu thụ&#34;)
 plt.show()
 
 #Two lines to make our compiler able to draw:
-plt.savefig(&#39;intro.png&#39;)</code></pre>
+output_file = os.path.join(os.path.dirname(__file__),&#39;intro.png&#39;)
+plt.savefig(output_file)</code></pre>
 </details>
 </section>
 <section>
@@ -72,7 +76,7 @@ plt.savefig(&#39;intro.png&#39;)</code></pre>
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="intro.myfunc"><code class="name flex">
+<dt id="ds.intro.intro.myfunc"><code class="name flex">
 <span>def <span class="ident">myfunc</span></span>(<span>x)</span>
 </code></dt>
 <dd>
@@ -99,9 +103,14 @@ plt.savefig(&#39;intro.png&#39;)</code></pre>
 <ul></ul>
 </div>
 <ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ds.intro" href="index.html">ds.intro</a></code></li>
+</ul>
+</li>
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="">
-<li><code><a title="intro.myfunc" href="#intro.myfunc">myfunc</a></code></li>
+<li><code><a title="ds.intro.intro.myfunc" href="#ds.intro.intro.myfunc">myfunc</a></code></li>
 </ul>
 </li>
 </ul>

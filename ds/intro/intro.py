@@ -7,8 +7,11 @@ matplotlib.use('Agg')
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy import stats
+import os
 
-full_health_data = pd.read_csv("data.csv", header=0, sep=",")
+file_name = "data.csv"
+file_path = os.path.join(os.path.dirname(__file__), file_name)
+full_health_data = pd.read_csv(file_path, header=0, sep=",")
 
 x = full_health_data["Average_Pulse"]
 y = full_health_data["Calorie"]
@@ -33,5 +36,6 @@ plt.ylabel ("Calorie tiêu thụ")
 plt.show()
 
 #Two lines to make our compiler able to draw:
-plt.savefig('intro.png')
+output_file = os.path.join(os.path.dirname(__file__),'intro.png')
+plt.savefig(output_file)
 

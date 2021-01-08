@@ -54,7 +54,7 @@ class Linux():
     Nhập vào terminal command sau: ```python3 --version``` hoặc ```python3.7 --version``` Nếu xuất hiện output như vầy là đã cài python thành công:
     ```
     Python 3.7.9 (default, Jul 25 2020, 13:03:44)
-    [GCC x.x.x] on Windows
+    [GCC x.x.x] on Debian
     Type "help", "copyright", "credits" or "license" for more information.
     >>>
     ```
