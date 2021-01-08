@@ -8,3 +8,39 @@ Start with print()
 6. Array Type
 7. Object Type
 """
+
+class c1_syntax():
+    """
+    Syntax
+    """
+
+class c1_comment():
+    """
+    Comment
+    """
+
+class c1_variables():
+    """
+    Variables
+    """
+
+class c1_data_types():
+    """
+    Data Types
+    """
+
+class c1_scala_typ():
+    """
+    Scala Type
+    """
+
+class c1_array_type():
+    """
+    Array Type
+    """
+
+class c1_object_type():
+    """
+    Object Type
+    """
+
