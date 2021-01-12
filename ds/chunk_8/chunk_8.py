@@ -1,4 +1,4 @@
 """
-Working with Chart
-1.
+Working with Chart\n
+1.\n
 """

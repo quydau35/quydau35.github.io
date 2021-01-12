@@ -1,46 +1,46 @@
 """
-Start with print()
-1. Syntax
-2. Comment
-3. Variables
-4. Data Types
-5. Scala Type
-6. Array Type
-7. Object Type
+Start with print()\n
+1. Syntax\n
+2. Comment\n
+3. Variables\n
+4. Data Types\n
+5. Scala Type\n
+6. Array Type\n
+7. Object Type\n
 """
 
 class c1_syntax():
     """
-    Syntax
+    Syntax\n
     """
 
-class c1_comment():
+class c2_comment():
     """
-    Comment
-    """
-
-class c1_variables():
-    """
-    Variables
+    Comment\n
     """
 
-class c1_data_types():
+class c3_variables():
     """
-    Data Types
-    """
-
-class c1_scala_typ():
-    """
-    Scala Type
+    Variables\n
     """
 
-class c1_array_type():
+class c4_data_types():
     """
-    Array Type
+    Data Types\n
     """
 
-class c1_object_type():
+class c5_scala_type():
     """
-    Object Type
+    Scala Type\n
+    """
+
+class c6_array_type():
+    """
+    Array Type\n
+    """
+
+class c7_object_type():
+    """
+    Object Type\n
     """
 

@@ -1,8 +1,8 @@
 """
-Scala Type
-1. Booleans
-2. Numbers
-3. Casting
-4. String
-5. Operators
+Scala Type\n
+1. Booleans\n
+2. Numbers\n
+3. Casting\n
+4. String\n
+5. Operators\n
 """

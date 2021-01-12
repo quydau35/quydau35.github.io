@@ -1,5 +1,5 @@
 """
-Script cơ bản visualize Calorie tiêu thụ theo mạch đập trung bình, sử dụng linear regression
+Script cơ bản visualize Calorie tiêu thụ theo mạch đập trung bình, sử dụng linear regression\n
 """
 import matplotlib
 matplotlib.use('Agg')
@@ -20,7 +20,7 @@ slope, intercept, r, p, std_err = stats.linregress(x, y)
 
 def myfunc(x):
     """
-    return data từ đồ thị tuyến tính ```y = ax + b``` với ```a = slope``` và ```b = intercept```
+    return data từ đồ thị tuyến tính ```y = ax + b``` với ```a = slope``` và ```b = intercept```\n
     """
     return slope * x + intercept
 
