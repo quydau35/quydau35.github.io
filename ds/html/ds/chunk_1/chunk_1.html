@@ -5,14 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.2" />
 <title>ds.chunk_1.chunk_1 API documentation</title>
-<meta name="description" content="Start with print()
-1. Syntax
-2. Comment
-3. Variables
-4. Data Types
-5. Scala Type
-6. Array Type
-7. Object Type" />
+<meta name="description" content="Start with print() …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
 <link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
@@ -29,62 +22,211 @@
 <h1 class="title">Module <code>ds.chunk_1.chunk_1</code></h1>
 </header>
 <section id="section-intro">
-<p>Start with print()
-1. Syntax
-2. Comment
-3. Variables
-4. Data Types
-5. Scala Type
-6. Array Type
-7. Object Type</p>
+<p>Start with print()</p>
+<ol>
+<li>
+<p>Syntax</p>
+</li>
+<li>
+<p>Comment</p>
+</li>
+<li>
+<p>Variables</p>
+</li>
+<li>
+<p>Data Types</p>
+</li>
+<li>
+<p>Scala Type</p>
+</li>
+<li>
+<p>Array Type</p>
+</li>
+<li>
+<p>Object Type</p>
+</li>
+</ol>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">&#34;&#34;&#34;
-Start with print()
-1. Syntax
-2. Comment
-3. Variables
-4. Data Types
-5. Scala Type
-6. Array Type
-7. Object Type
+Start with print()\n
+1. Syntax\n
+2. Comment\n
+3. Variables\n
+4. Data Types\n
+5. Scala Type\n
+6. Array Type\n
+7. Object Type\n
 &#34;&#34;&#34;
 
 class c1_syntax():
     &#34;&#34;&#34;
-    Syntax
+    Syntax\n
+    Indentation refers to the spaces at the beginning of a code line.\n
+    \n
+    Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.\n
+    \n
+    Python uses indentation to indicate a block of code.\n
+    ```
+    if 5 &gt; 2:
+        print(&#34;Five is greater than two!&#34;)
+    ```
+    Syntax Error:\n
+    ```
+    if 5 &gt; 2:
+    print(&#34;Five is greater than two!&#34;)
+    The number of spaces is up to you as a programmer, but it has to be at least one.\n
+    ```
+    if 5 &gt; 2:
+      print(&#34;Five is greater than two!&#34;)
+    if 5 &gt; 2:
+            print(&#34;Five is greater than two!&#34;)
+    ```
+    You have to use the same number of spaces in the same block of code, otherwise Python will give you an error:\n
+    ```
+    if 5 &gt; 2:
+        print(&#34;Five is greater than two!&#34;)
+                print(&#34;Five is greater than two!&#34;)
+    ```
     &#34;&#34;&#34;
 
-class c1_comment():
+class c2_comment():
     &#34;&#34;&#34;
-    Comment
-    &#34;&#34;&#34;
-
-class c1_variables():
-    &#34;&#34;&#34;
-    Variables
-    &#34;&#34;&#34;
-
-class c1_data_types():
-    &#34;&#34;&#34;
-    Data Types
-    &#34;&#34;&#34;
-
-class c1_scala_typ():
-    &#34;&#34;&#34;
-    Scala Type
+    Comment\n
+    Comments can be used to explain Python code.\n
+    Comments can be used to make the code more readable.\n
+    Comments can be used to prevent execution when testing code.\n
+    ```
+    #This is a comment.
+    \&#34;\&#34;\&#34;
+    This is a documentation comment
+    \&#34;\&#34;\&#34;
+    print(&#34;Hello, World!&#34;) # This shit is also a comment!
+    # This below line will not be executed
+    # print(&#34;Ah Yeahoo!&#34;)
+    ```
     &#34;&#34;&#34;
 
-class c1_array_type():
+class c3_variables():
     &#34;&#34;&#34;
-    Array Type
+    Variables\n
+    Variables are containers for storing data values.\n
+    Python has no command for declaring a variable.\n
+    A variable is created the moment you first assign a value to it.\n
+    ```
+    # Example:
+    x = 5
+    y = &#34;John&#34;
+    print(x)
+    print(y)
+    ```
+    Variables do not need to be declared with any particular type, and can even change type after they have been set.\n
+    ```
+    x = 4       # x is of type int
+    x = &#34;Sally&#34; # x is now of type str
+    print(x)
+    ```
+    If you want to specify the data type of a variable, this can be done with casting.\n
+    ```
+    x = str(3)    # x will be &#39;3&#39;
+    y = int(3)    # y will be 3
+    z = float(3)  # z will be 3.0
+    ```
+    You can get the data type of a variable with the type() function.\n
+    ```
+    x = 5
+    y = &#34;John&#34;
+    print(type(x))
+    print(type(y))
+    ```
+    String variables can be declared either by using single or double quotes:\n
+    ```
+    x = &#34;John&#34;
+    # is the same as
+    x = &#39;John&#39;
+    ```
+    Variable names are case-sensitive.\n
+    ```
+    a = 4
+    A = &#34;Sally&#34;
+    #A will not overwrite a
+    print(a)
+    print(A)
+    ```
+    Illegal variable names:\n
+    ```
+    2myvar = &#34;John&#34;
+    my-var = &#34;John&#34;
+    my var = &#34;John&#34;
+    ```
     &#34;&#34;&#34;
 
-class c1_object_type():
+class c4_data_types():
     &#34;&#34;&#34;
-    Object Type
+    Data Types\n
+    In programming, data type is an important concept.\n
+    Variables can store data of different types, and different types can do different things.\n
+    Python has the following data types built-in by default, in these categories:\n
+    Text Type:  ```str```\n
+    Numeric Types:      ```int```, ```float```, ```complex```\n
+    Sequence Types:     ```list```, ```tuple```, ```range```\n
+    Mapping Type:       ```dict```\n
+    Set Types:  ```set```, ```frozenset```\n
+    Boolean Type:       ```bool```\n
+    Binary Types:       ```bytes```, ```bytearray```, ```memoryview```\n
+    &#34;&#34;&#34;
+
+class c5_scala_type():
+    &#34;&#34;&#34;
+    Scala Type\n
+    1. Text\n
+    2. Numbers:\n
+        2.1. integer (int)\n
+        2.2. float (float)\n
+        2.3. complex (complex)\n
+    &#34;&#34;&#34;
+
+class c6_array_type():
+    &#34;&#34;&#34;
+    Array Type\n
+    Right now we can use LISTS as ARRAYS, however, to work with arrays in Python you will have to import a library, like the ```NumPy library```.\n
+    An array is a special variable, which can hold more than one value at a time.\n
+    If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:\n
+    ```
+    car1 = &#34;Ford&#34;
+    car2 = &#34;Volvo&#34;
+    car3 = &#34;BMW&#34;
+    ```
+    However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?\n
+    The solution is an array!\n
+    An array can hold many values under a single name, and you can access the values by referring to an index number.\n
+    Get the value of the first array item:\n
+    ```
+    x = cars[0]
+    ```
+    Modify the value of the first array item:\n
+    ```
+    cars[0] = &#34;Toyota&#34;
+    ```
+    Return the number of elements in the cars array:\n
+    ```
+    x = len(cars)
+    ```
+    Print each item in the cars array:\n
+    ```
+    for x in cars:
+        print(x)
+    ```
+    Add one more element to the cars array:\n
+    ```
+    cars.append(&#34;Honda&#34;)
+    ```
+    Delete the second element of the cars array:\n
+    ```
+    cars.pop(1)
+    ```
     &#34;&#34;&#34;</code></pre>
 </details>
 </section>
@@ -97,108 +239,364 @@ class c1_object_type():
 <section>
 <h2 class="section-title" id="header-classes">Classes</h2>
 <dl>
-<dt id="ds.chunk_1.chunk_1.c1_array_type"><code class="flex name class">
-<span>class <span class="ident">c1_array_type</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Array Type</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c1_array_type():
-    &#34;&#34;&#34;
-    Array Type
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_1.chunk_1.c1_comment"><code class="flex name class">
-<span>class <span class="ident">c1_comment</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Comment</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c1_comment():
-    &#34;&#34;&#34;
-    Comment
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_1.chunk_1.c1_data_types"><code class="flex name class">
-<span>class <span class="ident">c1_data_types</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Data Types</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c1_data_types():
-    &#34;&#34;&#34;
-    Data Types
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_1.chunk_1.c1_object_type"><code class="flex name class">
-<span>class <span class="ident">c1_object_type</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Object Type</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c1_object_type():
-    &#34;&#34;&#34;
-    Object Type
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_1.chunk_1.c1_scala_typ"><code class="flex name class">
-<span>class <span class="ident">c1_scala_typ</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Scala Type</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c1_scala_typ():
-    &#34;&#34;&#34;
-    Scala Type
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
 <dt id="ds.chunk_1.chunk_1.c1_syntax"><code class="flex name class">
 <span>class <span class="ident">c1_syntax</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Syntax</p></div>
+<div class="desc"><p>Syntax</p>
+<p>Indentation refers to the spaces at the beginning of a code line.</p>
+<p>Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.</p>
+<p>Python uses indentation to indicate a block of code.</p>
+<pre><code>if 5 &gt; 2:
+    print(&quot;Five is greater than two!&quot;)
+</code></pre>
+<p>Syntax Error:</p>
+<pre><code>if 5 &gt; 2:
+print(&quot;Five is greater than two!&quot;)
+The number of spaces is up to you as a programmer, but it has to be at least one.
+
+</code></pre>
+<p>if 5 &gt; 2:
+print("Five is greater than two!")
+if 5 &gt; 2:
+print("Five is greater than two!")</p>
+<pre><code>You have to use the same number of spaces in the same block of code, otherwise Python will give you an error:
+
+</code></pre>
+<p>if 5 &gt; 2:
+print("Five is greater than two!")
+print("Five is greater than two!")
+```</p></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
 <pre><code class="python">class c1_syntax():
     &#34;&#34;&#34;
-    Syntax
+    Syntax\n
+    Indentation refers to the spaces at the beginning of a code line.\n
+    \n
+    Where in other programming languages the indentation in code is for readability only, the indentation in Python is very important.\n
+    \n
+    Python uses indentation to indicate a block of code.\n
+    ```
+    if 5 &gt; 2:
+        print(&#34;Five is greater than two!&#34;)
+    ```
+    Syntax Error:\n
+    ```
+    if 5 &gt; 2:
+    print(&#34;Five is greater than two!&#34;)
+    The number of spaces is up to you as a programmer, but it has to be at least one.\n
+    ```
+    if 5 &gt; 2:
+      print(&#34;Five is greater than two!&#34;)
+    if 5 &gt; 2:
+            print(&#34;Five is greater than two!&#34;)
+    ```
+    You have to use the same number of spaces in the same block of code, otherwise Python will give you an error:\n
+    ```
+    if 5 &gt; 2:
+        print(&#34;Five is greater than two!&#34;)
+                print(&#34;Five is greater than two!&#34;)
+    ```
     &#34;&#34;&#34;</code></pre>
 </details>
 </dd>
-<dt id="ds.chunk_1.chunk_1.c1_variables"><code class="flex name class">
-<span>class <span class="ident">c1_variables</span></span>
+<dt id="ds.chunk_1.chunk_1.c2_comment"><code class="flex name class">
+<span>class <span class="ident">c2_comment</span></span>
 </code></dt>
 <dd>
-<div class="desc"><p>Variables</p></div>
+<div class="desc"><p>Comment</p>
+<p>Comments can be used to explain Python code.</p>
+<p>Comments can be used to make the code more readable.</p>
+<p>Comments can be used to prevent execution when testing code.</p>
+<pre><code>#This is a comment.
+&quot;&quot;&quot;
+This is a documentation comment
+&quot;&quot;&quot;
+print(&quot;Hello, World!&quot;) # This shit is also a comment!
+# This below line will not be executed
+# print(&quot;Ah Yeahoo!&quot;)
+</code></pre></div>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class c1_variables():
+<pre><code class="python">class c2_comment():
     &#34;&#34;&#34;
-    Variables
+    Comment\n
+    Comments can be used to explain Python code.\n
+    Comments can be used to make the code more readable.\n
+    Comments can be used to prevent execution when testing code.\n
+    ```
+    #This is a comment.
+    \&#34;\&#34;\&#34;
+    This is a documentation comment
+    \&#34;\&#34;\&#34;
+    print(&#34;Hello, World!&#34;) # This shit is also a comment!
+    # This below line will not be executed
+    # print(&#34;Ah Yeahoo!&#34;)
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_1.chunk_1.c3_variables"><code class="flex name class">
+<span>class <span class="ident">c3_variables</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Variables</p>
+<p>Variables are containers for storing data values.</p>
+<p>Python has no command for declaring a variable.</p>
+<p>A variable is created the moment you first assign a value to it.</p>
+<pre><code># Example:
+x = 5
+y = &quot;John&quot;
+print(x)
+print(y)
+</code></pre>
+<p>Variables do not need to be declared with any particular type, and can even change type after they have been set.</p>
+<pre><code>x = 4       # x is of type int
+x = &quot;Sally&quot; # x is now of type str
+print(x)
+</code></pre>
+<p>If you want to specify the data type of a variable, this can be done with casting.</p>
+<pre><code>x = str(3)    # x will be '3'
+y = int(3)    # y will be 3
+z = float(3)  # z will be 3.0
+</code></pre>
+<p>You can get the data type of a variable with the type() function.</p>
+<pre><code>x = 5
+y = &quot;John&quot;
+print(type(x))
+print(type(y))
+</code></pre>
+<p>String variables can be declared either by using single or double quotes:</p>
+<pre><code>x = &quot;John&quot;
+# is the same as
+x = 'John'
+</code></pre>
+<p>Variable names are case-sensitive.</p>
+<pre><code>a = 4
+A = &quot;Sally&quot;
+#A will not overwrite a
+print(a)
+print(A)
+</code></pre>
+<p>Illegal variable names:</p>
+<pre><code>2myvar = &quot;John&quot;
+my-var = &quot;John&quot;
+my var = &quot;John&quot;
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class c3_variables():
+    &#34;&#34;&#34;
+    Variables\n
+    Variables are containers for storing data values.\n
+    Python has no command for declaring a variable.\n
+    A variable is created the moment you first assign a value to it.\n
+    ```
+    # Example:
+    x = 5
+    y = &#34;John&#34;
+    print(x)
+    print(y)
+    ```
+    Variables do not need to be declared with any particular type, and can even change type after they have been set.\n
+    ```
+    x = 4       # x is of type int
+    x = &#34;Sally&#34; # x is now of type str
+    print(x)
+    ```
+    If you want to specify the data type of a variable, this can be done with casting.\n
+    ```
+    x = str(3)    # x will be &#39;3&#39;
+    y = int(3)    # y will be 3
+    z = float(3)  # z will be 3.0
+    ```
+    You can get the data type of a variable with the type() function.\n
+    ```
+    x = 5
+    y = &#34;John&#34;
+    print(type(x))
+    print(type(y))
+    ```
+    String variables can be declared either by using single or double quotes:\n
+    ```
+    x = &#34;John&#34;
+    # is the same as
+    x = &#39;John&#39;
+    ```
+    Variable names are case-sensitive.\n
+    ```
+    a = 4
+    A = &#34;Sally&#34;
+    #A will not overwrite a
+    print(a)
+    print(A)
+    ```
+    Illegal variable names:\n
+    ```
+    2myvar = &#34;John&#34;
+    my-var = &#34;John&#34;
+    my var = &#34;John&#34;
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_1.chunk_1.c4_data_types"><code class="flex name class">
+<span>class <span class="ident">c4_data_types</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Data Types</p>
+<p>In programming, data type is an important concept.</p>
+<p>Variables can store data of different types, and different types can do different things.</p>
+<p>Python has the following data types built-in by default, in these categories:</p>
+<p>Text Type:
+<code>str</code></p>
+<p>Numeric Types:
+<code>int</code>, <code>float</code>, <code>complex</code></p>
+<p>Sequence Types:
+<code>list</code>, <code>tuple</code>, <code>range</code></p>
+<p>Mapping Type:
+<code>dict</code></p>
+<p>Set Types:
+<code>set</code>, <code>frozenset</code></p>
+<p>Boolean Type:
+<code>bool</code></p>
+<p>Binary Types:
+<code>bytes</code>, <code>bytearray</code>, <code>memoryview</code></p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class c4_data_types():
+    &#34;&#34;&#34;
+    Data Types\n
+    In programming, data type is an important concept.\n
+    Variables can store data of different types, and different types can do different things.\n
+    Python has the following data types built-in by default, in these categories:\n
+    Text Type:  ```str```\n
+    Numeric Types:      ```int```, ```float```, ```complex```\n
+    Sequence Types:     ```list```, ```tuple```, ```range```\n
+    Mapping Type:       ```dict```\n
+    Set Types:  ```set```, ```frozenset```\n
+    Boolean Type:       ```bool```\n
+    Binary Types:       ```bytes```, ```bytearray```, ```memoryview```\n
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_1.chunk_1.c5_scala_type"><code class="flex name class">
+<span>class <span class="ident">c5_scala_type</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Scala Type</p>
+<ol>
+<li>
+<p>Text</p>
+</li>
+<li>
+<p>Numbers:</p>
+<p>2.1. integer (int)</p>
+<p>2.2. float (float)</p>
+<p>2.3. complex (complex)</p>
+</li>
+</ol></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class c5_scala_type():
+    &#34;&#34;&#34;
+    Scala Type\n
+    1. Text\n
+    2. Numbers:\n
+        2.1. integer (int)\n
+        2.2. float (float)\n
+        2.3. complex (complex)\n
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_1.chunk_1.c6_array_type"><code class="flex name class">
+<span>class <span class="ident">c6_array_type</span></span>
+</code></dt>
+<dd>
+<div class="desc"><p>Array Type</p>
+<p>Right now we can use LISTS as ARRAYS, however, to work with arrays in Python you will have to import a library, like the <code>NumPy library</code>.</p>
+<p>An array is a special variable, which can hold more than one value at a time.</p>
+<p>If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:</p>
+<pre><code>car1 = &quot;Ford&quot;
+car2 = &quot;Volvo&quot;
+car3 = &quot;BMW&quot;
+</code></pre>
+<p>However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?</p>
+<p>The solution is an array!</p>
+<p>An array can hold many values under a single name, and you can access the values by referring to an index number.</p>
+<p>Get the value of the first array item:</p>
+<pre><code>x = cars[0]
+</code></pre>
+<p>Modify the value of the first array item:</p>
+<pre><code>cars[0] = &quot;Toyota&quot;
+</code></pre>
+<p>Return the number of elements in the cars array:</p>
+<pre><code>x = len(cars)
+</code></pre>
+<p>Print each item in the cars array:</p>
+<pre><code>for x in cars:
+    print(x)
+</code></pre>
+<p>Add one more element to the cars array:</p>
+<pre><code>cars.append(&quot;Honda&quot;)
+</code></pre>
+<p>Delete the second element of the cars array:</p>
+<pre><code>cars.pop(1)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">class c6_array_type():
+    &#34;&#34;&#34;
+    Array Type\n
+    Right now we can use LISTS as ARRAYS, however, to work with arrays in Python you will have to import a library, like the ```NumPy library```.\n
+    An array is a special variable, which can hold more than one value at a time.\n
+    If you have a list of items (a list of car names, for example), storing the cars in single variables could look like this:\n
+    ```
+    car1 = &#34;Ford&#34;
+    car2 = &#34;Volvo&#34;
+    car3 = &#34;BMW&#34;
+    ```
+    However, what if you want to loop through the cars and find a specific one? And what if you had not 3 cars, but 300?\n
+    The solution is an array!\n
+    An array can hold many values under a single name, and you can access the values by referring to an index number.\n
+    Get the value of the first array item:\n
+    ```
+    x = cars[0]
+    ```
+    Modify the value of the first array item:\n
+    ```
+    cars[0] = &#34;Toyota&#34;
+    ```
+    Return the number of elements in the cars array:\n
+    ```
+    x = len(cars)
+    ```
+    Print each item in the cars array:\n
+    ```
+    for x in cars:
+        print(x)
+    ```
+    Add one more element to the cars array:\n
+    ```
+    cars.append(&#34;Honda&#34;)
+    ```
+    Delete the second element of the cars array:\n
+    ```
+    cars.pop(1)
+    ```
     &#34;&#34;&#34;</code></pre>
 </details>
 </dd>
@@ -219,25 +617,22 @@ class c1_object_type():
 <li><h3><a href="#header-classes">Classes</a></h3>
 <ul>
 <li>
-<h4><code><a title="ds.chunk_1.chunk_1.c1_array_type" href="#ds.chunk_1.chunk_1.c1_array_type">c1_array_type</a></code></h4>
-</li>
-<li>
-<h4><code><a title="ds.chunk_1.chunk_1.c1_comment" href="#ds.chunk_1.chunk_1.c1_comment">c1_comment</a></code></h4>
-</li>
-<li>
-<h4><code><a title="ds.chunk_1.chunk_1.c1_data_types" href="#ds.chunk_1.chunk_1.c1_data_types">c1_data_types</a></code></h4>
-</li>
-<li>
-<h4><code><a title="ds.chunk_1.chunk_1.c1_object_type" href="#ds.chunk_1.chunk_1.c1_object_type">c1_object_type</a></code></h4>
-</li>
-<li>
-<h4><code><a title="ds.chunk_1.chunk_1.c1_scala_typ" href="#ds.chunk_1.chunk_1.c1_scala_typ">c1_scala_typ</a></code></h4>
-</li>
-<li>
 <h4><code><a title="ds.chunk_1.chunk_1.c1_syntax" href="#ds.chunk_1.chunk_1.c1_syntax">c1_syntax</a></code></h4>
 </li>
 <li>
-<h4><code><a title="ds.chunk_1.chunk_1.c1_variables" href="#ds.chunk_1.chunk_1.c1_variables">c1_variables</a></code></h4>
+<h4><code><a title="ds.chunk_1.chunk_1.c2_comment" href="#ds.chunk_1.chunk_1.c2_comment">c2_comment</a></code></h4>
+</li>
+<li>
+<h4><code><a title="ds.chunk_1.chunk_1.c3_variables" href="#ds.chunk_1.chunk_1.c3_variables">c3_variables</a></code></h4>
+</li>
+<li>
+<h4><code><a title="ds.chunk_1.chunk_1.c4_data_types" href="#ds.chunk_1.chunk_1.c4_data_types">c4_data_types</a></code></h4>
+</li>
+<li>
+<h4><code><a title="ds.chunk_1.chunk_1.c5_scala_type" href="#ds.chunk_1.chunk_1.c5_scala_type">c5_scala_type</a></code></h4>
+</li>
+<li>
+<h4><code><a title="ds.chunk_1.chunk_1.c6_array_type" href="#ds.chunk_1.chunk_1.c6_array_type">c6_array_type</a></code></h4>
 </li>
 </ul>
 </li>
