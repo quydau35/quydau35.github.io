@@ -363,3 +363,150 @@ def m7_list_comprehension():
 
     "Return the item if is not banana, if it is banana return orange".\n
     """
+
+def m8_sort_list():
+    """
+    Sort List Alphanumerically
+    List objects have a ```sort()``` method that will sort the list alphanumerically, ascending, by default:
+
+    ```
+    # Sort the list alphabetically:
+    thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+    thislist.sort()
+    print(thislist)
+    ```
+
+    ```
+    # Sort the list numerically:
+    thislist = [100, 50, 65, 82, 23]
+    thislist.sort()
+    print(thislist)
+    ```
+    Sort Descending\n
+    To sort descending, use the keyword argument ````reverse = True````:
+    ```
+    # Sort the list descending:
+    thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+    thislist.sort(reverse = True)
+    print(thislist)
+    ```
+    ```
+    # Sort the list descending:
+    thislist = [100, 50, 65, 82, 23]
+    thislist.sort(reverse = True)
+    print(thislist)
+    ```
+    Customize Sort Function\n
+    You can also customize your own function by using the keyword argument ```key = function```.\n
+    The function will return a number that will be used to sort the list (the lowest number first):\n
+    ```
+    # Sort the list based on how close the number is to 50:
+    def myfunc(n):
+        return abs(n - 50)
+
+    thislist = [100, 50, 65, 82, 23]
+    thislist.sort(key = myfunc)
+    print(thislist)
+    ```
+    Case Insensitive Sort\n
+    By default the ```sort()``` method is case sensitive, resulting in all capital letters being sorted before lower case letters:\n
+    ```
+    # Case sensitive sorting can give an unexpected result:
+    thislist = ["banana", "Orange", "Kiwi", "cherry"]
+    thislist.sort()
+    print(thislist)
+    ```
+    Luckily we can use built-in functions as key functions when sorting a list.\n
+    So if you want a case-insensitive sort function, use str.lower as a key function:\n
+    ```
+    # Perform a case-insensitive sort of the list:
+    thislist = ["banana", "Orange", "Kiwi", "cherry"]
+    thislist.sort(key = str.lower)
+    print(thislist)
+    ```
+    Reverse Order\n
+    What if you want to reverse the order of a list, regardless of the alphabet?\n
+    The ```reverse()``` method reverses the current sorting order of the elements.\n
+    ```
+    # Reverse the order of the list items:
+    thislist = ["banana", "Orange", "Kiwi", "cherry"]
+    thislist.reverse()
+    print(thislist)
+    ```
+    """
+
+def m9_copy_list():
+    """
+    Copy a List
+    You cannot copy a list simply by typing ```list2 = list1```, because: ```list2``` will only be a reference to ```list1```, and changes made in ```list1``` will automatically also be made in ```list2```.
+    There are ways to make a copy, one way is to use the built-in List method ```copy()```.
+    ```
+    # Make a copy of a list with the copy() method:
+    thislist = ["apple", "banana", "cherry"]
+    mylist = thislist.copy()
+    print(mylist)
+    ```
+    Another way to make a copy is to use the built-in method ```list()```.
+    ```
+    # Make a copy of a list with the list() method:
+    thislist = ["apple", "banana", "cherry"]
+    mylist = list(thislist)
+    print(mylist)
+    ```
+    """
+
+def m10_join_two_list():
+    """
+    Join Two Lists\n
+    There are several ways to join, or concatenate, two or more lists in Python.\n
+    One of the easiest ways are by using the ```+``` operator.\n
+    ```
+    # Join two list:
+    list1 = ["a", "b", "c"]
+    list2 = [1, 2, 3]
+
+    list3 = list1 + list2
+    print(list3)
+    ```
+    Another way to join two lists are by appending all the items from list2 into list1, one by one:\n
+    ```
+    # Append list2 into list1:
+    list1 = ["a", "b" , "c"]
+    list2 = [1, 2, 3]
+
+    for x in list2:
+        list1.append(x)
+
+    print(list1)
+    ```
+    Or you can use the ```extend()``` method, which purpose is to add elements from one list to another list:\n
+    ```
+    # Use the extend() method to add list2 at the end of list1:
+    list1 = ["a", "b" , "c"]
+    list2 = [1, 2, 3]
+
+    list1.extend(list2)
+    print(list1)
+    ```
+    """
+
+def m11_list_methods():
+    """
+    List Methods\n
+    Python has a set of built-in methods that you can use on lists.\n
+
+    ```
+    # Method	Description
+    append()	Adds an element at the end of the list
+    clear()	Removes all the elements from the list
+    copy()	Returns a copy of the list
+    count()	Returns the number of elements with the specified value
+    extend()	Add the elements of a list (or any iterable), to the end of the current list
+    index()	Returns the index of the first element with the specified value
+    insert()	Adds an element at the specified position
+    pop()	Removes the element at the specified position
+    remove()	Removes the item with the specified value
+    reverse()	Reverses the order of the list
+    sort()	Sorts the list
+    ```
+    """

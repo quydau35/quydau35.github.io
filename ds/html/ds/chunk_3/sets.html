@@ -1,0 +1,1060 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ds.chunk_3.sets API documentation</title>
+<meta name="description" content="Set …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ds.chunk_3.sets</code></h1>
+</header>
+<section id="section-intro">
+<p>Set</p>
+<p>Sets are used to store multiple items in a single variable.</p>
+<p>Set is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Tuple, and Dictionary, all with different qualities and usage.</p>
+<p>A set is a collection which is both unordered and unindexed.</p>
+<p>Sets are written with curly brackets.</p>
+<pre><code># Create a Set:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+print(thisset)
+</code></pre>
+<p>Note: Sets are unordered, so you cannot be sure in which order the items will appear.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+Set\n
+Sets are used to store multiple items in a single variable.\n
+
+Set is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Tuple, and Dictionary, all with different qualities and usage.\n
+
+A set is a collection which is both unordered and unindexed.\n
+
+Sets are written with curly brackets.\n
+
+```
+# Create a Set:
+
+thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+print(thisset)
+```
+Note: Sets are unordered, so you cannot be sure in which order the items will appear.\n
+&#34;&#34;&#34;
+
+def m0_set_properties():
+    &#34;&#34;&#34;
+    Set Items\n
+    Set items are unordered, unchangeable, and do not allow duplicate values.\n
+
+    Unordered\n
+    Unordered means that the items in a set do not have a defined order.\n
+
+    Set items can appear in a different order every time you use them, and cannot be referred to by index or key.\n
+
+    Unchangeable\n
+    Sets are unchangeable, meaning that we cannot change the items after the set has been created.\n
+
+    Once a set is created, you cannot change its items, but you can add new items.\n
+
+    Duplicates Not Allowed\n
+    Sets cannot have two items with the same value.\n
+    ```
+    # Duplicate values will be ignored:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;}
+
+    print(thisset)
+    ```
+    Get the Length of a Set\n
+    To determine how many items a set has, use the len() method.\n
+
+    ```
+    # Get the number of items in a set:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    print(len(thisset))
+    ```
+    Set Items - Data Types\n
+    Set items can be of any data type:\n
+    ```
+    # String, int and boolean data types:
+
+    set1 = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    set2 = {1, 5, 7, 9, 3}
+    set3 = {True, False, False}
+    ```
+    A set can contain different data types:\n
+    ```
+    # A set with strings, integers and boolean values:
+
+    set1 = {&#34;abc&#34;, 34, True, 40, &#34;male&#34;}
+    ```
+    ```type()```\n
+    From Python&#39;s perspective, sets are defined as objects with the data type &#39;set&#39;:\n
+
+    ```
+    &lt;class &#39;set&#39;&gt;
+    ```
+    ```
+    # What is the data type of a set?
+
+    myset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    print(type(myset))
+    ```
+    The ```set()``` Constructor\n
+    It is also possible to use the ```set()``` constructor to make a set.\n
+    ```
+    # Using the set() constructor to make a set:
+
+    thisset = set((&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)) # note the double round-brackets
+    print(thisset)
+    ```
+    &#34;&#34;&#34;
+
+def m1_access_set_items():
+    &#34;&#34;&#34;
+    Access Items\n
+    You cannot access items in a set by referring to an index or a key.\n
+
+    But you can loop through the set items using a for loop, or ask if a specified value is present in a set, by using the in keyword.\n
+
+    ```
+    # Loop through the set, and print the values:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    for x in thisset:
+    print(x)
+
+
+    # Check if &#34;banana&#34; is present in the set:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    print(&#34;banana&#34; in thisset)
+    ```
+    Change Items\n
+    Once a set is created, you cannot change its items, but you can add new items.\n
+    &#34;&#34;&#34;
+
+def m2_add_set_items():
+    &#34;&#34;&#34;
+    Add Items\n
+    Once a set is created, you cannot change its items, but you can add new items.\n
+
+    To add one item to a set use the ```add()``` method.\n
+
+    ```
+    # Add an item to a set, using the add() method:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    thisset.add(&#34;orange&#34;)
+
+    print(thisset)
+    ```
+    Add Sets\n
+    To add items from another set into the current set, use the ```update()``` method.\n
+
+    ```
+    # Add elements from tropical and thisset into newset:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    tropical = {&#34;pineapple&#34;, &#34;mango&#34;, &#34;papaya&#34;}
+
+    thisset.update(tropical)
+
+    print(thisset)
+    ```
+    Add Any Iterable\n
+    The object in the ```update()``` method does not have be a set, it can be any iterable object (tuples, lists, dictionaries et,).\n
+
+    ```
+    # Add elements of a list to at set:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    mylist = [&#34;kiwi&#34;, &#34;orange&#34;]
+
+    thisset.update(mylist)
+
+    print(thisset)
+    ```
+    &#34;&#34;&#34;
+
+def m3_remove_set_items():
+    &#34;&#34;&#34;
+    Remove Item\n
+    To remove an item in a set, use the remove(), or the discard() method.\n
+
+    ```
+    # Remove &#34;banana&#34; by using the remove() method:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    thisset.remove(&#34;banana&#34;)
+
+    print(thisset)
+    ```
+    Note: If the item to remove does not exist, remove() will raise an error.\n
+
+    ```
+    # Remove &#34;banana&#34; by using the discard() method:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    thisset.discard(&#34;banana&#34;)
+
+    print(thisset)
+    ```
+    Note: If the item to remove does not exist, discard() will NOT raise an error.\n
+
+    You can also use the pop(), method to remove an item, but this method will remove the last item. Remember that sets are unordered, so you will not know what item that gets removed.\n
+
+    The return value of the pop() method is the removed item.\n
+
+    ```
+    # Remove the last item by using the pop() method:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    x = thisset.pop()
+
+    print(x)
+
+    print(thisset)
+    ```
+    Note: Sets are unordered, so when using the pop() method, you do not know which item that gets removed.\n
+
+    ```
+    # The clear() method empties the set:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    thisset.clear()
+
+    print(thisset)
+    ```
+    ```
+    The del keyword will delete the set completely:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    del thisset
+
+    print(thisset)
+    ```
+    &#34;&#34;&#34;
+
+def m4_loop_set_items():
+    &#34;&#34;&#34;
+    Loop Items
+    You can loop through the set items by using a ```for``` loop:
+    ```
+    # Loop through the set, and print the values:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    for x in thisset:
+        print(x)
+    ```
+    &#34;&#34;&#34;
+
+def m5_join_sets():
+    &#34;&#34;&#34;
+    Join Two Sets\n
+    There are several ways to join two or more sets in Python.\n
+
+    You can use the ```union()``` method that returns a new set containing all items from both sets, or the ```update()``` method that inserts all the items from one set into another:\n
+
+    ```
+    # The union() method returns a new set with all items from both sets:
+
+    set1 = {&#34;a&#34;, &#34;b&#34; , &#34;c&#34;}
+    set2 = {1, 2, 3}
+
+    set3 = set1.union(set2)
+    print(set3)
+    ```
+    ```
+    # The update() method inserts the items in set2 into set1:
+
+    set1 = {&#34;a&#34;, &#34;b&#34; , &#34;c&#34;}
+    set2 = {1, 2, 3}
+
+    set1.update(set2)
+    print(set1)
+    ```
+    Note: Both ```union()``` and ```update()``` will exclude any duplicate items.\n
+
+    Keep ONLY the Duplicates\n
+    The ```intersection_update()``` method will keep only the items that are present in both sets.\n
+
+    ```
+    # Keep the items that exist in both set x, and set y:
+
+    x = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    y = {&#34;google&#34;, &#34;microsoft&#34;, &#34;apple&#34;}
+
+    x.intersection_update(y)
+
+    print(x)
+    ```
+    The ```intersection()``` method will return a new set, that only contains the items that are present in both sets.\n
+
+    ```
+    # Return a set that contains the items that exist in both set x, and set y:
+
+    x = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    y = {&#34;google&#34;, &#34;microsoft&#34;, &#34;apple&#34;}
+
+    z = x.intersection(y)
+
+    print(z)
+    ```
+    Keep All, But NOT the Duplicates\n
+    The ```symmetric_difference_update()``` method will keep only the elements that are NOT present in both sets.\n
+
+    ```
+    # Keep the items that are not present in both sets:
+
+    x = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    y = {&#34;google&#34;, &#34;microsoft&#34;, &#34;apple&#34;}
+
+    x.symmetric_difference_update(y)
+
+    print(x)
+    ```
+    The ```symmetric_difference()``` method will return a new set, that contains only the elements that are NOT present in both sets.\n
+
+    ```
+    # Return a set that contains all items from both sets, except items that are present in both:
+
+    x = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    y = {&#34;google&#34;, &#34;microsoft&#34;, &#34;apple&#34;}
+
+    z = x.symmetric_difference(y)
+
+    print(z)
+    ```
+    &#34;&#34;&#34;
+
+def m6_set_methods():
+    &#34;&#34;&#34;
+    Set Methods\n
+    Python has a set of built-in methods that you can use on sets.\n
+
+    ```
+    # Method    Description
+    add()       Adds an element to the set
+    clear()     Removes all the elements from the set
+    copy()      Returns a copy of the set
+    difference()        Returns a set containing the difference between two or more sets
+    difference_update() Removes the items in this set that are also included in another, specified set
+    discard()   Remove the specified item
+    intersection()      Returns a set, that is the intersection of two other sets
+    intersection_update()       Removes the items in this set that are not present in other, specified set(s)
+    isdisjoint()        Returns whether two sets have a intersection or not
+    issubset()  Returns whether another set contains this set or not
+    issuperset()        Returns whether this set contains another set or not
+    pop()       Removes an element from the set
+    remove()    Removes the specified element
+    symmetric_difference()      Returns a set with the symmetric differences of two sets
+    symmetric_difference_update()       inserts the symmetric differences from this set and another
+    union()     Return a set containing the union of sets
+    update()    Update the set with the union of this set and others
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ds.chunk_3.sets.m0_set_properties"><code class="name flex">
+<span>def <span class="ident">m0_set_properties</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set Items</p>
+<p>Set items are unordered, unchangeable, and do not allow duplicate values.</p>
+<p>Unordered</p>
+<p>Unordered means that the items in a set do not have a defined order.</p>
+<p>Set items can appear in a different order every time you use them, and cannot be referred to by index or key.</p>
+<p>Unchangeable</p>
+<p>Sets are unchangeable, meaning that we cannot change the items after the set has been created.</p>
+<p>Once a set is created, you cannot change its items, but you can add new items.</p>
+<p>Duplicates Not Allowed</p>
+<p>Sets cannot have two items with the same value.</p>
+<pre><code># Duplicate values will be ignored:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;, &quot;apple&quot;}
+
+print(thisset)
+</code></pre>
+<p>Get the Length of a Set</p>
+<p>To determine how many items a set has, use the len() method.</p>
+<pre><code># Get the number of items in a set:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+print(len(thisset))
+</code></pre>
+<p>Set Items - Data Types</p>
+<p>Set items can be of any data type:</p>
+<pre><code># String, int and boolean data types:
+
+set1 = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+set2 = {1, 5, 7, 9, 3}
+set3 = {True, False, False}
+</code></pre>
+<p>A set can contain different data types:</p>
+<pre><code># A set with strings, integers and boolean values:
+
+set1 = {&quot;abc&quot;, 34, True, 40, &quot;male&quot;}
+</code></pre>
+<p><code>type()</code></p>
+<p>From Python's perspective, sets are defined as objects with the data type 'set':</p>
+<pre><code>&lt;class 'set'&gt;
+</code></pre>
+<pre><code># What is the data type of a set?
+
+myset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+print(type(myset))
+</code></pre>
+<p>The <code>set()</code> Constructor</p>
+<p>It is also possible to use the <code>set()</code> constructor to make a set.</p>
+<pre><code># Using the set() constructor to make a set:
+
+thisset = set((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)) # note the double round-brackets
+print(thisset)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def m0_set_properties():
+    &#34;&#34;&#34;
+    Set Items\n
+    Set items are unordered, unchangeable, and do not allow duplicate values.\n
+
+    Unordered\n
+    Unordered means that the items in a set do not have a defined order.\n
+
+    Set items can appear in a different order every time you use them, and cannot be referred to by index or key.\n
+
+    Unchangeable\n
+    Sets are unchangeable, meaning that we cannot change the items after the set has been created.\n
+
+    Once a set is created, you cannot change its items, but you can add new items.\n
+
+    Duplicates Not Allowed\n
+    Sets cannot have two items with the same value.\n
+    ```
+    # Duplicate values will be ignored:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;}
+
+    print(thisset)
+    ```
+    Get the Length of a Set\n
+    To determine how many items a set has, use the len() method.\n
+
+    ```
+    # Get the number of items in a set:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    print(len(thisset))
+    ```
+    Set Items - Data Types\n
+    Set items can be of any data type:\n
+    ```
+    # String, int and boolean data types:
+
+    set1 = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    set2 = {1, 5, 7, 9, 3}
+    set3 = {True, False, False}
+    ```
+    A set can contain different data types:\n
+    ```
+    # A set with strings, integers and boolean values:
+
+    set1 = {&#34;abc&#34;, 34, True, 40, &#34;male&#34;}
+    ```
+    ```type()```\n
+    From Python&#39;s perspective, sets are defined as objects with the data type &#39;set&#39;:\n
+
+    ```
+    &lt;class &#39;set&#39;&gt;
+    ```
+    ```
+    # What is the data type of a set?
+
+    myset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    print(type(myset))
+    ```
+    The ```set()``` Constructor\n
+    It is also possible to use the ```set()``` constructor to make a set.\n
+    ```
+    # Using the set() constructor to make a set:
+
+    thisset = set((&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)) # note the double round-brackets
+    print(thisset)
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_3.sets.m1_access_set_items"><code class="name flex">
+<span>def <span class="ident">m1_access_set_items</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Access Items</p>
+<p>You cannot access items in a set by referring to an index or a key.</p>
+<p>But you can loop through the set items using a for loop, or ask if a specified value is present in a set, by using the in keyword.</p>
+<pre><code># Loop through the set, and print the values:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+for x in thisset:
+print(x)
+
+
+# Check if &quot;banana&quot; is present in the set:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+print(&quot;banana&quot; in thisset)
+</code></pre>
+<p>Change Items</p>
+<p>Once a set is created, you cannot change its items, but you can add new items.</p></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def m1_access_set_items():
+    &#34;&#34;&#34;
+    Access Items\n
+    You cannot access items in a set by referring to an index or a key.\n
+
+    But you can loop through the set items using a for loop, or ask if a specified value is present in a set, by using the in keyword.\n
+
+    ```
+    # Loop through the set, and print the values:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    for x in thisset:
+    print(x)
+
+
+    # Check if &#34;banana&#34; is present in the set:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    print(&#34;banana&#34; in thisset)
+    ```
+    Change Items\n
+    Once a set is created, you cannot change its items, but you can add new items.\n
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_3.sets.m2_add_set_items"><code class="name flex">
+<span>def <span class="ident">m2_add_set_items</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Add Items</p>
+<p>Once a set is created, you cannot change its items, but you can add new items.</p>
+<p>To add one item to a set use the <code>add()</code> method.</p>
+<pre><code># Add an item to a set, using the add() method:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+thisset.add(&quot;orange&quot;)
+
+print(thisset)
+</code></pre>
+<p>Add Sets</p>
+<p>To add items from another set into the current set, use the <code>update()</code> method.</p>
+<pre><code># Add elements from tropical and thisset into newset:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+tropical = {&quot;pineapple&quot;, &quot;mango&quot;, &quot;papaya&quot;}
+
+thisset.update(tropical)
+
+print(thisset)
+</code></pre>
+<p>Add Any Iterable</p>
+<p>The object in the <code>update()</code> method does not have be a set, it can be any iterable object (tuples, lists, dictionaries et,).</p>
+<pre><code># Add elements of a list to at set:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+mylist = [&quot;kiwi&quot;, &quot;orange&quot;]
+
+thisset.update(mylist)
+
+print(thisset)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def m2_add_set_items():
+    &#34;&#34;&#34;
+    Add Items\n
+    Once a set is created, you cannot change its items, but you can add new items.\n
+
+    To add one item to a set use the ```add()``` method.\n
+
+    ```
+    # Add an item to a set, using the add() method:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    thisset.add(&#34;orange&#34;)
+
+    print(thisset)
+    ```
+    Add Sets\n
+    To add items from another set into the current set, use the ```update()``` method.\n
+
+    ```
+    # Add elements from tropical and thisset into newset:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    tropical = {&#34;pineapple&#34;, &#34;mango&#34;, &#34;papaya&#34;}
+
+    thisset.update(tropical)
+
+    print(thisset)
+    ```
+    Add Any Iterable\n
+    The object in the ```update()``` method does not have be a set, it can be any iterable object (tuples, lists, dictionaries et,).\n
+
+    ```
+    # Add elements of a list to at set:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    mylist = [&#34;kiwi&#34;, &#34;orange&#34;]
+
+    thisset.update(mylist)
+
+    print(thisset)
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_3.sets.m3_remove_set_items"><code class="name flex">
+<span>def <span class="ident">m3_remove_set_items</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Remove Item</p>
+<p>To remove an item in a set, use the remove(), or the discard() method.</p>
+<pre><code># Remove &quot;banana&quot; by using the remove() method:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+thisset.remove(&quot;banana&quot;)
+
+print(thisset)
+</code></pre>
+<p>Note: If the item to remove does not exist, remove() will raise an error.</p>
+<pre><code># Remove &quot;banana&quot; by using the discard() method:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+thisset.discard(&quot;banana&quot;)
+
+print(thisset)
+</code></pre>
+<p>Note: If the item to remove does not exist, discard() will NOT raise an error.</p>
+<p>You can also use the pop(), method to remove an item, but this method will remove the last item. Remember that sets are unordered, so you will not know what item that gets removed.</p>
+<p>The return value of the pop() method is the removed item.</p>
+<pre><code># Remove the last item by using the pop() method:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+x = thisset.pop()
+
+print(x)
+
+print(thisset)
+</code></pre>
+<p>Note: Sets are unordered, so when using the pop() method, you do not know which item that gets removed.</p>
+<pre><code># The clear() method empties the set:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+thisset.clear()
+
+print(thisset)
+</code></pre>
+<pre><code>The del keyword will delete the set completely:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+del thisset
+
+print(thisset)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def m3_remove_set_items():
+    &#34;&#34;&#34;
+    Remove Item\n
+    To remove an item in a set, use the remove(), or the discard() method.\n
+
+    ```
+    # Remove &#34;banana&#34; by using the remove() method:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    thisset.remove(&#34;banana&#34;)
+
+    print(thisset)
+    ```
+    Note: If the item to remove does not exist, remove() will raise an error.\n
+
+    ```
+    # Remove &#34;banana&#34; by using the discard() method:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    thisset.discard(&#34;banana&#34;)
+
+    print(thisset)
+    ```
+    Note: If the item to remove does not exist, discard() will NOT raise an error.\n
+
+    You can also use the pop(), method to remove an item, but this method will remove the last item. Remember that sets are unordered, so you will not know what item that gets removed.\n
+
+    The return value of the pop() method is the removed item.\n
+
+    ```
+    # Remove the last item by using the pop() method:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    x = thisset.pop()
+
+    print(x)
+
+    print(thisset)
+    ```
+    Note: Sets are unordered, so when using the pop() method, you do not know which item that gets removed.\n
+
+    ```
+    # The clear() method empties the set:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    thisset.clear()
+
+    print(thisset)
+    ```
+    ```
+    The del keyword will delete the set completely:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    del thisset
+
+    print(thisset)
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_3.sets.m4_loop_set_items"><code class="name flex">
+<span>def <span class="ident">m4_loop_set_items</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Loop Items
+You can loop through the set items by using a <code>for</code> loop:</p>
+<pre><code># Loop through the set, and print the values:
+
+thisset = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+
+for x in thisset:
+    print(x)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def m4_loop_set_items():
+    &#34;&#34;&#34;
+    Loop Items
+    You can loop through the set items by using a ```for``` loop:
+    ```
+    # Loop through the set, and print the values:
+
+    thisset = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+
+    for x in thisset:
+        print(x)
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_3.sets.m5_join_sets"><code class="name flex">
+<span>def <span class="ident">m5_join_sets</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Join Two Sets</p>
+<p>There are several ways to join two or more sets in Python.</p>
+<p>You can use the <code>union()</code> method that returns a new set containing all items from both sets, or the <code>update()</code> method that inserts all the items from one set into another:</p>
+<pre><code># The union() method returns a new set with all items from both sets:
+
+set1 = {&quot;a&quot;, &quot;b&quot; , &quot;c&quot;}
+set2 = {1, 2, 3}
+
+set3 = set1.union(set2)
+print(set3)
+</code></pre>
+<pre><code># The update() method inserts the items in set2 into set1:
+
+set1 = {&quot;a&quot;, &quot;b&quot; , &quot;c&quot;}
+set2 = {1, 2, 3}
+
+set1.update(set2)
+print(set1)
+</code></pre>
+<p>Note: Both <code>union()</code> and <code>update()</code> will exclude any duplicate items.</p>
+<p>Keep ONLY the Duplicates</p>
+<p>The <code>intersection_update()</code> method will keep only the items that are present in both sets.</p>
+<pre><code># Keep the items that exist in both set x, and set y:
+
+x = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+y = {&quot;google&quot;, &quot;microsoft&quot;, &quot;apple&quot;}
+
+x.intersection_update(y)
+
+print(x)
+</code></pre>
+<p>The <code>intersection()</code> method will return a new set, that only contains the items that are present in both sets.</p>
+<pre><code># Return a set that contains the items that exist in both set x, and set y:
+
+x = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+y = {&quot;google&quot;, &quot;microsoft&quot;, &quot;apple&quot;}
+
+z = x.intersection(y)
+
+print(z)
+</code></pre>
+<p>Keep All, But NOT the Duplicates</p>
+<p>The <code>symmetric_difference_update()</code> method will keep only the elements that are NOT present in both sets.</p>
+<pre><code># Keep the items that are not present in both sets:
+
+x = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+y = {&quot;google&quot;, &quot;microsoft&quot;, &quot;apple&quot;}
+
+x.symmetric_difference_update(y)
+
+print(x)
+</code></pre>
+<p>The <code>symmetric_difference()</code> method will return a new set, that contains only the elements that are NOT present in both sets.</p>
+<pre><code># Return a set that contains all items from both sets, except items that are present in both:
+
+x = {&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;}
+y = {&quot;google&quot;, &quot;microsoft&quot;, &quot;apple&quot;}
+
+z = x.symmetric_difference(y)
+
+print(z)
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def m5_join_sets():
+    &#34;&#34;&#34;
+    Join Two Sets\n
+    There are several ways to join two or more sets in Python.\n
+
+    You can use the ```union()``` method that returns a new set containing all items from both sets, or the ```update()``` method that inserts all the items from one set into another:\n
+
+    ```
+    # The union() method returns a new set with all items from both sets:
+
+    set1 = {&#34;a&#34;, &#34;b&#34; , &#34;c&#34;}
+    set2 = {1, 2, 3}
+
+    set3 = set1.union(set2)
+    print(set3)
+    ```
+    ```
+    # The update() method inserts the items in set2 into set1:
+
+    set1 = {&#34;a&#34;, &#34;b&#34; , &#34;c&#34;}
+    set2 = {1, 2, 3}
+
+    set1.update(set2)
+    print(set1)
+    ```
+    Note: Both ```union()``` and ```update()``` will exclude any duplicate items.\n
+
+    Keep ONLY the Duplicates\n
+    The ```intersection_update()``` method will keep only the items that are present in both sets.\n
+
+    ```
+    # Keep the items that exist in both set x, and set y:
+
+    x = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    y = {&#34;google&#34;, &#34;microsoft&#34;, &#34;apple&#34;}
+
+    x.intersection_update(y)
+
+    print(x)
+    ```
+    The ```intersection()``` method will return a new set, that only contains the items that are present in both sets.\n
+
+    ```
+    # Return a set that contains the items that exist in both set x, and set y:
+
+    x = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    y = {&#34;google&#34;, &#34;microsoft&#34;, &#34;apple&#34;}
+
+    z = x.intersection(y)
+
+    print(z)
+    ```
+    Keep All, But NOT the Duplicates\n
+    The ```symmetric_difference_update()``` method will keep only the elements that are NOT present in both sets.\n
+
+    ```
+    # Keep the items that are not present in both sets:
+
+    x = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    y = {&#34;google&#34;, &#34;microsoft&#34;, &#34;apple&#34;}
+
+    x.symmetric_difference_update(y)
+
+    print(x)
+    ```
+    The ```symmetric_difference()``` method will return a new set, that contains only the elements that are NOT present in both sets.\n
+
+    ```
+    # Return a set that contains all items from both sets, except items that are present in both:
+
+    x = {&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;}
+    y = {&#34;google&#34;, &#34;microsoft&#34;, &#34;apple&#34;}
+
+    z = x.symmetric_difference(y)
+
+    print(z)
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+<dt id="ds.chunk_3.sets.m6_set_methods"><code class="name flex">
+<span>def <span class="ident">m6_set_methods</span></span>(<span>)</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Set Methods</p>
+<p>Python has a set of built-in methods that you can use on sets.</p>
+<pre><code># Method    Description
+add()       Adds an element to the set
+clear()     Removes all the elements from the set
+copy()      Returns a copy of the set
+difference()        Returns a set containing the difference between two or more sets
+difference_update() Removes the items in this set that are also included in another, specified set
+discard()   Remove the specified item
+intersection()      Returns a set, that is the intersection of two other sets
+intersection_update()       Removes the items in this set that are not present in other, specified set(s)
+isdisjoint()        Returns whether two sets have a intersection or not
+issubset()  Returns whether another set contains this set or not
+issuperset()        Returns whether this set contains another set or not
+pop()       Removes an element from the set
+remove()    Removes the specified element
+symmetric_difference()      Returns a set with the symmetric differences of two sets
+symmetric_difference_update()       inserts the symmetric differences from this set and another
+union()     Return a set containing the union of sets
+update()    Update the set with the union of this set and others
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def m6_set_methods():
+    &#34;&#34;&#34;
+    Set Methods\n
+    Python has a set of built-in methods that you can use on sets.\n
+
+    ```
+    # Method    Description
+    add()       Adds an element to the set
+    clear()     Removes all the elements from the set
+    copy()      Returns a copy of the set
+    difference()        Returns a set containing the difference between two or more sets
+    difference_update() Removes the items in this set that are also included in another, specified set
+    discard()   Remove the specified item
+    intersection()      Returns a set, that is the intersection of two other sets
+    intersection_update()       Removes the items in this set that are not present in other, specified set(s)
+    isdisjoint()        Returns whether two sets have a intersection or not
+    issubset()  Returns whether another set contains this set or not
+    issuperset()        Returns whether this set contains another set or not
+    pop()       Removes an element from the set
+    remove()    Removes the specified element
+    symmetric_difference()      Returns a set with the symmetric differences of two sets
+    symmetric_difference_update()       inserts the symmetric differences from this set and another
+    union()     Return a set containing the union of sets
+    update()    Update the set with the union of this set and others
+    ```
+    &#34;&#34;&#34;</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ds.chunk_3" href="index.html">ds.chunk_3</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="ds.chunk_3.sets.m0_set_properties" href="#ds.chunk_3.sets.m0_set_properties">m0_set_properties</a></code></li>
+<li><code><a title="ds.chunk_3.sets.m1_access_set_items" href="#ds.chunk_3.sets.m1_access_set_items">m1_access_set_items</a></code></li>
+<li><code><a title="ds.chunk_3.sets.m2_add_set_items" href="#ds.chunk_3.sets.m2_add_set_items">m2_add_set_items</a></code></li>
+<li><code><a title="ds.chunk_3.sets.m3_remove_set_items" href="#ds.chunk_3.sets.m3_remove_set_items">m3_remove_set_items</a></code></li>
+<li><code><a title="ds.chunk_3.sets.m4_loop_set_items" href="#ds.chunk_3.sets.m4_loop_set_items">m4_loop_set_items</a></code></li>
+<li><code><a title="ds.chunk_3.sets.m5_join_sets" href="#ds.chunk_3.sets.m5_join_sets">m5_join_sets</a></code></li>
+<li><code><a title="ds.chunk_3.sets.m6_set_methods" href="#ds.chunk_3.sets.m6_set_methods">m6_set_methods</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
