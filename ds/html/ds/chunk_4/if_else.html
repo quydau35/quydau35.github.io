@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ds.chunk_4.if_else API documentation</title>
+<meta name="description" content="Python Conditions and If statements …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ds.chunk_4.if_else</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="python-conditions-and-if-statements">Python Conditions and If statements</h1>
+<p>Python supports the usual logical conditions from mathematics:</p>
+<pre><code>Equals: a == b
+Not Equals: a != b
+Less than: a &lt; b
+Less than or equal to: a &lt;= b
+Greater than: a &gt; b
+Greater than or equal to: a &gt;= b
+</code></pre>
+<p>These conditions can be used in several ways, most commonly in "if statements" and loops.</p>
+<p>An "if statement" is written by using the if keyword.</p>
+<pre><code># If statement:
+
+a = 33
+b = 200
+if b &gt; a:
+  print(&quot;b is greater than a&quot;)
+</code></pre>
+<p>In this example we use two variables, a and b, which are used as part of the if statement to test whether b is greater than a. As a is 33, and b is 200, we know that 200 is greater than 33, and so we print to screen that "b is greater than a".</p>
+<h1 id="indentation">Indentation</h1>
+<p>Python relies on indentation (whitespace at the beginning of a line) to define scope in the code. Other programming languages often use curly-brackets for this purpose.</p>
+<pre><code># If statement, without indentation (will raise an error):
+
+a = 33
+b = 200
+if b &gt; a:
+print(&quot;b is greater than a&quot;) # you will get an error
+</code></pre>
+<h1 id="elif">Elif</h1>
+<p>The elif keyword is pythons way of saying "if the previous conditions were not true, then try this condition".</p>
+<pre><code>a = 33
+b = 33
+if b &gt; a:
+    print(&quot;b is greater than a&quot;)
+elif a == b:
+    print(&quot;a and b are equal&quot;)
+</code></pre>
+<p>In this example <code>a</code> is equal to <code>b</code>, so the first condition is not <code>true</code>, but the <code>elif</code> condition is true, so we print to screen that "a and b are equal".</p>
+<h1 id="else">Else</h1>
+<p>The else keyword catches anything which isn't caught by the preceding conditions.</p>
+<pre><code>a = 200
+b = 33
+if b &gt; a:
+    print(&quot;b is greater than a&quot;)
+elif a == b:
+    print(&quot;a and b are equal&quot;)
+else:
+    print(&quot;a is greater than b&quot;)
+</code></pre>
+<p>In this example <code>a</code> is greater than <code>b</code>, so the first condition is not <code>true</code>, also the <code>elif</code> condition is not true, so we go to the else condition and print to screen that "a is greater than b".</p>
+<p>You can also have an <code>else</code> without the <code>elif</code>:</p>
+<pre><code>a = 200
+b = 33
+if b &gt; a:
+    print(&quot;b is greater than a&quot;)
+else:
+    print(&quot;b is not greater than a&quot;)
+</code></pre>
+<h1 id="short-hand-if">Short Hand If</h1>
+<p>If you have only one statement to execute, you can put it on the same line as the if statement.</p>
+<pre><code># One line if statement:
+
+if a &gt; b: print(&quot;a is greater than b&quot;)
+</code></pre>
+<p>Short Hand If &hellip; Else</p>
+<p>If you have only one statement to execute, one for if, and one for else, you can put it all on the same line:</p>
+<pre><code># One line if else statement:
+
+a = 2
+b = 330
+print(&quot;A&quot;) if a &gt; b else print(&quot;B&quot;)
+</code></pre>
+<p>This technique is known as Ternary Operators, or Conditional Expressions.</p>
+<p>You can also have multiple else statements on the same line:</p>
+<pre><code># One line if else statement, with 3 conditions:
+
+a = 330
+b = 330
+print(&quot;A&quot;) if a &gt; b else print(&quot;=&quot;) if a == b else print(&quot;B&quot;)
+</code></pre>
+<h1 id="and">And</h1>
+<p>The and keyword is a logical operator, and is used to combine conditional statements:</p>
+<pre><code># Test if a is greater than b, AND if c is greater than a:
+
+a = 200
+b = 33
+c = 500
+if a &gt; b and c &gt; a:
+print(&quot;Both conditions are True&quot;)
+</code></pre>
+<h1 id="or">Or</h1>
+<p>The or keyword is a logical operator, and is used to combine conditional statements:</p>
+<pre><code># Test if a is greater than b, OR if a is greater than c:
+
+a = 200
+b = 33
+c = 500
+if a &gt; b or a &gt; c:
+print(&quot;At least one of the conditions is True&quot;)
+</code></pre>
+<h1 id="nested-if">Nested If</h1>
+<p>You can have if statements inside if statements, this is called nested if statements.</p>
+<pre><code>x = 41
+
+if x &gt; 10:
+    print(&quot;Above ten,&quot;)
+    if x &gt; 20:
+        print(&quot;and also above 20!&quot;)
+    else:
+        print(&quot;but not above 20.&quot;)
+</code></pre>
+<h1 id="the-pass-statement">The <code>pass</code> Statement</h1>
+<p>if statements cannot be empty, but if you for some reason have an if statement with no content, put in the <code>pass</code> statement to avoid getting an error.</p>
+<pre><code>a = 33
+b = 200
+
+if b &gt; a:
+    pass
+</code></pre>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+# Python Conditions and If statements\n
+Python supports the usual logical conditions from mathematics:\n
+
+    Equals: a == b
+    Not Equals: a != b
+    Less than: a &lt; b
+    Less than or equal to: a &lt;= b
+    Greater than: a &gt; b
+    Greater than or equal to: a &gt;= b
+These conditions can be used in several ways, most commonly in &#34;if statements&#34; and loops.\n
+
+An &#34;if statement&#34; is written by using the if keyword.\n
+
+```
+# If statement:
+
+a = 33
+b = 200
+if b &gt; a:
+  print(&#34;b is greater than a&#34;)
+```
+In this example we use two variables, a and b, which are used as part of the if statement to test whether b is greater than a. As a is 33, and b is 200, we know that 200 is greater than 33, and so we print to screen that &#34;b is greater than a&#34;.\n
+# Indentation\n
+Python relies on indentation (whitespace at the beginning of a line) to define scope in the code. Other programming languages often use curly-brackets for this purpose.\n
+
+```
+# If statement, without indentation (will raise an error):
+
+a = 33
+b = 200
+if b &gt; a:
+print(&#34;b is greater than a&#34;) # you will get an error
+```
+
+# Elif\n
+The elif keyword is pythons way of saying &#34;if the previous conditions were not true, then try this condition&#34;.\n
+
+```
+a = 33
+b = 33
+if b &gt; a:
+    print(&#34;b is greater than a&#34;)
+elif a == b:
+    print(&#34;a and b are equal&#34;)
+```
+In this example ```a``` is equal to ```b```, so the first condition is not ```true```, but the ```elif``` condition is true, so we print to screen that &#34;a and b are equal&#34;.
+
+# Else\n
+The else keyword catches anything which isn&#39;t caught by the preceding conditions.\n
+
+```
+a = 200
+b = 33
+if b &gt; a:
+    print(&#34;b is greater than a&#34;)
+elif a == b:
+    print(&#34;a and b are equal&#34;)
+else:
+    print(&#34;a is greater than b&#34;)
+```
+In this example ```a``` is greater than ```b```, so the first condition is not ```true```, also the ```elif``` condition is not true, so we go to the else condition and print to screen that &#34;a is greater than b&#34;.\n
+
+You can also have an ```else``` without the ```elif```:\n
+
+```
+a = 200
+b = 33
+if b &gt; a:
+    print(&#34;b is greater than a&#34;)
+else:
+    print(&#34;b is not greater than a&#34;)
+```
+
+# Short Hand If\n
+If you have only one statement to execute, you can put it on the same line as the if statement.\n
+
+```
+# One line if statement:
+
+if a &gt; b: print(&#34;a is greater than b&#34;)
+```
+Short Hand If ... Else\n
+If you have only one statement to execute, one for if, and one for else, you can put it all on the same line:\n
+
+```
+# One line if else statement:
+
+a = 2
+b = 330
+print(&#34;A&#34;) if a &gt; b else print(&#34;B&#34;)
+```
+This technique is known as Ternary Operators, or Conditional Expressions.\n
+
+You can also have multiple else statements on the same line:\n
+
+```
+# One line if else statement, with 3 conditions:
+
+a = 330
+b = 330
+print(&#34;A&#34;) if a &gt; b else print(&#34;=&#34;) if a == b else print(&#34;B&#34;)
+```
+# And\n
+The and keyword is a logical operator, and is used to combine conditional statements:\n
+
+```
+# Test if a is greater than b, AND if c is greater than a:
+
+a = 200
+b = 33
+c = 500
+if a &gt; b and c &gt; a:
+print(&#34;Both conditions are True&#34;)
+```
+# Or\n
+The or keyword is a logical operator, and is used to combine conditional statements:\n
+
+```
+# Test if a is greater than b, OR if a is greater than c:
+
+a = 200
+b = 33
+c = 500
+if a &gt; b or a &gt; c:
+print(&#34;At least one of the conditions is True&#34;)
+```
+# Nested If\n
+You can have if statements inside if statements, this is called nested if statements.\n
+
+```
+x = 41
+
+if x &gt; 10:
+    print(&#34;Above ten,&#34;)
+    if x &gt; 20:
+        print(&#34;and also above 20!&#34;)
+    else:
+        print(&#34;but not above 20.&#34;)
+```
+# The ```pass``` Statement\n
+if statements cannot be empty, but if you for some reason have an if statement with no content, put in the ```pass``` statement to avoid getting an error.\n
+
+```
+a = 33
+b = 200
+
+if b &gt; a:
+    pass
+```
+&#34;&#34;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#python-conditions-and-if-statements">Python Conditions and If statements</a></li>
+<li><a href="#indentation">Indentation</a></li>
+<li><a href="#elif">Elif</a></li>
+<li><a href="#else">Else</a></li>
+<li><a href="#short-hand-if">Short Hand If</a></li>
+<li><a href="#and">And</a></li>
+<li><a href="#or">Or</a></li>
+<li><a href="#nested-if">Nested If</a></li>
+<li><a href="#the-pass-statement">The pass Statement</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ds.chunk_4" href="index.html">ds.chunk_4</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

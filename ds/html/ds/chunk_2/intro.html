@@ -40,294 +40,8 @@
 <p>Operators</p>
 </li>
 </ol>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">&#34;&#34;&#34;
-Scala Type\n
-1. Booleans\n
-2. Numbers\n
-3. Casting\n
-4. String\n
-5. Operators\n
-&#34;&#34;&#34;
-
-class c1_bool():
-    &#34;&#34;&#34;
-    Booleans represent one of two values: ```True``` or ```False```.\n
-    When you compare two values, the expression is evaluated and Python returns the Boolean answer:\n
-    ```
-    print(10 &gt; 9)
-    print(10 &gt;= 9)
-    print(10 == 9)
-    print(10 &lt; 9)
-    print(10 &lt;= 9)
-    ```
-    Evaluate a string and a number:\n
-    ```
-    print(bool(&#34;Hello&#34;))
-    print(bool(15))
-
-    x = &#34;Hello&#34;
-    y = 15
-
-    print(bool(x))
-    print(bool(y))
-    ```
-    Almost any value is evaluated to True if it has some sort of content.\n
-    Any string is True, except empty strings.\n
-    Any number is True, except 0.\n
-    Any list, tuple, set, and dictionary are True, except empty ones.\n
-    The following will return False:\n
-    ```
-    bool(False)
-    bool(None)
-    bool(0)
-    bool(&#34;&#34;)
-    bool(())
-    bool([])
-    bool({})
-    ```
-    Python also has many built-in functions that return a boolean value, like the ```isinstance()``` function, which can be used to determine if an object is of a certain data type:\n
-    ```
-    x = 200
-    print(isinstance(x, int))
-    ```
-    &#34;&#34;&#34;
-
-
-class c2_numbers():
-    &#34;&#34;&#34;
-    There are three numeric types in Python:\n
-    ```int```\n
-    ```float```\n
-    ```complex```\n
-    Variables of numeric types are created when you assign a value to them:\n
-    ```
-    x = 1    # int
-    y = 2.8  # float
-    z = 1j   # complex
-    ```
-    To verify the type of any object in Python, use the type() function:\n
-    ```
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-
-    Integers:\n
-    Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.\n
-    ```
-    x = 1
-    y = 35656222554887711
-    z = -3255522
-
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-
-    Floats:\n
-    Float, or &#34;floating point number&#34; is a number, positive or negative, containing one or more decimals.\n
-    ```
-    x = 1.10
-    y = 1.0
-    z = -35.59
-
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-    Float can also be scientific numbers with an &#34;e&#34; to indicate the power of 10.\n
-    ```
-    x = 35e3
-    y = 12E4
-    z = -87.7e100
-
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-    Complex:\n
-    Complex numbers are written with a &#34;j&#34; as the imaginary part:\n
-    ```
-    x = 3+5j
-    y = 5j
-    z = -5j
-
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-    You can convert from one type to another with the int(), float(), and complex() methods:\n
-    ```
-    x = 1    # int
-    y = 2.8  # float
-    z = 1j   # complex
-
-    #convert from int to float:
-    a = float(x)
-
-    #convert from float to int:
-    b = int(y)
-
-    #convert from int to complex:
-    c = complex(x)
-
-    print(a)
-    print(b)
-    print(c)
-
-    print(type(a))
-    print(type(b))
-    print(type(c))
-    ```
-    &#34;&#34;&#34;
-
-
-class c3_casting():
-    &#34;&#34;&#34;
-    There may be times when you want to specify a type on to a variable. This can be done with casting. Python is an object-orientated language, and as such it uses classes to define data types, including its primitive types.\n
-
-    Casting in python is therefore done using constructor functions:\n
-        int() - constructs an integer number from an integer literal, a float literal (by rounding down to the previous whole number), or a string literal (providing the string represents a whole number)\n
-        float() - constructs a float number from an integer literal, a float literal or a string literal (providing the string represents a float or an integer)\n
-        str() - constructs a string from a wide variety of data types, including strings, integer literals and float literals\n
-    Integers:\n
-    ```
-    x = int(1)   # x will be 1
-    y = int(2.8) # y will be 2
-    z = int(&#34;3&#34;) # z will be 3
-    ```
-    Floats:\n
-    ```
-    x = float(1)     # x will be 1.0
-    y = float(2.8)   # y will be 2.8
-    z = float(&#34;3&#34;)   # z will be 3.0
-    w = float(&#34;4.2&#34;) # w will be 4.2
-    ```
-    Strings:\n
-    ```
-    x = str(&#34;s1&#34;) # x will be &#39;s1&#39;
-    y = str(2)    # y will be &#39;2&#39;
-    z = str(3.0)  # z will be &#39;3.0&#39;
-    ```
-    &#34;&#34;&#34;
-
-
-class c4_string():
-    &#34;&#34;&#34;
-    Strings in python are surrounded by either single quotation marks, or double quotation marks.
-    &#39;hello&#39; is the same as &#34;hello&#34;.
-    You can display a string literal with the print() function:
-    ```
-    print(&#34;Hello&#34;)
-    print(&#39;Hello&#39;)
-    ```
-    &#34;&#34;&#34;
-
-
-class c5_operators():
-    &#34;&#34;&#34;
-    Operators are used to perform operations on variables and values.\n
-    In the example below, we use the ```+``` operator to add together two values:\n
-    ```
-    print(10 + 5)
-    ```
-    Python divides the operators in the following groups:\n
-        Arithmetic operators\n
-        Assignment operators\n
-        Comparison operators\n
-        Logical operators\n
-        Identity operators\n
-        Membership operators\n
-        Bitwise operators\n
-    Arithmetic operators are used with numeric values to perform common mathematical operations:\n
-    ```
-    Operator    Name    Example
-    +   Addition        x + y
-    -   Subtraction     x - y
-    *   Multiplication  x * y
-    /   Division        x / y
-    %   Modulus x % y
-    **  Exponentiation  x ** y
-    //  Floor division  x // y
-    ```
-    Assignment operators are used to assign values to variables:\n
-    ```
-    Operator    Example Same As
-    =   x = 5   x = 5
-    +=  x += 3  x = x + 3
-    -=  x -= 3  x = x - 3
-    *=  x *= 3  x = x * 3
-    /=  x /= 3  x = x / 3
-    %=  x %= 3  x = x % 3
-    //= x //= 3 x = x // 3
-    **= x **= 3 x = x ** 3
-    &amp;=  x &amp;= 3  x = x &amp; 3
-    |=  x |= 3  x = x | 3
-    ^=  x ^= 3  x = x ^ 3
-    &gt;&gt;= x &gt;&gt;= 3 x = x &gt;&gt; 3
-    &lt;&lt;= x &lt;&lt;= 3 x = x &lt;&lt; 3
-    ```
-    Comparison operators are used to compare two values:\n
-    ```
-    Operator    Name                            Example
-    ==          Equal                           x == y
-    !=          Not equal                       x != y
-    &gt;           Greater than                    x &gt; y
-    &lt;           Less than                       x &lt; y
-    &gt;=          Greater than or equal to        x &gt;= y
-    &lt;=          Less than or equal to           x &lt;= y
-    ```
-    Logical operators are used to combine conditional statements:\n
-    ```
-    Operator    Description                             Example
-    and         Returns True if both statements are true                        x &lt; 5 and  x &lt; 10
-    or          Returns True if one of the statements is true                   x &lt; 5 or x &lt; 4
-    not         Reverse the result, returns False if the result is true         not(x &lt; 5 and x &lt; 10)
-    ```
-    Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:\n
-    ```
-    Operator    Description     Example
-    is          Returns True if both variables are the same object      x is y
-    is not      Returns True if both variables are not the same object  x is not y
-    ```
-    Membership operators are used to test if a sequence is presented in an object:\n
-    ```
-    Operator    Description                                     Example
-    in          Returns True if a sequence with the specified value is present in the object            x in y
-    not in      Returns True if a sequence with the specified value is not present in the object        x not in y
-    ```
-    Bitwise operators are used to compare (binary) numbers:
-
-    ```
-    Operator    Name            Description
-    &amp;   AND                     Sets each bit to 1 if both bits are 1
-    |   OR                      Sets each bit to 1 if one of two bits is 1
-    ^   XOR                     Sets each bit to 1 if only one of two bits is 1
-    ~   NOT                     Inverts all the bits
-    &lt;&lt;  Zero fill left shift    Shift left by pushing zeros in from the right and let the leftmost bits fall off
-    &gt;&gt;  Signed right shift      Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-classes">Classes</h2>
-<dl>
-<dt id="ds.chunk_2.intro.c1_bool"><code class="flex name class">
-<span>class <span class="ident">c1_bool</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Booleans represent one of two values: <code>True</code> or <code>False</code>.</p>
+<h1 id="booleans">Booleans</h1>
+<p>Booleans represent one of two values: <code>True</code> or <code>False</code>.</p>
 <p>When you compare two values, the expression is evaluated and Python returns the Boolean answer:</p>
 <pre><code>print(10 &gt; 9)
 print(10 &gt;= 9)
@@ -361,60 +75,9 @@ bool({})
 <p>Python also has many built-in functions that return a boolean value, like the <code>isinstance()</code> function, which can be used to determine if an object is of a certain data type:</p>
 <pre><code>x = 200
 print(isinstance(x, int))
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c1_bool():
-    &#34;&#34;&#34;
-    Booleans represent one of two values: ```True``` or ```False```.\n
-    When you compare two values, the expression is evaluated and Python returns the Boolean answer:\n
-    ```
-    print(10 &gt; 9)
-    print(10 &gt;= 9)
-    print(10 == 9)
-    print(10 &lt; 9)
-    print(10 &lt;= 9)
-    ```
-    Evaluate a string and a number:\n
-    ```
-    print(bool(&#34;Hello&#34;))
-    print(bool(15))
-
-    x = &#34;Hello&#34;
-    y = 15
-
-    print(bool(x))
-    print(bool(y))
-    ```
-    Almost any value is evaluated to True if it has some sort of content.\n
-    Any string is True, except empty strings.\n
-    Any number is True, except 0.\n
-    Any list, tuple, set, and dictionary are True, except empty ones.\n
-    The following will return False:\n
-    ```
-    bool(False)
-    bool(None)
-    bool(0)
-    bool(&#34;&#34;)
-    bool(())
-    bool([])
-    bool({})
-    ```
-    Python also has many built-in functions that return a boolean value, like the ```isinstance()``` function, which can be used to determine if an object is of a certain data type:\n
-    ```
-    x = 200
-    print(isinstance(x, int))
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_2.intro.c2_numbers"><code class="flex name class">
-<span>class <span class="ident">c2_numbers</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>There are three numeric types in Python:</p>
+</code></pre>
+<h1 id="numbers">Numbers</h1>
+<p>There are three numeric types in Python:</p>
 <p><code>int</code></p>
 <p><code>float</code></p>
 <p><code>complex</code></p>
@@ -488,105 +151,9 @@ print(c)
 print(type(a))
 print(type(b))
 print(type(c))
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c2_numbers():
-    &#34;&#34;&#34;
-    There are three numeric types in Python:\n
-    ```int```\n
-    ```float```\n
-    ```complex```\n
-    Variables of numeric types are created when you assign a value to them:\n
-    ```
-    x = 1    # int
-    y = 2.8  # float
-    z = 1j   # complex
-    ```
-    To verify the type of any object in Python, use the type() function:\n
-    ```
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-
-    Integers:\n
-    Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.\n
-    ```
-    x = 1
-    y = 35656222554887711
-    z = -3255522
-
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-
-    Floats:\n
-    Float, or &#34;floating point number&#34; is a number, positive or negative, containing one or more decimals.\n
-    ```
-    x = 1.10
-    y = 1.0
-    z = -35.59
-
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-    Float can also be scientific numbers with an &#34;e&#34; to indicate the power of 10.\n
-    ```
-    x = 35e3
-    y = 12E4
-    z = -87.7e100
-
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-    Complex:\n
-    Complex numbers are written with a &#34;j&#34; as the imaginary part:\n
-    ```
-    x = 3+5j
-    y = 5j
-    z = -5j
-
-    print(type(x))
-    print(type(y))
-    print(type(z))
-    ```
-    You can convert from one type to another with the int(), float(), and complex() methods:\n
-    ```
-    x = 1    # int
-    y = 2.8  # float
-    z = 1j   # complex
-
-    #convert from int to float:
-    a = float(x)
-
-    #convert from float to int:
-    b = int(y)
-
-    #convert from int to complex:
-    c = complex(x)
-
-    print(a)
-    print(b)
-    print(c)
-
-    print(type(a))
-    print(type(b))
-    print(type(c))
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_2.intro.c3_casting"><code class="flex name class">
-<span>class <span class="ident">c3_casting</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>There may be times when you want to specify a type on to a variable. This can be done with casting. Python is an object-orientated language, and as such it uses classes to define data types, including its primitive types.</p>
+</code></pre>
+<h1 id="casting">Casting</h1>
+<p>There may be times when you want to specify a type on to a variable. This can be done with casting. Python is an object-orientated language, and as such it uses classes to define data types, including its primitive types.</p>
 <p>Casting in python is therefore done using constructor functions:</p>
 <pre><code>int() - constructs an integer number from an integer literal, a float literal (by rounding down to the previous whole number), or a string literal (providing the string represents a whole number)
 
@@ -609,72 +176,16 @@ w = float(&quot;4.2&quot;) # w will be 4.2
 <pre><code>x = str(&quot;s1&quot;) # x will be 's1'
 y = str(2)    # y will be '2'
 z = str(3.0)  # z will be '3.0'
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c3_casting():
-    &#34;&#34;&#34;
-    There may be times when you want to specify a type on to a variable. This can be done with casting. Python is an object-orientated language, and as such it uses classes to define data types, including its primitive types.\n
-
-    Casting in python is therefore done using constructor functions:\n
-        int() - constructs an integer number from an integer literal, a float literal (by rounding down to the previous whole number), or a string literal (providing the string represents a whole number)\n
-        float() - constructs a float number from an integer literal, a float literal or a string literal (providing the string represents a float or an integer)\n
-        str() - constructs a string from a wide variety of data types, including strings, integer literals and float literals\n
-    Integers:\n
-    ```
-    x = int(1)   # x will be 1
-    y = int(2.8) # y will be 2
-    z = int(&#34;3&#34;) # z will be 3
-    ```
-    Floats:\n
-    ```
-    x = float(1)     # x will be 1.0
-    y = float(2.8)   # y will be 2.8
-    z = float(&#34;3&#34;)   # z will be 3.0
-    w = float(&#34;4.2&#34;) # w will be 4.2
-    ```
-    Strings:\n
-    ```
-    x = str(&#34;s1&#34;) # x will be &#39;s1&#39;
-    y = str(2)    # y will be &#39;2&#39;
-    z = str(3.0)  # z will be &#39;3.0&#39;
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_2.intro.c4_string"><code class="flex name class">
-<span>class <span class="ident">c4_string</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Strings in python are surrounded by either single quotation marks, or double quotation marks.
-'hello' is the same as "hello".
-You can display a string literal with the print() function:</p>
+</code></pre>
+<h1 id="strings">Strings</h1>
+<p>Strings in python are surrounded by either single quotation marks, or double quotation marks.
+'hello' is the same as "hello".</p>
+<p>You can display a string literal with the print() function:</p>
 <pre><code>print(&quot;Hello&quot;)
 print('Hello')
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">class c4_string():
-    &#34;&#34;&#34;
-    Strings in python are surrounded by either single quotation marks, or double quotation marks.
-    &#39;hello&#39; is the same as &#34;hello&#34;.
-    You can display a string literal with the print() function:
-    ```
-    print(&#34;Hello&#34;)
-    print(&#39;Hello&#39;)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_2.intro.c5_operators"><code class="flex name class">
-<span>class <span class="ident">c5_operators</span></span>
-</code></dt>
-<dd>
-<div class="desc"><p>Operators are used to perform operations on variables and values.</p>
+</code></pre>
+<h1 id="operators">Operators</h1>
+<p>Operators are used to perform operations on variables and values.</p>
 <p>In the example below, we use the <code>+</code> operator to add together two values:</p>
 <pre><code>print(10 + 5)
 </code></pre>
@@ -694,186 +205,345 @@ Membership operators
 Bitwise operators
 </code></pre>
 <p>Arithmetic operators are used with numeric values to perform common mathematical operations:</p>
-<pre><code>Operator    Name    Example
-+   Addition        x + y
--   Subtraction     x - y
-*   Multiplication  x * y
-/   Division        x / y
-%   Modulus x % y
-**  Exponentiation  x ** y
-//  Floor division  x // y
+<pre><code>Operator        Name    Example
++       Addition        x + y
+-       Subtraction     x - y
+*       Multiplication  x * y
+/       Division        x / y
+%       Modulus x % y
+**      Exponentiation  x ** y
+//      Floor division  x // y
 </code></pre>
 <p>Assignment operators are used to assign values to variables:</p>
-<pre><code>Operator    Example Same As
-=   x = 5   x = 5
-+=  x += 3  x = x + 3
--=  x -= 3  x = x - 3
-*=  x *= 3  x = x * 3
-/=  x /= 3  x = x / 3
-%=  x %= 3  x = x % 3
-//= x //= 3 x = x // 3
-**= x **= 3 x = x ** 3
-&amp;=  x &amp;= 3  x = x &amp; 3
-|=  x |= 3  x = x | 3
-^=  x ^= 3  x = x ^ 3
-&gt;&gt;= x &gt;&gt;= 3 x = x &gt;&gt; 3
-&lt;&lt;= x &lt;&lt;= 3 x = x &lt;&lt; 3
+<pre><code>Operator        Example Same As
+=       x = 5   x = 5
++=      x += 3  x = x + 3
+-=      x -= 3  x = x - 3
+*=      x *= 3  x = x * 3
+/=      x /= 3  x = x / 3
+%=      x %= 3  x = x % 3
+//=     x //= 3 x = x // 3
+**=     x **= 3 x = x ** 3
+&amp;=      x &amp;= 3  x = x &amp; 3
+|=      x |= 3  x = x | 3
+^=      x ^= 3  x = x ^ 3
+&gt;&gt;=     x &gt;&gt;= 3 x = x &gt;&gt; 3
+&lt;&lt;=     x &lt;&lt;= 3 x = x &lt;&lt; 3
 </code></pre>
 <p>Comparison operators are used to compare two values:</p>
-<pre><code>Operator    Name                            Example
-==          Equal                           x == y
-!=          Not equal                       x != y
-&gt;           Greater than                    x &gt; y
-&lt;           Less than                       x &lt; y
-&gt;=          Greater than or equal to        x &gt;= y
-&lt;=          Less than or equal to           x &lt;= y
+<pre><code>Operator        Name                            Example
+==              Equal                           x == y
+!=              Not equal                       x != y
+&gt;               Greater than                    x &gt; y
+&lt;               Less than                       x &lt; y
+&gt;=              Greater than or equal to        x &gt;= y
+&lt;=              Less than or equal to           x &lt;= y
 </code></pre>
 <p>Logical operators are used to combine conditional statements:</p>
-<pre><code>Operator    Description                             Example
-and         Returns True if both statements are true                        x &lt; 5 and  x &lt; 10
-or          Returns True if one of the statements is true                   x &lt; 5 or x &lt; 4
-not         Reverse the result, returns False if the result is true         not(x &lt; 5 and x &lt; 10)
+<pre><code>Operator        Description                             Example
+and     Returns True if both statements are true                        x &lt; 5 and  x &lt; 10
+or              Returns True if one of the statements is true                   x &lt; 5 or x &lt; 4
+not             Reverse the result, returns False if the result is true         not(x &lt; 5 and x &lt; 10)
 </code></pre>
 <p>Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:</p>
-<pre><code>Operator    Description     Example
-is          Returns True if both variables are the same object      x is y
-is not      Returns True if both variables are not the same object  x is not y
+<pre><code>Operator        Description     Example
+is              Returns True if both variables are the same object      x is y
+is not  Returns True if both variables are not the same object  x is not y
 </code></pre>
 <p>Membership operators are used to test if a sequence is presented in an object:</p>
-<pre><code>Operator    Description                                     Example
-in          Returns True if a sequence with the specified value is present in the object            x in y
-not in      Returns True if a sequence with the specified value is not present in the object        x not in y
+<pre><code>Operator        Description                                     Example
+in              Returns True if a sequence with the specified value is present in the object            x in y
+not in  Returns True if a sequence with the specified value is not present in the object        x not in y
 </code></pre>
 <p>Bitwise operators are used to compare (binary) numbers:</p>
-<pre><code>Operator    Name            Description
-&amp;   AND                     Sets each bit to 1 if both bits are 1
-|   OR                      Sets each bit to 1 if one of two bits is 1
-^   XOR                     Sets each bit to 1 if only one of two bits is 1
-~   NOT                     Inverts all the bits
-&lt;&lt;  Zero fill left shift    Shift left by pushing zeros in from the right and let the leftmost bits fall off
-&gt;&gt;  Signed right shift      Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
-</code></pre></div>
+<pre><code>Operator        Name            Description
+&amp;       AND                     Sets each bit to 1 if both bits are 1
+|       OR                      Sets each bit to 1 if one of two bits is 1
+^       XOR                     Sets each bit to 1 if only one of two bits is 1
+~       NOT                     Inverts all the bits
+&lt;&lt;      Zero fill left shift    Shift left by pushing zeros in from the right and let the leftmost bits fall off
+&gt;&gt;      Signed right shift      Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+</code></pre>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">class c5_operators():
-    &#34;&#34;&#34;
-    Operators are used to perform operations on variables and values.\n
-    In the example below, we use the ```+``` operator to add together two values:\n
-    ```
-    print(10 + 5)
-    ```
-    Python divides the operators in the following groups:\n
-        Arithmetic operators\n
-        Assignment operators\n
-        Comparison operators\n
-        Logical operators\n
-        Identity operators\n
-        Membership operators\n
-        Bitwise operators\n
-    Arithmetic operators are used with numeric values to perform common mathematical operations:\n
-    ```
-    Operator    Name    Example
-    +   Addition        x + y
-    -   Subtraction     x - y
-    *   Multiplication  x * y
-    /   Division        x / y
-    %   Modulus x % y
-    **  Exponentiation  x ** y
-    //  Floor division  x // y
-    ```
-    Assignment operators are used to assign values to variables:\n
-    ```
-    Operator    Example Same As
-    =   x = 5   x = 5
-    +=  x += 3  x = x + 3
-    -=  x -= 3  x = x - 3
-    *=  x *= 3  x = x * 3
-    /=  x /= 3  x = x / 3
-    %=  x %= 3  x = x % 3
-    //= x //= 3 x = x // 3
-    **= x **= 3 x = x ** 3
-    &amp;=  x &amp;= 3  x = x &amp; 3
-    |=  x |= 3  x = x | 3
-    ^=  x ^= 3  x = x ^ 3
-    &gt;&gt;= x &gt;&gt;= 3 x = x &gt;&gt; 3
-    &lt;&lt;= x &lt;&lt;= 3 x = x &lt;&lt; 3
-    ```
-    Comparison operators are used to compare two values:\n
-    ```
-    Operator    Name                            Example
-    ==          Equal                           x == y
-    !=          Not equal                       x != y
-    &gt;           Greater than                    x &gt; y
-    &lt;           Less than                       x &lt; y
-    &gt;=          Greater than or equal to        x &gt;= y
-    &lt;=          Less than or equal to           x &lt;= y
-    ```
-    Logical operators are used to combine conditional statements:\n
-    ```
-    Operator    Description                             Example
-    and         Returns True if both statements are true                        x &lt; 5 and  x &lt; 10
-    or          Returns True if one of the statements is true                   x &lt; 5 or x &lt; 4
-    not         Reverse the result, returns False if the result is true         not(x &lt; 5 and x &lt; 10)
-    ```
-    Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:\n
-    ```
-    Operator    Description     Example
-    is          Returns True if both variables are the same object      x is y
-    is not      Returns True if both variables are not the same object  x is not y
-    ```
-    Membership operators are used to test if a sequence is presented in an object:\n
-    ```
-    Operator    Description                                     Example
-    in          Returns True if a sequence with the specified value is present in the object            x in y
-    not in      Returns True if a sequence with the specified value is not present in the object        x not in y
-    ```
-    Bitwise operators are used to compare (binary) numbers:
+<pre><code class="python">&#34;&#34;&#34;
+Scala Type\n
+1. Booleans\n
+2. Numbers\n
+3. Casting\n
+4. String\n
+5. Operators\n
 
-    ```
-    Operator    Name            Description
-    &amp;   AND                     Sets each bit to 1 if both bits are 1
-    |   OR                      Sets each bit to 1 if one of two bits is 1
-    ^   XOR                     Sets each bit to 1 if only one of two bits is 1
-    ~   NOT                     Inverts all the bits
-    &lt;&lt;  Zero fill left shift    Shift left by pushing zeros in from the right and let the leftmost bits fall off
-    &gt;&gt;  Signed right shift      Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
-    ```
-    &#34;&#34;&#34;</code></pre>
+# Booleans\n
+Booleans represent one of two values: ```True``` or ```False```.\n
+When you compare two values, the expression is evaluated and Python returns the Boolean answer:\n
+```
+print(10 &gt; 9)
+print(10 &gt;= 9)
+print(10 == 9)
+print(10 &lt; 9)
+print(10 &lt;= 9)
+```
+Evaluate a string and a number:\n
+```
+print(bool(&#34;Hello&#34;))
+print(bool(15))
+
+x = &#34;Hello&#34;
+y = 15
+
+print(bool(x))
+print(bool(y))
+```
+Almost any value is evaluated to True if it has some sort of content.\n
+Any string is True, except empty strings.\n
+Any number is True, except 0.\n
+Any list, tuple, set, and dictionary are True, except empty ones.\n
+The following will return False:\n
+```
+bool(False)
+bool(None)
+bool(0)
+bool(&#34;&#34;)
+bool(())
+bool([])
+bool({})
+```
+Python also has many built-in functions that return a boolean value, like the ```isinstance()``` function, which can be used to determine if an object is of a certain data type:\n
+```
+x = 200
+print(isinstance(x, int))
+```
+# Numbers\n
+There are three numeric types in Python:\n
+```int```\n
+```float```\n
+```complex```\n
+Variables of numeric types are created when you assign a value to them:\n
+```
+x = 1    # int
+y = 2.8  # float
+z = 1j   # complex
+```
+To verify the type of any object in Python, use the type() function:\n
+```
+print(type(x))
+print(type(y))
+print(type(z))
+```
+
+Integers:\n
+Int, or integer, is a whole number, positive or negative, without decimals, of unlimited length.\n
+```
+x = 1
+y = 35656222554887711
+z = -3255522
+
+print(type(x))
+print(type(y))
+print(type(z))
+```
+
+Floats:\n
+Float, or &#34;floating point number&#34; is a number, positive or negative, containing one or more decimals.\n
+```
+x = 1.10
+y = 1.0
+z = -35.59
+
+print(type(x))
+print(type(y))
+print(type(z))
+```
+Float can also be scientific numbers with an &#34;e&#34; to indicate the power of 10.\n
+```
+x = 35e3
+y = 12E4
+z = -87.7e100
+
+print(type(x))
+print(type(y))
+print(type(z))
+```
+Complex:\n
+Complex numbers are written with a &#34;j&#34; as the imaginary part:\n
+```
+x = 3+5j
+y = 5j
+z = -5j
+
+print(type(x))
+print(type(y))
+print(type(z))
+```
+You can convert from one type to another with the int(), float(), and complex() methods:\n
+```
+x = 1    # int
+y = 2.8  # float
+z = 1j   # complex
+
+#convert from int to float:
+a = float(x)
+
+#convert from float to int:
+b = int(y)
+
+#convert from int to complex:
+c = complex(x)
+
+print(a)
+print(b)
+print(c)
+
+print(type(a))
+print(type(b))
+print(type(c))
+```
+# Casting
+There may be times when you want to specify a type on to a variable. This can be done with casting. Python is an object-orientated language, and as such it uses classes to define data types, including its primitive types.\n
+
+Casting in python is therefore done using constructor functions:\n
+    int() - constructs an integer number from an integer literal, a float literal (by rounding down to the previous whole number), or a string literal (providing the string represents a whole number)\n
+    float() - constructs a float number from an integer literal, a float literal or a string literal (providing the string represents a float or an integer)\n
+    str() - constructs a string from a wide variety of data types, including strings, integer literals and float literals\n
+Integers:\n
+```
+x = int(1)   # x will be 1
+y = int(2.8) # y will be 2
+z = int(&#34;3&#34;) # z will be 3
+```
+Floats:\n
+```
+x = float(1)     # x will be 1.0
+y = float(2.8)   # y will be 2.8
+z = float(&#34;3&#34;)   # z will be 3.0
+w = float(&#34;4.2&#34;) # w will be 4.2
+```
+Strings:\n
+```
+x = str(&#34;s1&#34;) # x will be &#39;s1&#39;
+y = str(2)    # y will be &#39;2&#39;
+z = str(3.0)  # z will be &#39;3.0&#39;
+```
+# Strings\n
+Strings in python are surrounded by either single quotation marks, or double quotation marks.
+&#39;hello&#39; is the same as &#34;hello&#34;.\n
+You can display a string literal with the print() function:\n
+```
+print(&#34;Hello&#34;)
+print(&#39;Hello&#39;)
+```
+# Operators\n
+Operators are used to perform operations on variables and values.\n
+In the example below, we use the ```+``` operator to add together two values:\n
+```
+print(10 + 5)
+```
+Python divides the operators in the following groups:\n
+    Arithmetic operators\n
+    Assignment operators\n
+    Comparison operators\n
+    Logical operators\n
+    Identity operators\n
+    Membership operators\n
+    Bitwise operators\n
+Arithmetic operators are used with numeric values to perform common mathematical operations:\n
+```
+Operator        Name    Example
++       Addition        x + y
+-       Subtraction     x - y
+*       Multiplication  x * y
+/       Division        x / y
+%       Modulus x % y
+**      Exponentiation  x ** y
+//      Floor division  x // y
+```
+Assignment operators are used to assign values to variables:\n
+```
+Operator        Example Same As
+=       x = 5   x = 5
++=      x += 3  x = x + 3
+-=      x -= 3  x = x - 3
+*=      x *= 3  x = x * 3
+/=      x /= 3  x = x / 3
+%=      x %= 3  x = x % 3
+//=     x //= 3 x = x // 3
+**=     x **= 3 x = x ** 3
+&amp;=      x &amp;= 3  x = x &amp; 3
+|=      x |= 3  x = x | 3
+^=      x ^= 3  x = x ^ 3
+&gt;&gt;=     x &gt;&gt;= 3 x = x &gt;&gt; 3
+&lt;&lt;=     x &lt;&lt;= 3 x = x &lt;&lt; 3
+```
+Comparison operators are used to compare two values:\n
+```
+Operator        Name                            Example
+==              Equal                           x == y
+!=              Not equal                       x != y
+&gt;               Greater than                    x &gt; y
+&lt;               Less than                       x &lt; y
+&gt;=              Greater than or equal to        x &gt;= y
+&lt;=              Less than or equal to           x &lt;= y
+```
+Logical operators are used to combine conditional statements:\n
+```
+Operator        Description                             Example
+and     Returns True if both statements are true                        x &lt; 5 and  x &lt; 10
+or              Returns True if one of the statements is true                   x &lt; 5 or x &lt; 4
+not             Reverse the result, returns False if the result is true         not(x &lt; 5 and x &lt; 10)
+```
+Identity operators are used to compare the objects, not if they are equal, but if they are actually the same object, with the same memory location:\n
+```
+Operator        Description     Example
+is              Returns True if both variables are the same object      x is y
+is not  Returns True if both variables are not the same object  x is not y
+```
+Membership operators are used to test if a sequence is presented in an object:\n
+```
+Operator        Description                                     Example
+in              Returns True if a sequence with the specified value is present in the object            x in y
+not in  Returns True if a sequence with the specified value is not present in the object        x not in y
+```
+Bitwise operators are used to compare (binary) numbers:
+
+```
+Operator        Name            Description
+&amp;       AND                     Sets each bit to 1 if both bits are 1
+|       OR                      Sets each bit to 1 if one of two bits is 1
+^       XOR                     Sets each bit to 1 if only one of two bits is 1
+~       NOT                     Inverts all the bits
+&lt;&lt;      Zero fill left shift    Shift left by pushing zeros in from the right and let the leftmost bits fall off
+&gt;&gt;      Signed right shift      Shift right by pushing copies of the leftmost bit in from the left, and let the rightmost bits fall off
+```
+&#34;&#34;&#34;</code></pre>
 </details>
-</dd>
-</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
 </section>
 </article>
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#booleans">Booleans</a></li>
+<li><a href="#numbers">Numbers</a></li>
+<li><a href="#casting">Casting</a></li>
+<li><a href="#strings">Strings</a></li>
+<li><a href="#operators">Operators</a></li>
+</ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
 <li><code><a title="ds.chunk_2" href="index.html">ds.chunk_2</a></code></li>
-</ul>
-</li>
-<li><h3><a href="#header-classes">Classes</a></h3>
-<ul>
-<li>
-<h4><code><a title="ds.chunk_2.intro.c1_bool" href="#ds.chunk_2.intro.c1_bool">c1_bool</a></code></h4>
-</li>
-<li>
-<h4><code><a title="ds.chunk_2.intro.c2_numbers" href="#ds.chunk_2.intro.c2_numbers">c2_numbers</a></code></h4>
-</li>
-<li>
-<h4><code><a title="ds.chunk_2.intro.c3_casting" href="#ds.chunk_2.intro.c3_casting">c3_casting</a></code></h4>
-</li>
-<li>
-<h4><code><a title="ds.chunk_2.intro.c4_string" href="#ds.chunk_2.intro.c4_string">c4_string</a></code></h4>
-</li>
-<li>
-<h4><code><a title="ds.chunk_2.intro.c5_operators" href="#ds.chunk_2.intro.c5_operators">c5_operators</a></code></h4>
-</li>
 </ul>
 </li>
 </ul>

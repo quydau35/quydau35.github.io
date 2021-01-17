@@ -31,333 +31,7 @@ Tuple …" />
 <p>Tuples are used to store multiple items in a single variable.</p>
 <p>Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Set, and Dictionary, all with different qualities and usage.</p>
 <p>A tuple is a collection which is ordered and unchangeable.</p>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">&#34;&#34;&#34;
-```
-mytuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-```
-Tuple\n
-Tuples are used to store multiple items in a single variable.\n
-Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Set, and Dictionary, all with different qualities and usage.\n
-
-A tuple is a collection which is ordered and unchangeable.\n
-&#34;&#34;&#34;
-
-def m0_tuples_properties():
-    &#34;&#34;&#34;
-    Tuple Items\n
-    Tuple items are ordered, unchangeable, and allow duplicate values.\n
-
-    Tuple items are indexed, the first item has index [0], the second item has index [1] etc.\n
-
-    Ordered\n
-    When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.\n
-
-    Unchangeable\n
-    Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been created.\n
-
-    Allow Duplicates\n
-    Since tuple are indexed, tuples can have items with the same value:\n
-    ```
-    # Tuples allow duplicate values:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;, &#34;cherry&#34;)
-    print(thistuple)
-    ```
-    Tuple Length\n
-    To determine how many items a tuple has, use the len() function:\n
-    ```
-    # Print the number of items in the tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    print(len(thistuple))
-    ```
-    Create Tuple With One Item\n
-    To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.\n
-    ```
-    # One item tuple, remember the commma:
-    thistuple = (&#34;apple&#34;,)
-    print(type(thistuple))
-
-    #NOT a tuple
-    thistuple = (&#34;apple&#34;)
-    print(type(thistuple))
-    ```
-    Tuple Items - Data Types\n
-    Tuple items can be of any data type:\n
-    ```
-    # String, int and boolean data types:
-    tuple1 = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    tuple2 = (1, 5, 7, 9, 3)
-    tuple3 = (True, False, False)
-    ```
-    A tuple can contain different data types:\n
-    ```
-    # A tuple with strings, integers and boolean values:
-    tuple1 = (&#34;abc&#34;, 34, True, 40, &#34;male&#34;)
-    ```
-    ```type()```
-    From Python&#39;s perspective, tuples are defined as objects with the data type &#39;tuple&#39;:\n
-    ```
-    &lt;class &#39;tuple&#39;&gt;
-    ```
-    ```
-    # What is the data type of a tuple?
-    mytuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    print(type(mytuple))
-    ```
-    The tuple() Constructor\n
-    It is also possible to use the tuple() constructor to make a tuple.\n
-    ```
-    # Using the tuple() method to make a tuple:
-    thistuple = tuple((&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)) # note the double round-brackets
-    print(thistuple)
-    ```
-    &#34;&#34;&#34;
-
-def m1_access_tuple_items():
-    &#34;&#34;&#34;
-    Access Tuple Items\n
-    You can access tuple items by referring to the index number, inside square brackets:\n
-    ```
-    # Print the second item in the tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    print(thistuple[1])
-    ```
-    Note: The first item has index ```0```.\n
-
-    Negative Indexing\n
-    Negative indexing means start from the end.\n
-
-    -1 refers to the last item, -2 refers to the second last item etc.\n
-    ```
-    # Print the last item of the tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    print(thistuple[-1])
-    ```
-    Range of Indexes\n
-    You can specify a range of indexes by specifying where to start and where to end the range.\n
-
-    When specifying a range, the return value will be a new tuple with the specified items.\n
-    ```
-    # Return the third, fourth, and fifth item:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
-    print(thistuple[2:5])
-    ```
-    Note: The search will start at index 2 (included) and end at index 5 (not included).\n
-    Remember that the first item has index 0.\n
-    By leaving out the start value, the range will start at the first item:\n
-    ```
-    # This example returns the items from the beginning to, but NOT included, &#34;kiwi&#34;:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
-    print(thistuple[:4])
-    ```
-    By leaving out the end value, the range will go on to the end of the list:\n
-    ```
-    # This example returns the items from &#34;cherry&#34; and to the end:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
-    print(thistuple[2:])
-    ```
-    Range of Negative Indexes\n
-    Specify negative indexes if you want to start the search from the end of the tuple:\n
-    ```
-    # This example returns the items from index -4 (included) to index -1 (excluded)
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
-    print(thistuple[-4:-1])
-    ```
-    Check if Item Exists\n
-    To determine if a specified item is present in a tuple use the in keyword:\n
-    ```
-    # Check if &#34;apple&#34; is present in the tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    if &#34;apple&#34; in thistuple:
-    print(&#34;Yes, &#39;apple&#39; is in the fruits tuple&#34;)
-    ```
-    &#34;&#34;&#34;
-
-def m2_update_tuples():
-    &#34;&#34;&#34;
-    Tuples are unchangeable, meaing that you cannot change, add, or remove items once the tuple is created.\n
-    But there are some workarounds.\n
-    Change Tuple Values\n
-    Once a tuple is created, you cannot change its values. Tuples are unchangeable, or immutable as it also is called.\n
-    But there is a workaround. You can convert the tuple into a list, change the list, and convert the list back into a tuple.\n
-    ```
-    # Convert the tuple into a list to be able to change it:
-    x = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    y = list(x)
-    y[1] = &#34;kiwi&#34;
-    x = tuple(y)
-
-    print(x)
-    ```
-    Add Items\n
-    Once a tuple is created, you cannot add items to it.\n
-    ```
-    # You cannot add items to a tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    thistuple.append(&#34;orange&#34;) # This will raise an error
-    print(thistuple)
-    ```
-    Just like the workaround for changing a tuple, you can convert it into a list, add your item(s), and convert it back into a tuple.\n
-    ```
-    # Convert the tuple into a list, add &#34;orange&#34;, and convert it back into a tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    y = list(thistuple)
-    y.append(&#34;orange&#34;)
-    thistuple = tuple(y)
-    ```
-    Remove Items\n
-    Note: You cannot remove items in a tuple.\n
-
-    Tuples are unchangeable, so you cannot remove items from it, but you can use the same workaround as we used for changing and adding tuple items:\n
-    ```
-    # Convert the tuple into a list, remove &#34;apple&#34;, and convert it back into a tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    y = list(thistuple)
-    y.remove(&#34;apple&#34;)
-    thistuple = tuple(y)
-    ```
-    Or you can delete the tuple completely:\n
-    ```
-    # The del keyword can delete the tuple completely:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    del thistuple
-    print(thistuple) #this will raise an error because the tuple no longer exists
-    ```
-    &#34;&#34;&#34;
-
-def m4_unpack_tuples():
-    &#34;&#34;&#34;
-    Unpacking a Tuple\n
-    When we create a tuple, we normally assign values to it. This is called &#34;packing&#34; a tuple:\n
-    ```
-    # Packing a tuple:
-    fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    ```
-    But, in Python, we are also allowed to extract the values back into variables. This is called &#34;unpacking&#34;:\n
-    ```
-    # Unpacking a tuple:
-    fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    (green, yellow, red) = fruits
-    print(green)
-    print(yellow)
-    print(red)
-    ```
-    Note: The number of variables must match the number of values in the tuple, if not, you must use an asterix to collect the remaining values as a list.\n
-
-    Using Asterix*\n
-    If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the variable as a list:\n
-    ```
-    # Assign the rest of the values as a list called &#34;red&#34;:
-
-    fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;strawberry&#34;, &#34;raspberry&#34;)
-
-    (green, yellow, *red) = fruits
-
-    print(green)
-    print(yellow)
-    print(red)
-    ```
-    If the asterix is added to another variable name than the last, Python will assign values to the variable until the number of values left matches the number of variables left.\n
-    ```
-    # Add a list of values the &#34;tropic&#34; variable:
-
-    fruits = (&#34;apple&#34;, &#34;mango&#34;, &#34;papaya&#34;, &#34;pineapple&#34;, &#34;cherry&#34;)
-
-    (green, *tropic, red) = fruits
-
-    print(green)
-    print(tropic)
-    print(red)
-    ```
-    &#34;&#34;&#34;
-
-def m5_loop_through_tuple_items():
-    &#34;&#34;&#34;
-    Loop Through a Tuple\n
-    You can loop through the tuple items by using a for loop.\n
-    ```
-    # Iterate through the items and print the values:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    for x in thistuple:
-    print(x)
-    ```
-    Learn more about for loops in our Python For Loops Chapter.\n
-    Loop Through the Index Numbers\n
-    You can also loop through the tuple items by referring to their index number.\n
-    Use the ```range()``` and ```len()``` functions to create a suitable iterable.\n
-    ```
-    # Print all items by referring to their index number:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    for i in range(len(thistuple)):
-    print(thistuple[i])
-    ```
-    Using a ```While``` Loop\n
-    You can loop through the list items by using a ```while``` loop.\n
-
-    Use the ```len()``` function to determine the length of the tuple, then start at ```0``` and loop your way through the tuple items by refering to their indexes.\n
-
-    Remember to increase the index by 1 after each iteration.\n
-    ```
-    # Print all items, using a while loop to go through all the index numbers:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    i = 0
-    while i &lt; len(thistuple):
-        print(thistuple[i])
-        i = i + 1
-    ```
-    &#34;&#34;&#34;
-
-def m6_join_tuples():
-    &#34;&#34;&#34;
-    Join Two Tuples\n
-    To join two or more tuples you can use the ```+``` operator:\n
-    ```
-    # Join two tuples:
-    tuple1 = (&#34;a&#34;, &#34;b&#34; , &#34;c&#34;)
-    tuple2 = (1, 2, 3)
-
-    tuple3 = tuple1 + tuple2
-    print(tuple3)
-    ```
-    Multiply Tuples\n
-    If you want to multiply the content of a tuple a given number of times, you can use the ```*``` operator:\n
-    ```
-    # Multiply the fruits tuple by 2:
-    fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    mytuple = fruits * 2
-
-    print(mytuple)
-    ```
-    &#34;&#34;&#34;
-
-def m7_tuple_methods():
-    &#34;&#34;&#34;
-    Tuple Methods\n
-    Python has two built-in methods that you can use on tuples.\n
-
-    ```
-    # Method    Description
-    count()     Returns the number of times a specified value occurs in a tuple
-    index()     Searches the tuple for a specified value and returns the position of where it was found
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="ds.chunk_3.tuples.m0_tuples_properties"><code class="name flex">
-<span>def <span class="ident">m0_tuples_properties</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Tuple Items</p>
+<h1 id="tuple-items">Tuple Items</h1>
 <p>Tuple items are ordered, unchangeable, and allow duplicate values.</p>
 <p>Tuple items are indexed, the first item has index [0], the second item has index [1] etc.</p>
 <p>Ordered</p>
@@ -410,87 +84,8 @@ print(type(mytuple))
 <pre><code># Using the tuple() method to make a tuple:
 thistuple = tuple((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)) # note the double round-brackets
 print(thistuple)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m0_tuples_properties():
-    &#34;&#34;&#34;
-    Tuple Items\n
-    Tuple items are ordered, unchangeable, and allow duplicate values.\n
-
-    Tuple items are indexed, the first item has index [0], the second item has index [1] etc.\n
-
-    Ordered\n
-    When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.\n
-
-    Unchangeable\n
-    Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been created.\n
-
-    Allow Duplicates\n
-    Since tuple are indexed, tuples can have items with the same value:\n
-    ```
-    # Tuples allow duplicate values:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;, &#34;cherry&#34;)
-    print(thistuple)
-    ```
-    Tuple Length\n
-    To determine how many items a tuple has, use the len() function:\n
-    ```
-    # Print the number of items in the tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    print(len(thistuple))
-    ```
-    Create Tuple With One Item\n
-    To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.\n
-    ```
-    # One item tuple, remember the commma:
-    thistuple = (&#34;apple&#34;,)
-    print(type(thistuple))
-
-    #NOT a tuple
-    thistuple = (&#34;apple&#34;)
-    print(type(thistuple))
-    ```
-    Tuple Items - Data Types\n
-    Tuple items can be of any data type:\n
-    ```
-    # String, int and boolean data types:
-    tuple1 = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    tuple2 = (1, 5, 7, 9, 3)
-    tuple3 = (True, False, False)
-    ```
-    A tuple can contain different data types:\n
-    ```
-    # A tuple with strings, integers and boolean values:
-    tuple1 = (&#34;abc&#34;, 34, True, 40, &#34;male&#34;)
-    ```
-    ```type()```
-    From Python&#39;s perspective, tuples are defined as objects with the data type &#39;tuple&#39;:\n
-    ```
-    &lt;class &#39;tuple&#39;&gt;
-    ```
-    ```
-    # What is the data type of a tuple?
-    mytuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    print(type(mytuple))
-    ```
-    The tuple() Constructor\n
-    It is also possible to use the tuple() constructor to make a tuple.\n
-    ```
-    # Using the tuple() method to make a tuple:
-    thistuple = tuple((&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)) # note the double round-brackets
-    print(thistuple)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.tuples.m1_access_tuple_items"><code class="name flex">
-<span>def <span class="ident">m1_access_tuple_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Access Tuple Items</p>
+</code></pre>
+<h1 id="access-tuple-items">Access Tuple Items</h1>
 <p>You can access tuple items by referring to the index number, inside square brackets:</p>
 <pre><code># Print the second item in the tuple:
 thistuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
@@ -535,77 +130,9 @@ print(thistuple[-4:-1])
 thistuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
 if &quot;apple&quot; in thistuple:
 print(&quot;Yes, 'apple' is in the fruits tuple&quot;)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m1_access_tuple_items():
-    &#34;&#34;&#34;
-    Access Tuple Items\n
-    You can access tuple items by referring to the index number, inside square brackets:\n
-    ```
-    # Print the second item in the tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    print(thistuple[1])
-    ```
-    Note: The first item has index ```0```.\n
-
-    Negative Indexing\n
-    Negative indexing means start from the end.\n
-
-    -1 refers to the last item, -2 refers to the second last item etc.\n
-    ```
-    # Print the last item of the tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    print(thistuple[-1])
-    ```
-    Range of Indexes\n
-    You can specify a range of indexes by specifying where to start and where to end the range.\n
-
-    When specifying a range, the return value will be a new tuple with the specified items.\n
-    ```
-    # Return the third, fourth, and fifth item:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
-    print(thistuple[2:5])
-    ```
-    Note: The search will start at index 2 (included) and end at index 5 (not included).\n
-    Remember that the first item has index 0.\n
-    By leaving out the start value, the range will start at the first item:\n
-    ```
-    # This example returns the items from the beginning to, but NOT included, &#34;kiwi&#34;:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
-    print(thistuple[:4])
-    ```
-    By leaving out the end value, the range will go on to the end of the list:\n
-    ```
-    # This example returns the items from &#34;cherry&#34; and to the end:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
-    print(thistuple[2:])
-    ```
-    Range of Negative Indexes\n
-    Specify negative indexes if you want to start the search from the end of the tuple:\n
-    ```
-    # This example returns the items from index -4 (included) to index -1 (excluded)
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
-    print(thistuple[-4:-1])
-    ```
-    Check if Item Exists\n
-    To determine if a specified item is present in a tuple use the in keyword:\n
-    ```
-    # Check if &#34;apple&#34; is present in the tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    if &#34;apple&#34; in thistuple:
-    print(&#34;Yes, &#39;apple&#39; is in the fruits tuple&#34;)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.tuples.m2_update_tuples"><code class="name flex">
-<span>def <span class="ident">m2_update_tuples</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Tuples are unchangeable, meaing that you cannot change, add, or remove items once the tuple is created.</p>
+</code></pre>
+<h1 id="update-tuples">Update tuples</h1>
+<p>Tuples are unchangeable, meaing that you cannot change, add, or remove items once the tuple is created.</p>
 <p>But there are some workarounds.</p>
 <p>Change Tuple Values</p>
 <p>Once a tuple is created, you cannot change its values. Tuples are unchangeable, or immutable as it also is called.</p>
@@ -646,69 +173,8 @@ thistuple = tuple(y)
 thistuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
 del thistuple
 print(thistuple) #this will raise an error because the tuple no longer exists
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m2_update_tuples():
-    &#34;&#34;&#34;
-    Tuples are unchangeable, meaing that you cannot change, add, or remove items once the tuple is created.\n
-    But there are some workarounds.\n
-    Change Tuple Values\n
-    Once a tuple is created, you cannot change its values. Tuples are unchangeable, or immutable as it also is called.\n
-    But there is a workaround. You can convert the tuple into a list, change the list, and convert the list back into a tuple.\n
-    ```
-    # Convert the tuple into a list to be able to change it:
-    x = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    y = list(x)
-    y[1] = &#34;kiwi&#34;
-    x = tuple(y)
-
-    print(x)
-    ```
-    Add Items\n
-    Once a tuple is created, you cannot add items to it.\n
-    ```
-    # You cannot add items to a tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    thistuple.append(&#34;orange&#34;) # This will raise an error
-    print(thistuple)
-    ```
-    Just like the workaround for changing a tuple, you can convert it into a list, add your item(s), and convert it back into a tuple.\n
-    ```
-    # Convert the tuple into a list, add &#34;orange&#34;, and convert it back into a tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    y = list(thistuple)
-    y.append(&#34;orange&#34;)
-    thistuple = tuple(y)
-    ```
-    Remove Items\n
-    Note: You cannot remove items in a tuple.\n
-
-    Tuples are unchangeable, so you cannot remove items from it, but you can use the same workaround as we used for changing and adding tuple items:\n
-    ```
-    # Convert the tuple into a list, remove &#34;apple&#34;, and convert it back into a tuple:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    y = list(thistuple)
-    y.remove(&#34;apple&#34;)
-    thistuple = tuple(y)
-    ```
-    Or you can delete the tuple completely:\n
-    ```
-    # The del keyword can delete the tuple completely:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    del thistuple
-    print(thistuple) #this will raise an error because the tuple no longer exists
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.tuples.m4_unpack_tuples"><code class="name flex">
-<span>def <span class="ident">m4_unpack_tuples</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Unpacking a Tuple</p>
+</code></pre>
+<h1 id="unpacking-a-tuple">Unpacking a Tuple</h1>
 <p>When we create a tuple, we normally assign values to it. This is called "packing" a tuple:</p>
 <pre><code># Packing a tuple:
 fruits = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
@@ -744,63 +210,8 @@ fruits = (&quot;apple&quot;, &quot;mango&quot;, &quot;papaya&quot;, &quot;pineap
 print(green)
 print(tropic)
 print(red)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m4_unpack_tuples():
-    &#34;&#34;&#34;
-    Unpacking a Tuple\n
-    When we create a tuple, we normally assign values to it. This is called &#34;packing&#34; a tuple:\n
-    ```
-    # Packing a tuple:
-    fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    ```
-    But, in Python, we are also allowed to extract the values back into variables. This is called &#34;unpacking&#34;:\n
-    ```
-    # Unpacking a tuple:
-    fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    (green, yellow, red) = fruits
-    print(green)
-    print(yellow)
-    print(red)
-    ```
-    Note: The number of variables must match the number of values in the tuple, if not, you must use an asterix to collect the remaining values as a list.\n
-
-    Using Asterix*\n
-    If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the variable as a list:\n
-    ```
-    # Assign the rest of the values as a list called &#34;red&#34;:
-
-    fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;strawberry&#34;, &#34;raspberry&#34;)
-
-    (green, yellow, *red) = fruits
-
-    print(green)
-    print(yellow)
-    print(red)
-    ```
-    If the asterix is added to another variable name than the last, Python will assign values to the variable until the number of values left matches the number of variables left.\n
-    ```
-    # Add a list of values the &#34;tropic&#34; variable:
-
-    fruits = (&#34;apple&#34;, &#34;mango&#34;, &#34;papaya&#34;, &#34;pineapple&#34;, &#34;cherry&#34;)
-
-    (green, *tropic, red) = fruits
-
-    print(green)
-    print(tropic)
-    print(red)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.tuples.m5_loop_through_tuple_items"><code class="name flex">
-<span>def <span class="ident">m5_loop_through_tuple_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Loop Through a Tuple</p>
+</code></pre>
+<h1 id="loop-through-a-tuple">Loop Through a Tuple</h1>
 <p>You can loop through the tuple items by using a for loop.</p>
 <pre><code># Iterate through the items and print the values:
 thistuple = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
@@ -826,53 +237,8 @@ i = 0
 while i &lt; len(thistuple):
     print(thistuple[i])
     i = i + 1
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m5_loop_through_tuple_items():
-    &#34;&#34;&#34;
-    Loop Through a Tuple\n
-    You can loop through the tuple items by using a for loop.\n
-    ```
-    # Iterate through the items and print the values:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    for x in thistuple:
-    print(x)
-    ```
-    Learn more about for loops in our Python For Loops Chapter.\n
-    Loop Through the Index Numbers\n
-    You can also loop through the tuple items by referring to their index number.\n
-    Use the ```range()``` and ```len()``` functions to create a suitable iterable.\n
-    ```
-    # Print all items by referring to their index number:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    for i in range(len(thistuple)):
-    print(thistuple[i])
-    ```
-    Using a ```While``` Loop\n
-    You can loop through the list items by using a ```while``` loop.\n
-
-    Use the ```len()``` function to determine the length of the tuple, then start at ```0``` and loop your way through the tuple items by refering to their indexes.\n
-
-    Remember to increase the index by 1 after each iteration.\n
-    ```
-    # Print all items, using a while loop to go through all the index numbers:
-    thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    i = 0
-    while i &lt; len(thistuple):
-        print(thistuple[i])
-        i = i + 1
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.tuples.m6_join_tuples"><code class="name flex">
-<span>def <span class="ident">m6_join_tuples</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Join Two Tuples</p>
+</code></pre>
+<h1 id="join-two-tuples">Join Two Tuples</h1>
 <p>To join two or more tuples you can use the <code>+</code> operator:</p>
 <pre><code># Join two tuples:
 tuple1 = (&quot;a&quot;, &quot;b&quot; , &quot;c&quot;)
@@ -888,63 +254,312 @@ fruits = (&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)
 mytuple = fruits * 2
 
 print(mytuple)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m6_join_tuples():
-    &#34;&#34;&#34;
-    Join Two Tuples\n
-    To join two or more tuples you can use the ```+``` operator:\n
-    ```
-    # Join two tuples:
-    tuple1 = (&#34;a&#34;, &#34;b&#34; , &#34;c&#34;)
-    tuple2 = (1, 2, 3)
-
-    tuple3 = tuple1 + tuple2
-    print(tuple3)
-    ```
-    Multiply Tuples\n
-    If you want to multiply the content of a tuple a given number of times, you can use the ```*``` operator:\n
-    ```
-    # Multiply the fruits tuple by 2:
-    fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
-    mytuple = fruits * 2
-
-    print(mytuple)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.tuples.m7_tuple_methods"><code class="name flex">
-<span>def <span class="ident">m7_tuple_methods</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Tuple Methods</p>
+</code></pre>
+<h1 id="tuple-methods">Tuple Methods</h1>
 <p>Python has two built-in methods that you can use on tuples.</p>
-<pre><code># Method    Description
-count()     Returns the number of times a specified value occurs in a tuple
-index()     Searches the tuple for a specified value and returns the position of where it was found
-</code></pre></div>
+<pre><code># Method        Description
+count() Returns the number of times a specified value occurs in a tuple
+index() Searches the tuple for a specified value and returns the position of where it was found
+</code></pre>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def m7_tuple_methods():
-    &#34;&#34;&#34;
-    Tuple Methods\n
-    Python has two built-in methods that you can use on tuples.\n
+<pre><code class="python">&#34;&#34;&#34;
+```
+mytuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+```
+Tuple\n
+Tuples are used to store multiple items in a single variable.\n
+Tuple is one of 4 built-in data types in Python used to store collections of data, the other 3 are List, Set, and Dictionary, all with different qualities and usage.\n
 
-    ```
-    # Method    Description
-    count()     Returns the number of times a specified value occurs in a tuple
-    index()     Searches the tuple for a specified value and returns the position of where it was found
-    ```
-    &#34;&#34;&#34;</code></pre>
+A tuple is a collection which is ordered and unchangeable.\n
+
+# Tuple Items\n
+Tuple items are ordered, unchangeable, and allow duplicate values.\n
+
+Tuple items are indexed, the first item has index [0], the second item has index [1] etc.\n
+
+Ordered\n
+When we say that tuples are ordered, it means that the items have a defined order, and that order will not change.\n
+
+Unchangeable\n
+Tuples are unchangeable, meaning that we cannot change, add or remove items after the tuple has been created.\n
+
+Allow Duplicates\n
+Since tuple are indexed, tuples can have items with the same value:\n
+```
+# Tuples allow duplicate values:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;, &#34;cherry&#34;)
+print(thistuple)
+```
+Tuple Length\n
+To determine how many items a tuple has, use the len() function:\n
+```
+# Print the number of items in the tuple:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+print(len(thistuple))
+```
+Create Tuple With One Item\n
+To create a tuple with only one item, you have to add a comma after the item, otherwise Python will not recognize it as a tuple.\n
+```
+# One item tuple, remember the commma:
+thistuple = (&#34;apple&#34;,)
+print(type(thistuple))
+
+#NOT a tuple
+thistuple = (&#34;apple&#34;)
+print(type(thistuple))
+```
+Tuple Items - Data Types\n
+Tuple items can be of any data type:\n
+```
+# String, int and boolean data types:
+tuple1 = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+tuple2 = (1, 5, 7, 9, 3)
+tuple3 = (True, False, False)
+```
+A tuple can contain different data types:\n
+```
+# A tuple with strings, integers and boolean values:
+tuple1 = (&#34;abc&#34;, 34, True, 40, &#34;male&#34;)
+```
+```type()```
+From Python&#39;s perspective, tuples are defined as objects with the data type &#39;tuple&#39;:\n
+```
+&lt;class &#39;tuple&#39;&gt;
+```
+```
+# What is the data type of a tuple?
+mytuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+print(type(mytuple))
+```
+The tuple() Constructor\n
+It is also possible to use the tuple() constructor to make a tuple.\n
+```
+# Using the tuple() method to make a tuple:
+thistuple = tuple((&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)) # note the double round-brackets
+print(thistuple)
+```
+
+# Access Tuple Items\n
+You can access tuple items by referring to the index number, inside square brackets:\n
+```
+# Print the second item in the tuple:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+print(thistuple[1])
+```
+Note: The first item has index ```0```.\n
+
+Negative Indexing\n
+Negative indexing means start from the end.\n
+
+-1 refers to the last item, -2 refers to the second last item etc.\n
+```
+# Print the last item of the tuple:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+print(thistuple[-1])
+```
+Range of Indexes\n
+You can specify a range of indexes by specifying where to start and where to end the range.\n
+
+When specifying a range, the return value will be a new tuple with the specified items.\n
+```
+# Return the third, fourth, and fifth item:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+print(thistuple[2:5])
+```
+Note: The search will start at index 2 (included) and end at index 5 (not included).\n
+Remember that the first item has index 0.\n
+By leaving out the start value, the range will start at the first item:\n
+```
+# This example returns the items from the beginning to, but NOT included, &#34;kiwi&#34;:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+print(thistuple[:4])
+```
+By leaving out the end value, the range will go on to the end of the list:\n
+```
+# This example returns the items from &#34;cherry&#34; and to the end:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+print(thistuple[2:])
+```
+Range of Negative Indexes\n
+Specify negative indexes if you want to start the search from the end of the tuple:\n
+```
+# This example returns the items from index -4 (included) to index -1 (excluded)
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;)
+print(thistuple[-4:-1])
+```
+Check if Item Exists\n
+To determine if a specified item is present in a tuple use the in keyword:\n
+```
+# Check if &#34;apple&#34; is present in the tuple:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+if &#34;apple&#34; in thistuple:
+print(&#34;Yes, &#39;apple&#39; is in the fruits tuple&#34;)
+```
+# Update tuples\n
+Tuples are unchangeable, meaing that you cannot change, add, or remove items once the tuple is created.\n
+But there are some workarounds.\n
+Change Tuple Values\n
+Once a tuple is created, you cannot change its values. Tuples are unchangeable, or immutable as it also is called.\n
+But there is a workaround. You can convert the tuple into a list, change the list, and convert the list back into a tuple.\n
+```
+# Convert the tuple into a list to be able to change it:
+x = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+y = list(x)
+y[1] = &#34;kiwi&#34;
+x = tuple(y)
+
+print(x)
+```
+Add Items\n
+Once a tuple is created, you cannot add items to it.\n
+```
+# You cannot add items to a tuple:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+thistuple.append(&#34;orange&#34;) # This will raise an error
+print(thistuple)
+```
+Just like the workaround for changing a tuple, you can convert it into a list, add your item(s), and convert it back into a tuple.\n
+```
+# Convert the tuple into a list, add &#34;orange&#34;, and convert it back into a tuple:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+y = list(thistuple)
+y.append(&#34;orange&#34;)
+thistuple = tuple(y)
+```
+Remove Items\n
+Note: You cannot remove items in a tuple.\n
+
+Tuples are unchangeable, so you cannot remove items from it, but you can use the same workaround as we used for changing and adding tuple items:\n
+```
+# Convert the tuple into a list, remove &#34;apple&#34;, and convert it back into a tuple:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+y = list(thistuple)
+y.remove(&#34;apple&#34;)
+thistuple = tuple(y)
+```
+Or you can delete the tuple completely:\n
+```
+# The del keyword can delete the tuple completely:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+del thistuple
+print(thistuple) #this will raise an error because the tuple no longer exists
+```
+
+# Unpacking a Tuple\n
+When we create a tuple, we normally assign values to it. This is called &#34;packing&#34; a tuple:\n
+```
+# Packing a tuple:
+fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+```
+But, in Python, we are also allowed to extract the values back into variables. This is called &#34;unpacking&#34;:\n
+```
+# Unpacking a tuple:
+fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+(green, yellow, red) = fruits
+print(green)
+print(yellow)
+print(red)
+```
+Note: The number of variables must match the number of values in the tuple, if not, you must use an asterix to collect the remaining values as a list.\n
+
+Using Asterix*\n
+If the number of variables is less than the number of values, you can add an * to the variable name and the values will be assigned to the variable as a list:\n
+```
+# Assign the rest of the values as a list called &#34;red&#34;:
+
+fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;strawberry&#34;, &#34;raspberry&#34;)
+
+(green, yellow, *red) = fruits
+
+print(green)
+print(yellow)
+print(red)
+```
+If the asterix is added to another variable name than the last, Python will assign values to the variable until the number of values left matches the number of variables left.\n
+```
+# Add a list of values the &#34;tropic&#34; variable:
+
+fruits = (&#34;apple&#34;, &#34;mango&#34;, &#34;papaya&#34;, &#34;pineapple&#34;, &#34;cherry&#34;)
+
+(green, *tropic, red) = fruits
+
+print(green)
+print(tropic)
+print(red)
+```
+
+# Loop Through a Tuple\n
+You can loop through the tuple items by using a for loop.\n
+```
+# Iterate through the items and print the values:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+for x in thistuple:
+print(x)
+```
+Learn more about for loops in our Python For Loops Chapter.\n
+Loop Through the Index Numbers\n
+You can also loop through the tuple items by referring to their index number.\n
+Use the ```range()``` and ```len()``` functions to create a suitable iterable.\n
+```
+# Print all items by referring to their index number:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+for i in range(len(thistuple)):
+print(thistuple[i])
+```
+Using a ```While``` Loop\n
+You can loop through the list items by using a ```while``` loop.\n
+
+Use the ```len()``` function to determine the length of the tuple, then start at ```0``` and loop your way through the tuple items by refering to their indexes.\n
+
+Remember to increase the index by 1 after each iteration.\n
+```
+# Print all items, using a while loop to go through all the index numbers:
+thistuple = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+i = 0
+while i &lt; len(thistuple):
+    print(thistuple[i])
+    i = i + 1
+```
+
+# Join Two Tuples\n
+To join two or more tuples you can use the ```+``` operator:\n
+```
+# Join two tuples:
+tuple1 = (&#34;a&#34;, &#34;b&#34; , &#34;c&#34;)
+tuple2 = (1, 2, 3)
+
+tuple3 = tuple1 + tuple2
+print(tuple3)
+```
+Multiply Tuples\n
+If you want to multiply the content of a tuple a given number of times, you can use the ```*``` operator:\n
+```
+# Multiply the fruits tuple by 2:
+fruits = (&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)
+mytuple = fruits * 2
+
+print(mytuple)
+```
+
+# Tuple Methods\n
+Python has two built-in methods that you can use on tuples.\n
+
+```
+# Method        Description
+count() Returns the number of times a specified value occurs in a tuple
+index() Searches the tuple for a specified value and returns the position of where it was found
+```
+&#34;&#34;&#34;</code></pre>
 </details>
-</dd>
-</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
 </section>
 <section>
 </section>
@@ -952,23 +567,20 @@ index()     Searches the tuple for a specified value and returns the position of
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#tuple-items">Tuple Items</a></li>
+<li><a href="#access-tuple-items">Access Tuple Items</a></li>
+<li><a href="#update-tuples">Update tuples</a></li>
+<li><a href="#unpacking-a-tuple">Unpacking a Tuple</a></li>
+<li><a href="#loop-through-a-tuple">Loop Through a Tuple</a></li>
+<li><a href="#join-two-tuples">Join Two Tuples</a></li>
+<li><a href="#tuple-methods">Tuple Methods</a></li>
+</ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
 <li><code><a title="ds.chunk_3" href="index.html">ds.chunk_3</a></code></li>
-</ul>
-</li>
-<li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="ds.chunk_3.tuples.m0_tuples_properties" href="#ds.chunk_3.tuples.m0_tuples_properties">m0_tuples_properties</a></code></li>
-<li><code><a title="ds.chunk_3.tuples.m1_access_tuple_items" href="#ds.chunk_3.tuples.m1_access_tuple_items">m1_access_tuple_items</a></code></li>
-<li><code><a title="ds.chunk_3.tuples.m2_update_tuples" href="#ds.chunk_3.tuples.m2_update_tuples">m2_update_tuples</a></code></li>
-<li><code><a title="ds.chunk_3.tuples.m4_unpack_tuples" href="#ds.chunk_3.tuples.m4_unpack_tuples">m4_unpack_tuples</a></code></li>
-<li><code><a title="ds.chunk_3.tuples.m5_loop_through_tuple_items" href="#ds.chunk_3.tuples.m5_loop_through_tuple_items">m5_loop_through_tuple_items</a></code></li>
-<li><code><a title="ds.chunk_3.tuples.m6_join_tuples" href="#ds.chunk_3.tuples.m6_join_tuples">m6_join_tuples</a></code></li>
-<li><code><a title="ds.chunk_3.tuples.m7_tuple_methods" href="#ds.chunk_3.tuples.m7_tuple_methods">m7_tuple_methods</a></code></li>
 </ul>
 </li>
 </ul>

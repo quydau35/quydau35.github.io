@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ds.chunk_5.function API documentation</title>
+<meta name="description" content="Python Functions …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ds.chunk_5.function</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="python-functions">Python Functions</h1>
+<p>A function is a block of code which only runs when it is called.</p>
+<p>You can pass data, known as parameters, into a function.</p>
+<p>A function can return data as a result.</p>
+<h1 id="creating-a-function">Creating a Function</h1>
+<p>In Python a function is defined using the def keyword:</p>
+<pre><code>def my_function():
+  print(&quot;Hello from a function&quot;)
+</code></pre>
+<h1 id="calling-a-function">Calling a Function</h1>
+<p>To call a function, use the function name followed by parenthesis:</p>
+<pre><code>def my_function():
+  print(&quot;Hello from a function&quot;)
+
+my_function()
+</code></pre>
+<h1 id="arguments">Arguments</h1>
+<p>Information can be passed into functions as arguments.</p>
+<p>Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.</p>
+<p>The following example has a function with one argument (fname). When the function is called, we pass along a first name, which is used inside the function to print the full name:</p>
+<pre><code>def my_function(fname):
+  print(fname + &quot; Refsnes&quot;)
+
+my_function(&quot;Emil&quot;)
+my_function(&quot;Tobias&quot;)
+my_function(&quot;Linus&quot;)
+</code></pre>
+<p><code>Arguments</code> are often shortened to <code>args</code> in Python documentations.</p>
+<h1 id="parameters-or-arguments">Parameters or Arguments?</h1>
+<p>The terms <code>parameter</code> and <code>argument</code> can be used for the same thing: information that are passed into a function.</p>
+<p>From a function's perspective:</p>
+<p>A parameter is the variable listed inside the parentheses in the function definition.</p>
+<p>An argument is the value that is sent to the function when it is called.</p>
+<h1 id="number-of-arguments">Number of Arguments</h1>
+<p>By default, a function must be called with the correct number of arguments. Meaning that if your function expects 2 arguments, you have to call the function with 2 arguments, not more, and not less.</p>
+<pre><code># This function expects 2 arguments, and gets 2 arguments:
+
+def my_function(fname, lname):
+  print(fname + &quot; &quot; + lname)
+
+my_function(&quot;Emil&quot;, &quot;Refsnes&quot;)
+</code></pre>
+<p>If you try to call the function with 1 or 3 arguments, you will get an error:</p>
+<pre><code># This function expects 2 arguments, but gets only 1:
+
+def my_function(fname, lname):
+  print(fname + &quot; &quot; + lname)
+
+my_function(&quot;Emil&quot;)
+</code></pre>
+<h1 id="arbitrary-arguments-args">Arbitrary Arguments, <code>*args</code></h1>
+<p>If you do not know how many arguments that will be passed into your function, add a <code>*</code> before the parameter name in the function definition.</p>
+<p>This way the function will receive a <code>tuple</code> of arguments, and can access the items accordingly:</p>
+<pre><code># If the number of arguments is unknown, add a * before the parameter name:
+
+def my_function(*kids):
+  print(&quot;The youngest child is &quot; + kids[2])
+
+my_function(&quot;Emil&quot;, &quot;Tobias&quot;, &quot;Linus&quot;)
+</code></pre>
+<p><code>Arbitrary Arguments</code> are often shortened to <code>*args</code> in Python documentations.</p>
+<h1 id="keyword-arguments">Keyword Arguments</h1>
+<p>You can also send arguments with the key = value syntax.</p>
+<p>This way the order of the arguments does not matter.</p>
+<pre><code># def my_function(child3, child2, child1):
+  print(&quot;The youngest child is &quot; + child3)
+
+my_function(child1 = &quot;Emil&quot;, child2 = &quot;Tobias&quot;, child3 = &quot;Linus&quot;)
+</code></pre>
+<p>The phrase Keyword Arguments are often shortened to kwargs in Python documentations.</p>
+<h1 id="arbitrary-keyword-arguments-kwargs">Arbitrary Keyword Arguments, <code>**kwargs</code></h1>
+<p>If you do not know how many keyword arguments that will be passed into your function, add two asterisk: <code>**</code> before the parameter name in the function definition.</p>
+<p>This way the function will receive a <code>dictionary</code> of arguments, and can access the items accordingly:</p>
+<pre><code># If the number of keyword arguments is unknown, add a double ** before the parameter name:
+
+def my_function(**kid):
+  print(&quot;His last name is &quot; + kid[&quot;lname&quot;])
+
+my_function(fname = &quot;Tobias&quot;, lname = &quot;Refsnes&quot;)
+</code></pre>
+<p><code>Arbitrary Kword Arguments</code> are often shortened to <code>**kwargs</code> in Python documentations.</p>
+<h1 id="default-parameter-value">Default Parameter Value</h1>
+<p>The following example shows how to use a default parameter value.</p>
+<p>If we call the function without argument, it uses the default value:</p>
+<pre><code>def my_function(country = &quot;Norway&quot;):
+  print(&quot;I am from &quot; + country)
+
+my_function(&quot;Sweden&quot;)
+my_function(&quot;India&quot;)
+my_function()
+my_function(&quot;Brazil&quot;)
+</code></pre>
+<h1 id="passing-a-list-as-an-argument">Passing a List as an Argument</h1>
+<p>You can send any data types of argument to a function (string, number, list, dictionary etc.), and it will be treated as the same data type inside the function.</p>
+<p>E.g. if you send a List as an argument, it will still be a List when it reaches the function:</p>
+<pre><code>def my_function(food):
+  for x in food:
+    print(x)
+
+fruits = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
+
+my_function(fruits)
+</code></pre>
+<h1 id="return-values">Return Values</h1>
+<p>To let a function return a value, use the <code>return</code> statement:</p>
+<pre><code>def my_function(x):
+  return 5 * x
+
+print(my_function(3))
+print(my_function(5))
+print(my_function(9))
+</code></pre>
+<h1 id="the-pass-statement">The <code>pass</code> Statement</h1>
+<p><code>function</code> definitions cannot be empty, but if you for some reason have a <code>function</code> definition with no content, put in the <code>pass</code> statement to avoid getting an error.</p>
+<pre><code>def myfunction():
+  pass
+</code></pre>
+<h1 id="recursion">Recursion</h1>
+<p>Python also accepts function recursion, which means a defined function can call itself.</p>
+<p>Recursion is a common mathematical and programming concept. It means that a function calls itself. This has the benefit of meaning that you can loop through data to reach a result.</p>
+<p>The developer should be very careful with recursion as it can be quite easy to slip into writing a function which never terminates, or one that uses excess amounts of memory or processor power. However, when written correctly recursion can be a very efficient and mathematically-elegant approach to programming.</p>
+<p>In this example, <code>tri_recursion()</code> is a function that we have defined to call itself ("recurse"). We use the <code>k</code> variable as the data, which decrements (<code>-1</code>) every time we recurse. The recursion ends when the condition is not greater than <code>0</code> (i.e. when it is <code>0</code>).</p>
+<p>To a new developer it can take some time to work out how exactly this works, best way to find out is by testing and modifying it.</p>
+<pre><code># Recursion
+def tri_recursion(k):
+  if(k &gt; 0):
+    result = k + tri_recursion(k - 1)
+    print(result)
+  else:
+    result = 0
+  return result
+
+print(&quot;
+
+Recursion Example Results&quot;)
+tri_recursion(6)
+</code></pre>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+# Python Functions\n
+A function is a block of code which only runs when it is called.\n
+
+You can pass data, known as parameters, into a function.\n
+
+A function can return data as a result.\n
+
+# Creating a Function\n
+In Python a function is defined using the def keyword:\n
+
+```
+def my_function():
+  print(&#34;Hello from a function&#34;)
+```
+# Calling a Function
+To call a function, use the function name followed by parenthesis:
+
+```
+def my_function():
+  print(&#34;Hello from a function&#34;)
+
+my_function()
+```
+# Arguments\n
+Information can be passed into functions as arguments.\n
+
+Arguments are specified after the function name, inside the parentheses. You can add as many arguments as you want, just separate them with a comma.\n
+
+The following example has a function with one argument (fname). When the function is called, we pass along a first name, which is used inside the function to print the full name:\n
+
+```
+def my_function(fname):
+  print(fname + &#34; Refsnes&#34;)
+
+my_function(&#34;Emil&#34;)
+my_function(&#34;Tobias&#34;)
+my_function(&#34;Linus&#34;)
+```
+```Arguments``` are often shortened to ```args``` in Python documentations.\n
+
+# Parameters or Arguments?\n
+The terms ```parameter``` and ```argument``` can be used for the same thing: information that are passed into a function.\n
+
+From a function&#39;s perspective:\n
+
+A parameter is the variable listed inside the parentheses in the function definition.\n
+
+An argument is the value that is sent to the function when it is called.\n
+
+# Number of Arguments\n
+By default, a function must be called with the correct number of arguments. Meaning that if your function expects 2 arguments, you have to call the function with 2 arguments, not more, and not less.\n
+
+```
+# This function expects 2 arguments, and gets 2 arguments:
+
+def my_function(fname, lname):
+  print(fname + &#34; &#34; + lname)
+
+my_function(&#34;Emil&#34;, &#34;Refsnes&#34;)
+```
+If you try to call the function with 1 or 3 arguments, you will get an error:\n
+```
+# This function expects 2 arguments, but gets only 1:
+
+def my_function(fname, lname):
+  print(fname + &#34; &#34; + lname)
+
+my_function(&#34;Emil&#34;)
+```
+# Arbitrary Arguments, ```*args```\n
+If you do not know how many arguments that will be passed into your function, add a ```*``` before the parameter name in the function definition.\n
+
+This way the function will receive a ```tuple``` of arguments, and can access the items accordingly:\n
+
+```
+# If the number of arguments is unknown, add a * before the parameter name:
+
+def my_function(*kids):
+  print(&#34;The youngest child is &#34; + kids[2])
+
+my_function(&#34;Emil&#34;, &#34;Tobias&#34;, &#34;Linus&#34;)
+```
+```Arbitrary Arguments``` are often shortened to ```*args``` in Python documentations.\n
+
+# Keyword Arguments\n
+You can also send arguments with the key = value syntax.\n
+
+This way the order of the arguments does not matter.\n
+
+```
+# def my_function(child3, child2, child1):
+  print(&#34;The youngest child is &#34; + child3)
+
+my_function(child1 = &#34;Emil&#34;, child2 = &#34;Tobias&#34;, child3 = &#34;Linus&#34;)
+```
+The phrase Keyword Arguments are often shortened to kwargs in Python documentations.\n
+
+# Arbitrary Keyword Arguments, ```**kwargs```\n
+If you do not know how many keyword arguments that will be passed into your function, add two asterisk: ```**``` before the parameter name in the function definition.\n
+
+This way the function will receive a ```dictionary``` of arguments, and can access the items accordingly:\n
+
+```
+# If the number of keyword arguments is unknown, add a double ** before the parameter name:
+
+def my_function(**kid):
+  print(&#34;His last name is &#34; + kid[&#34;lname&#34;])
+
+my_function(fname = &#34;Tobias&#34;, lname = &#34;Refsnes&#34;)
+```
+```Arbitrary Kword Arguments``` are often shortened to ```**kwargs``` in Python documentations.\n
+
+# Default Parameter Value\n
+The following example shows how to use a default parameter value.\n
+
+If we call the function without argument, it uses the default value:\n
+
+```
+def my_function(country = &#34;Norway&#34;):
+  print(&#34;I am from &#34; + country)
+
+my_function(&#34;Sweden&#34;)
+my_function(&#34;India&#34;)
+my_function()
+my_function(&#34;Brazil&#34;)
+```
+# Passing a List as an Argument\n
+You can send any data types of argument to a function (string, number, list, dictionary etc.), and it will be treated as the same data type inside the function.\n
+
+E.g. if you send a List as an argument, it will still be a List when it reaches the function:\n
+
+```
+def my_function(food):
+  for x in food:
+    print(x)
+
+fruits = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
+
+my_function(fruits)
+```
+#Return Values\n
+To let a function return a value, use the ```return``` statement:\n
+
+```
+def my_function(x):
+  return 5 * x
+
+print(my_function(3))
+print(my_function(5))
+print(my_function(9))
+```
+# The ```pass``` Statement\n
+```function``` definitions cannot be empty, but if you for some reason have a ```function``` definition with no content, put in the ```pass``` statement to avoid getting an error.\n
+
+```
+def myfunction():
+  pass
+```
+# Recursion\n
+Python also accepts function recursion, which means a defined function can call itself.\n
+
+Recursion is a common mathematical and programming concept. It means that a function calls itself. This has the benefit of meaning that you can loop through data to reach a result.\n
+
+The developer should be very careful with recursion as it can be quite easy to slip into writing a function which never terminates, or one that uses excess amounts of memory or processor power. However, when written correctly recursion can be a very efficient and mathematically-elegant approach to programming.\n
+
+In this example, ```tri_recursion()``` is a function that we have defined to call itself (&#34;recurse&#34;). We use the ```k``` variable as the data, which decrements (```-1```) every time we recurse. The recursion ends when the condition is not greater than ```0``` (i.e. when it is ```0```).\n
+
+To a new developer it can take some time to work out how exactly this works, best way to find out is by testing and modifying it.\n
+
+```
+# Recursion
+def tri_recursion(k):
+  if(k &gt; 0):
+    result = k + tri_recursion(k - 1)
+    print(result)
+  else:
+    result = 0
+  return result
+
+print(&#34;\n\nRecursion Example Results&#34;)
+tri_recursion(6)
+```
+&#34;&#34;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#python-functions">Python Functions</a></li>
+<li><a href="#creating-a-function">Creating a Function</a></li>
+<li><a href="#calling-a-function">Calling a Function</a></li>
+<li><a href="#arguments">Arguments</a></li>
+<li><a href="#parameters-or-arguments">Parameters or Arguments?</a></li>
+<li><a href="#number-of-arguments">Number of Arguments</a></li>
+<li><a href="#arbitrary-arguments-args">Arbitrary Arguments, *args</a></li>
+<li><a href="#keyword-arguments">Keyword Arguments</a></li>
+<li><a href="#arbitrary-keyword-arguments-kwargs">Arbitrary Keyword Arguments, **kwargs</a></li>
+<li><a href="#default-parameter-value">Default Parameter Value</a></li>
+<li><a href="#passing-a-list-as-an-argument">Passing a List as an Argument</a></li>
+<li><a href="#return-values">Return Values</a></li>
+<li><a href="#the-pass-statement">The pass Statement</a></li>
+<li><a href="#recursion">Recursion</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ds.chunk_5" href="index.html">ds.chunk_5</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>

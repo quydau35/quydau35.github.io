@@ -48,496 +48,7 @@ thisdict = {
 }
 print(thisdict)
 </code></pre>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">&#34;&#34;&#34;
-```
-thisdict = {
-  &#34;brand&#34;: &#34;Ford&#34;,
-  &#34;model&#34;: &#34;Mustang&#34;,
-  &#34;year&#34;: 1964
-}
-```
-Dictionary\n
-Dictionaries are used to store data values in key:value pairs.\n
-
-A dictionary is a collection which is unordered, changeable and does not allow duplicates.\n
-
-Dictionaries are written with curly brackets, and have keys and values:\n
-
-```
-# Create and print a dictionary:
-
-thisdict = {
-  &#34;brand&#34;: &#34;Ford&#34;,
-  &#34;model&#34;: &#34;Mustang&#34;,
-  &#34;year&#34;: 1964
-}
-print(thisdict)
-```
-&#34;&#34;&#34;
-
-def m0_dictionary_properties():
-    &#34;&#34;&#34;
-    Dictionary Items\n
-    Dictionary items are unordered, changeable, and does not allow duplicates.\n
-
-    Dictionary items are presented in key:value pairs, and can be referred to by using the key name.\n
-
-    ```
-    # Print the &#34;brand&#34; value of the dictionary:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    print(thisdict[&#34;brand&#34;])
-    ```
-    Unordered\n
-    When we say that dictionaries are unordered, it means that the items does not have a defined order, you cannot refer to an item by using an index.\n
-
-    Changeable\n
-    Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has been created.\n
-
-    Duplicates Not Allowed\n
-    Dictionaries cannot have two items with the same key:\n
-
-    ```
-    # Duplicate values will overwrite existing values:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964,
-    &#34;year&#34;: 2020
-    }
-    print(thisdict)
-    ```
-    Dictionary Length\n
-    To determine how many items a dictionary has, use the len() function:\n
-
-    ```
-    # Print the number of items in the dictionary:
-
-    print(len(thisdict))
-    ```
-    Dictionary Items - Data Types\n
-    The values in dictionary items can be of any data type:\n
-
-    ```
-    # String, int, boolean, and list data types:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;electric&#34;: False,
-    &#34;year&#34;: 1964,
-    &#34;colors&#34;: [&#34;red&#34;, &#34;white&#34;, &#34;blue&#34;]
-    }
-    ```
-    ```type()```\n
-    From Python&#39;s perspective, dictionaries are defined as objects with the data type &#39;dict&#39;:\n
-
-    ```
-    &lt;class &#39;dict&#39;&gt;
-    ```
-    ```
-    # Print the data type of a dictionary:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    print(type(thisdict))
-    ```
-    &#34;&#34;&#34;
-
-def m1_access_dictionary_items():
-    &#34;&#34;&#34;
-    Accessing Items\n
-    You can access the items of a dictionary by referring to its key name, inside square brackets:\n
-
-    ```
-    # Get the value of the &#34;model&#34; key:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    x = thisdict[&#34;model&#34;]
-    ```
-    There is also a method called get() that will give you the same result:\n
-
-    ```
-    # Get the value of the &#34;model&#34; key:
-
-    x = thisdict.get(&#34;model&#34;)
-    ```
-    Get Keys\n
-    The ```keys()``` method will return a list of all the keys in the dictionary.\n
-
-    ```
-    # Get a list of the keys:
-
-    x = thisdict.keys()
-    ```
-    The list of the keys is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the keys list.\n
-
-    ```
-    # Add a new item to the original dictionary, and see that the value list gets updated as well:
-
-    car = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-
-    x = car.keys()
-
-    print(x) #before the change
-
-    car[&#34;color&#34;] = &#34;white&#34;
-
-    print(x) #after the change
-    ```
-    Get Values\n
-    The ```values()``` method will return a list of all the values in the dictionary.\n
-
-    ```
-    # Get a list of the values:
-
-    x = thisdict.values()
-    ```
-    The list of the values is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the values list.\n
-
-    ```
-    # Add a new item to the original dictionary, and see that the keys list gets updated as well:
-
-    car = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-
-    x = car.values()
-
-    print(x) #before the change
-
-    car[&#34;year&#34;] = 2020
-
-    print(x) #after the change
-    ```
-    Get Items\n
-    The ```items()``` method will return each item in a dictionary, as tuples in a list.\n
-
-    ```
-    # Get a list of the key:value pairs
-
-    x = thisdict.items()
-    ```
-    The returned list is a view of the items of the dictionary, meaning that any changes done to the dictionary will be reflected in the items list.\n
-
-    ```
-    # Add a new item to the original dictionary, and see that the items list gets updated as well:
-
-    car = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-
-    x = car.items()
-
-    print(x) #before the change
-
-    car[&#34;year&#34;] = 2020
-
-    print(x) #after the change
-    ```
-    Check if Key Exists\n
-    To determine if a specified key is present in a dictionary use the in keyword:\n
-
-    ```
-    # Check if &#34;model&#34; is present in the dictionary:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    if &#34;model&#34; in thisdict:
-    print(&#34;Yes, &#39;model&#39; is one of the keys in the thisdict dictionary&#34;)
-    ```
-    &#34;&#34;&#34;
-
-def m2_change_dictionary_items():
-    &#34;&#34;&#34;
-    Change Values\n
-    You can change the value of a specific item by referring to its key name:\n
-
-    ```
-    # Change the &#34;year&#34; to 2018:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict[&#34;year&#34;] = 2018
-    ```
-    Update Dictionary\n
-    The ```update()``` method will update the dictionary with the items from the given argument.\n
-
-    The argument must be a dictionary, or an iterable object with ```key:value``` pairs.\n
-
-    ```
-    # Update the &#34;year&#34; of the car by using the update() method:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.update({&#34;year&#34;: 2020})
-    ```
-    &#34;&#34;&#34;
-
-def m3_add_dictionary_items():
-    &#34;&#34;&#34;
-    Adding Items\n
-    Adding an item to the dictionary is done by using a new index key and assigning a value to it:\n
-
-    ```
-    # thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict[&#34;color&#34;] = &#34;red&#34;
-    print(thisdict)
-    ```
-    Update Dictionary\n
-    The ```update()``` method will update the dictionary with the items from a given argument. If the item does not exist, the item will be added.\n
-
-    The argument must be a dictionary, or an iterable object with ```key:value``` pairs.\n
-
-    ```
-    # Add a color item to the dictionary by using the update() method:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.update({&#34;color&#34;: &#34;red&#34;})
-    ```
-    &#34;&#34;&#34;
-
-def m4_remove_dictionary_items():
-    &#34;&#34;&#34;
-    Removing Items\n
-    There are several methods to remove items from a dictionary:\n
-
-    ```
-    # The pop() method removes the item with the specified key name:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.pop(&#34;model&#34;)
-    print(thisdict)
-    # The popitem() method removes the last inserted item (in versions before 3.7, a random item is removed instead):
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.popitem()
-    print(thisdict)
-    # The del keyword removes the item with the specified key name:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    del thisdict[&#34;model&#34;]
-    print(thisdict)
-    # The del keyword can also delete the dictionary completely:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    del thisdict
-    print(thisdict) #this will cause an error because &#34;thisdict&#34; no longer exists.
-    # The clear() method empties the dictionary:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.clear()
-    print(thisdict)
-    ```
-    &#34;&#34;&#34;
-
-def m5_loop_through_dictionary_items():
-    &#34;&#34;&#34;
-    Loop Through a Dictionary\n
-    You can loop through a dictionary by using a for loop.\n
-
-    When looping through a dictionary, the return value are the keys of the dictionary, but there are methods to return the values as well.\n
-
-    ```
-    # Print all key names in the dictionary, one by one:
-
-    for x in thisdict:
-        print(x)
-    # Print all values in the dictionary, one by one:
-
-    for x in thisdict:
-        print(thisdict[x])
-    # You can also use the values() method to return values of a dictionary:
-
-    for x in thisdict.values():
-        print(x)
-    # You can use the keys() method to return the keys of a dictionary:
-
-    for x in thisdict.keys():
-        print(x)
-    # Loop through both keys and values, by using the items() method:
-
-    for x, y in thisdict.items():
-        print(x, y)
-    ```
-    &#34;&#34;&#34;
-
-def m6_copy_dictionaries():
-    &#34;&#34;&#34;
-    Copy a Dictionary\n
-    You cannot copy a dictionary simply by typing ```dict2 = dict1```, because: ```dict2``` will only be a reference to ```dict1```, and changes made in ```dict1``` will automatically also be made in ```dict2```.\n
-
-    There are ways to make a copy, one way is to use the built-in Dictionary method ```copy()```.\n
-
-    ```
-    # Make a copy of a dictionary with the copy() method:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    mydict = thisdict.copy()
-    print(mydict)
-    ```
-    Another way to make a copy is to use the built-in function ```dict()```.\n
-
-    ```
-    # Make a copy of a dictionary with the dict() function:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    mydict = dict(thisdict)
-    print(mydict)
-    ```
-    &#34;&#34;&#34;
-
-def m7_nested_dictionaries():
-    &#34;&#34;&#34;
-    Nested Dictionaries\n
-    A dictionary can contain dictionaries, this is called nested dictionaries.\n
-
-    ```
-    # Create a dictionary that contain three dictionaries:
-
-    myfamily = {
-        &#34;child1&#34; : {
-            &#34;name&#34; : &#34;Emil&#34;,
-            &#34;year&#34; : 2004
-        },
-        &#34;child2&#34; : {
-            &#34;name&#34; : &#34;Tobias&#34;,
-            &#34;year&#34; : 2007
-        },
-        &#34;child3&#34; : {
-            &#34;name&#34; : &#34;Linus&#34;,
-            &#34;year&#34; : 2011
-        }
-    }
-    ```
-    Or, if you want to add three dictionaries into a new dictionary:\n
-
-    ``
-    `# Create three dictionaries, then create one dictionary that will contain the other three dictionaries:
-
-    child1 = {
-    &#34;name&#34; : &#34;Emil&#34;,
-    &#34;year&#34; : 2004
-    }
-    child2 = {
-    &#34;name&#34; : &#34;Tobias&#34;,
-    &#34;year&#34; : 2007
-    }
-    child3 = {
-    &#34;name&#34; : &#34;Linus&#34;,
-    &#34;year&#34; : 2011
-    }
-
-    myfamily = {
-    &#34;child1&#34; : child1,
-    &#34;child2&#34; : child2,
-    &#34;child3&#34; : child3
-    }
-    ```
-    &#34;&#34;&#34;
-
-def m8_dictionary_methods():
-    &#34;&#34;&#34;
-    Dictionary Methods\n
-    Python has a set of built-in methods that you can use on dictionaries.\n
-
-    ```
-    # Method    Description
-    clear()     Removes all the elements from the dictionary
-    copy()      Returns a copy of the dictionary
-    fromkeys()  Returns a dictionary with the specified keys and value
-    get()       Returns the value of the specified key
-    items()     Returns a list containing a tuple for each key value pair
-    keys()      Returns a list containing the dictionary&#39;s keys
-    pop()       Removes the element with the specified key
-    popitem()   Removes the last inserted key-value pair
-    setdefault()        Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
-    update()    Updates the dictionary with the specified key-value pairs
-    values()    Returns a list of all the values in the dictionary
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="ds.chunk_3.dictionary.m0_dictionary_properties"><code class="name flex">
-<span>def <span class="ident">m0_dictionary_properties</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Dictionary Items</p>
+<h1 id="dictionary-items">Dictionary Items</h1>
 <p>Dictionary items are unordered, changeable, and does not allow duplicates.</p>
 <p>Dictionary items are presented in key:value pairs, and can be referred to by using the key name.</p>
 <pre><code># Print the &quot;brand&quot; value of the dictionary:
@@ -594,93 +105,8 @@ thisdict = {
 &quot;year&quot;: 1964
 }
 print(type(thisdict))
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m0_dictionary_properties():
-    &#34;&#34;&#34;
-    Dictionary Items\n
-    Dictionary items are unordered, changeable, and does not allow duplicates.\n
-
-    Dictionary items are presented in key:value pairs, and can be referred to by using the key name.\n
-
-    ```
-    # Print the &#34;brand&#34; value of the dictionary:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    print(thisdict[&#34;brand&#34;])
-    ```
-    Unordered\n
-    When we say that dictionaries are unordered, it means that the items does not have a defined order, you cannot refer to an item by using an index.\n
-
-    Changeable\n
-    Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has been created.\n
-
-    Duplicates Not Allowed\n
-    Dictionaries cannot have two items with the same key:\n
-
-    ```
-    # Duplicate values will overwrite existing values:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964,
-    &#34;year&#34;: 2020
-    }
-    print(thisdict)
-    ```
-    Dictionary Length\n
-    To determine how many items a dictionary has, use the len() function:\n
-
-    ```
-    # Print the number of items in the dictionary:
-
-    print(len(thisdict))
-    ```
-    Dictionary Items - Data Types\n
-    The values in dictionary items can be of any data type:\n
-
-    ```
-    # String, int, boolean, and list data types:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;electric&#34;: False,
-    &#34;year&#34;: 1964,
-    &#34;colors&#34;: [&#34;red&#34;, &#34;white&#34;, &#34;blue&#34;]
-    }
-    ```
-    ```type()```\n
-    From Python&#39;s perspective, dictionaries are defined as objects with the data type &#39;dict&#39;:\n
-
-    ```
-    &lt;class &#39;dict&#39;&gt;
-    ```
-    ```
-    # Print the data type of a dictionary:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    print(type(thisdict))
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.dictionary.m1_access_dictionary_items"><code class="name flex">
-<span>def <span class="ident">m1_access_dictionary_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Accessing Items</p>
+</code></pre>
+<h1 id="accessing-items">Accessing Items</h1>
 <p>You can access the items of a dictionary by referring to its key name, inside square brackets:</p>
 <pre><code># Get the value of the &quot;model&quot; key:
 
@@ -776,136 +202,8 @@ thisdict = {
 }
 if &quot;model&quot; in thisdict:
 print(&quot;Yes, 'model' is one of the keys in the thisdict dictionary&quot;)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m1_access_dictionary_items():
-    &#34;&#34;&#34;
-    Accessing Items\n
-    You can access the items of a dictionary by referring to its key name, inside square brackets:\n
-
-    ```
-    # Get the value of the &#34;model&#34; key:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    x = thisdict[&#34;model&#34;]
-    ```
-    There is also a method called get() that will give you the same result:\n
-
-    ```
-    # Get the value of the &#34;model&#34; key:
-
-    x = thisdict.get(&#34;model&#34;)
-    ```
-    Get Keys\n
-    The ```keys()``` method will return a list of all the keys in the dictionary.\n
-
-    ```
-    # Get a list of the keys:
-
-    x = thisdict.keys()
-    ```
-    The list of the keys is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the keys list.\n
-
-    ```
-    # Add a new item to the original dictionary, and see that the value list gets updated as well:
-
-    car = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-
-    x = car.keys()
-
-    print(x) #before the change
-
-    car[&#34;color&#34;] = &#34;white&#34;
-
-    print(x) #after the change
-    ```
-    Get Values\n
-    The ```values()``` method will return a list of all the values in the dictionary.\n
-
-    ```
-    # Get a list of the values:
-
-    x = thisdict.values()
-    ```
-    The list of the values is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the values list.\n
-
-    ```
-    # Add a new item to the original dictionary, and see that the keys list gets updated as well:
-
-    car = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-
-    x = car.values()
-
-    print(x) #before the change
-
-    car[&#34;year&#34;] = 2020
-
-    print(x) #after the change
-    ```
-    Get Items\n
-    The ```items()``` method will return each item in a dictionary, as tuples in a list.\n
-
-    ```
-    # Get a list of the key:value pairs
-
-    x = thisdict.items()
-    ```
-    The returned list is a view of the items of the dictionary, meaning that any changes done to the dictionary will be reflected in the items list.\n
-
-    ```
-    # Add a new item to the original dictionary, and see that the items list gets updated as well:
-
-    car = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-
-    x = car.items()
-
-    print(x) #before the change
-
-    car[&#34;year&#34;] = 2020
-
-    print(x) #after the change
-    ```
-    Check if Key Exists\n
-    To determine if a specified key is present in a dictionary use the in keyword:\n
-
-    ```
-    # Check if &#34;model&#34; is present in the dictionary:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    if &#34;model&#34; in thisdict:
-    print(&#34;Yes, &#39;model&#39; is one of the keys in the thisdict dictionary&#34;)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.dictionary.m2_change_dictionary_items"><code class="name flex">
-<span>def <span class="ident">m2_change_dictionary_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Change Values</p>
+</code></pre>
+<h1 id="change-values">Change Values</h1>
 <p>You can change the value of a specific item by referring to its key name:</p>
 <pre><code># Change the &quot;year&quot; to 2018:
 
@@ -927,49 +225,8 @@ thisdict = {
 &quot;year&quot;: 1964
 }
 thisdict.update({&quot;year&quot;: 2020})
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m2_change_dictionary_items():
-    &#34;&#34;&#34;
-    Change Values\n
-    You can change the value of a specific item by referring to its key name:\n
-
-    ```
-    # Change the &#34;year&#34; to 2018:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict[&#34;year&#34;] = 2018
-    ```
-    Update Dictionary\n
-    The ```update()``` method will update the dictionary with the items from the given argument.\n
-
-    The argument must be a dictionary, or an iterable object with ```key:value``` pairs.\n
-
-    ```
-    # Update the &#34;year&#34; of the car by using the update() method:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.update({&#34;year&#34;: 2020})
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.dictionary.m3_add_dictionary_items"><code class="name flex">
-<span>def <span class="ident">m3_add_dictionary_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Adding Items</p>
+</code></pre>
+<h1 id="adding-items">Adding Items</h1>
 <p>Adding an item to the dictionary is done by using a new index key and assigning a value to it:</p>
 <pre><code># thisdict = {
 &quot;brand&quot;: &quot;Ford&quot;,
@@ -990,48 +247,8 @@ thisdict = {
 &quot;year&quot;: 1964
 }
 thisdict.update({&quot;color&quot;: &quot;red&quot;})
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m3_add_dictionary_items():
-    &#34;&#34;&#34;
-    Adding Items\n
-    Adding an item to the dictionary is done by using a new index key and assigning a value to it:\n
-
-    ```
-    # thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict[&#34;color&#34;] = &#34;red&#34;
-    print(thisdict)
-    ```
-    Update Dictionary\n
-    The ```update()``` method will update the dictionary with the items from a given argument. If the item does not exist, the item will be added.\n
-
-    The argument must be a dictionary, or an iterable object with ```key:value``` pairs.\n
-
-    ```
-    # Add a color item to the dictionary by using the update() method:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.update({&#34;color&#34;: &#34;red&#34;})
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.dictionary.m4_remove_dictionary_items"><code class="name flex">
-<span>def <span class="ident">m4_remove_dictionary_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Removing Items</p>
+</code></pre>
+<h1 id="removing-items">Removing Items</h1>
 <p>There are several methods to remove items from a dictionary:</p>
 <pre><code># The pop() method removes the item with the specified key name:
 
@@ -1078,71 +295,8 @@ thisdict = {
 }
 thisdict.clear()
 print(thisdict)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m4_remove_dictionary_items():
-    &#34;&#34;&#34;
-    Removing Items\n
-    There are several methods to remove items from a dictionary:\n
-
-    ```
-    # The pop() method removes the item with the specified key name:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.pop(&#34;model&#34;)
-    print(thisdict)
-    # The popitem() method removes the last inserted item (in versions before 3.7, a random item is removed instead):
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.popitem()
-    print(thisdict)
-    # The del keyword removes the item with the specified key name:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    del thisdict[&#34;model&#34;]
-    print(thisdict)
-    # The del keyword can also delete the dictionary completely:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    del thisdict
-    print(thisdict) #this will cause an error because &#34;thisdict&#34; no longer exists.
-    # The clear() method empties the dictionary:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    thisdict.clear()
-    print(thisdict)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.dictionary.m5_loop_through_dictionary_items"><code class="name flex">
-<span>def <span class="ident">m5_loop_through_dictionary_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Loop Through a Dictionary</p>
+</code></pre>
+<h1 id="loop-through-a-dictionary">Loop Through a Dictionary</h1>
 <p>You can loop through a dictionary by using a for loop.</p>
 <p>When looping through a dictionary, the return value are the keys of the dictionary, but there are methods to return the values as well.</p>
 <pre><code># Print all key names in the dictionary, one by one:
@@ -1165,48 +319,8 @@ for x in thisdict.keys():
 
 for x, y in thisdict.items():
     print(x, y)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m5_loop_through_dictionary_items():
-    &#34;&#34;&#34;
-    Loop Through a Dictionary\n
-    You can loop through a dictionary by using a for loop.\n
-
-    When looping through a dictionary, the return value are the keys of the dictionary, but there are methods to return the values as well.\n
-
-    ```
-    # Print all key names in the dictionary, one by one:
-
-    for x in thisdict:
-        print(x)
-    # Print all values in the dictionary, one by one:
-
-    for x in thisdict:
-        print(thisdict[x])
-    # You can also use the values() method to return values of a dictionary:
-
-    for x in thisdict.values():
-        print(x)
-    # You can use the keys() method to return the keys of a dictionary:
-
-    for x in thisdict.keys():
-        print(x)
-    # Loop through both keys and values, by using the items() method:
-
-    for x, y in thisdict.items():
-        print(x, y)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.dictionary.m6_copy_dictionaries"><code class="name flex">
-<span>def <span class="ident">m6_copy_dictionaries</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Copy a Dictionary</p>
+</code></pre>
+<h1 id="copy-a-dictionary">Copy a Dictionary</h1>
 <p>You cannot copy a dictionary simply by typing <code>dict2 = dict1</code>, because: <code>dict2</code> will only be a reference to <code>dict1</code>, and changes made in <code>dict1</code> will automatically also be made in <code>dict2</code>.</p>
 <p>There are ways to make a copy, one way is to use the built-in Dictionary method <code>copy()</code>.</p>
 <pre><code># Make a copy of a dictionary with the copy() method:
@@ -1229,50 +343,8 @@ thisdict = {
 }
 mydict = dict(thisdict)
 print(mydict)
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m6_copy_dictionaries():
-    &#34;&#34;&#34;
-    Copy a Dictionary\n
-    You cannot copy a dictionary simply by typing ```dict2 = dict1```, because: ```dict2``` will only be a reference to ```dict1```, and changes made in ```dict1``` will automatically also be made in ```dict2```.\n
-
-    There are ways to make a copy, one way is to use the built-in Dictionary method ```copy()```.\n
-
-    ```
-    # Make a copy of a dictionary with the copy() method:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    mydict = thisdict.copy()
-    print(mydict)
-    ```
-    Another way to make a copy is to use the built-in function ```dict()```.\n
-
-    ```
-    # Make a copy of a dictionary with the dict() function:
-
-    thisdict = {
-    &#34;brand&#34;: &#34;Ford&#34;,
-    &#34;model&#34;: &#34;Mustang&#34;,
-    &#34;year&#34;: 1964
-    }
-    mydict = dict(thisdict)
-    print(mydict)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.dictionary.m7_nested_dictionaries"><code class="name flex">
-<span>def <span class="ident">m7_nested_dictionaries</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Nested Dictionaries</p>
+</code></pre>
+<h1 id="nested-dictionaries">Nested Dictionaries</h1>
 <p>A dictionary can contain dictionaries, this is called nested dictionaries.</p>
 <pre><code># Create a dictionary that contain three dictionaries:
 
@@ -1292,125 +364,497 @@ myfamily = {
 }
 </code></pre>
 <p>Or, if you want to add three dictionaries into a new dictionary:</p>
-<p><code>`</code># Create three dictionaries, then create one dictionary that will contain the other three dictionaries:</p>
-<p>child1 = {
-"name" : "Emil",
-"year" : 2004
+<pre><code># Create three dictionaries, then create one dictionary that will contain the other three dictionaries:
+
+child1 = {
+&quot;name&quot; : &quot;Emil&quot;,
+&quot;year&quot; : 2004
 }
 child2 = {
-"name" : "Tobias",
-"year" : 2007
+&quot;name&quot; : &quot;Tobias&quot;,
+&quot;year&quot; : 2007
 }
 child3 = {
-"name" : "Linus",
-"year" : 2011
-}</p>
-<p>myfamily = {
-"child1" : child1,
-"child2" : child2,
-"child3" : child3
+&quot;name&quot; : &quot;Linus&quot;,
+&quot;year&quot; : 2011
 }
-```</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m7_nested_dictionaries():
-    &#34;&#34;&#34;
-    Nested Dictionaries\n
-    A dictionary can contain dictionaries, this is called nested dictionaries.\n
 
-    ```
-    # Create a dictionary that contain three dictionaries:
-
-    myfamily = {
-        &#34;child1&#34; : {
-            &#34;name&#34; : &#34;Emil&#34;,
-            &#34;year&#34; : 2004
-        },
-        &#34;child2&#34; : {
-            &#34;name&#34; : &#34;Tobias&#34;,
-            &#34;year&#34; : 2007
-        },
-        &#34;child3&#34; : {
-            &#34;name&#34; : &#34;Linus&#34;,
-            &#34;year&#34; : 2011
-        }
-    }
-    ```
-    Or, if you want to add three dictionaries into a new dictionary:\n
-
-    ``
-    `# Create three dictionaries, then create one dictionary that will contain the other three dictionaries:
-
-    child1 = {
-    &#34;name&#34; : &#34;Emil&#34;,
-    &#34;year&#34; : 2004
-    }
-    child2 = {
-    &#34;name&#34; : &#34;Tobias&#34;,
-    &#34;year&#34; : 2007
-    }
-    child3 = {
-    &#34;name&#34; : &#34;Linus&#34;,
-    &#34;year&#34; : 2011
-    }
-
-    myfamily = {
-    &#34;child1&#34; : child1,
-    &#34;child2&#34; : child2,
-    &#34;child3&#34; : child3
-    }
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.dictionary.m8_dictionary_methods"><code class="name flex">
-<span>def <span class="ident">m8_dictionary_methods</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Dictionary Methods</p>
+myfamily = {
+&quot;child1&quot; : child1,
+&quot;child2&quot; : child2,
+&quot;child3&quot; : child3
+}
+</code></pre>
+<h1 id="dictionary-methods">Dictionary Methods</h1>
 <p>Python has a set of built-in methods that you can use on dictionaries.</p>
-<pre><code># Method    Description
-clear()     Removes all the elements from the dictionary
-copy()      Returns a copy of the dictionary
-fromkeys()  Returns a dictionary with the specified keys and value
-get()       Returns the value of the specified key
-items()     Returns a list containing a tuple for each key value pair
-keys()      Returns a list containing the dictionary's keys
-pop()       Removes the element with the specified key
-popitem()   Removes the last inserted key-value pair
-setdefault()        Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
-update()    Updates the dictionary with the specified key-value pairs
-values()    Returns a list of all the values in the dictionary
-</code></pre></div>
+<pre><code># Method        Description
+clear() Removes all the elements from the dictionary
+copy()  Returns a copy of the dictionary
+fromkeys()      Returns a dictionary with the specified keys and value
+get()   Returns the value of the specified key
+items() Returns a list containing a tuple for each key value pair
+keys()  Returns a list containing the dictionary's keys
+pop()   Removes the element with the specified key
+popitem()       Removes the last inserted key-value pair
+setdefault()    Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()        Updates the dictionary with the specified key-value pairs
+values()        Returns a list of all the values in the dictionary
+</code></pre>
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<pre><code class="python">def m8_dictionary_methods():
-    &#34;&#34;&#34;
-    Dictionary Methods\n
-    Python has a set of built-in methods that you can use on dictionaries.\n
+<pre><code class="python">&#34;&#34;&#34;
+```
+thisdict = {
+  &#34;brand&#34;: &#34;Ford&#34;,
+  &#34;model&#34;: &#34;Mustang&#34;,
+  &#34;year&#34;: 1964
+}
+```
+Dictionary\n
+Dictionaries are used to store data values in key:value pairs.\n
 
-    ```
-    # Method    Description
-    clear()     Removes all the elements from the dictionary
-    copy()      Returns a copy of the dictionary
-    fromkeys()  Returns a dictionary with the specified keys and value
-    get()       Returns the value of the specified key
-    items()     Returns a list containing a tuple for each key value pair
-    keys()      Returns a list containing the dictionary&#39;s keys
-    pop()       Removes the element with the specified key
-    popitem()   Removes the last inserted key-value pair
-    setdefault()        Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
-    update()    Updates the dictionary with the specified key-value pairs
-    values()    Returns a list of all the values in the dictionary
-    ```
-    &#34;&#34;&#34;</code></pre>
+A dictionary is a collection which is unordered, changeable and does not allow duplicates.\n
+
+Dictionaries are written with curly brackets, and have keys and values:\n
+
+```
+# Create and print a dictionary:
+
+thisdict = {
+  &#34;brand&#34;: &#34;Ford&#34;,
+  &#34;model&#34;: &#34;Mustang&#34;,
+  &#34;year&#34;: 1964
+}
+print(thisdict)
+```
+
+# Dictionary Items\n
+Dictionary items are unordered, changeable, and does not allow duplicates.\n
+
+Dictionary items are presented in key:value pairs, and can be referred to by using the key name.\n
+
+```
+# Print the &#34;brand&#34; value of the dictionary:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+print(thisdict[&#34;brand&#34;])
+```
+Unordered\n
+When we say that dictionaries are unordered, it means that the items does not have a defined order, you cannot refer to an item by using an index.\n
+
+Changeable\n
+Dictionaries are changeable, meaning that we can change, add or remove items after the dictionary has been created.\n
+
+Duplicates Not Allowed\n
+Dictionaries cannot have two items with the same key:\n
+
+```
+# Duplicate values will overwrite existing values:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964,
+&#34;year&#34;: 2020
+}
+print(thisdict)
+```
+Dictionary Length\n
+To determine how many items a dictionary has, use the len() function:\n
+
+```
+# Print the number of items in the dictionary:
+
+print(len(thisdict))
+```
+Dictionary Items - Data Types\n
+The values in dictionary items can be of any data type:\n
+
+```
+# String, int, boolean, and list data types:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;electric&#34;: False,
+&#34;year&#34;: 1964,
+&#34;colors&#34;: [&#34;red&#34;, &#34;white&#34;, &#34;blue&#34;]
+}
+```
+```type()```\n
+From Python&#39;s perspective, dictionaries are defined as objects with the data type &#39;dict&#39;:\n
+
+```
+&lt;class &#39;dict&#39;&gt;
+```
+```
+# Print the data type of a dictionary:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+print(type(thisdict))
+```
+
+# Accessing Items\n
+You can access the items of a dictionary by referring to its key name, inside square brackets:\n
+
+```
+# Get the value of the &#34;model&#34; key:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+x = thisdict[&#34;model&#34;]
+```
+There is also a method called get() that will give you the same result:\n
+
+```
+# Get the value of the &#34;model&#34; key:
+
+x = thisdict.get(&#34;model&#34;)
+```
+Get Keys\n
+The ```keys()``` method will return a list of all the keys in the dictionary.\n
+
+```
+# Get a list of the keys:
+
+x = thisdict.keys()
+```
+The list of the keys is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the keys list.\n
+
+```
+# Add a new item to the original dictionary, and see that the value list gets updated as well:
+
+car = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+
+x = car.keys()
+
+print(x) #before the change
+
+car[&#34;color&#34;] = &#34;white&#34;
+
+print(x) #after the change
+```
+Get Values\n
+The ```values()``` method will return a list of all the values in the dictionary.\n
+
+```
+# Get a list of the values:
+
+x = thisdict.values()
+```
+The list of the values is a view of the dictionary, meaning that any changes done to the dictionary will be reflected in the values list.\n
+
+```
+# Add a new item to the original dictionary, and see that the keys list gets updated as well:
+
+car = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+
+x = car.values()
+
+print(x) #before the change
+
+car[&#34;year&#34;] = 2020
+
+print(x) #after the change
+```
+Get Items\n
+The ```items()``` method will return each item in a dictionary, as tuples in a list.\n
+
+```
+# Get a list of the key:value pairs
+
+x = thisdict.items()
+```
+The returned list is a view of the items of the dictionary, meaning that any changes done to the dictionary will be reflected in the items list.\n
+
+```
+# Add a new item to the original dictionary, and see that the items list gets updated as well:
+
+car = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+
+x = car.items()
+
+print(x) #before the change
+
+car[&#34;year&#34;] = 2020
+
+print(x) #after the change
+```
+Check if Key Exists\n
+To determine if a specified key is present in a dictionary use the in keyword:\n
+
+```
+# Check if &#34;model&#34; is present in the dictionary:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+if &#34;model&#34; in thisdict:
+print(&#34;Yes, &#39;model&#39; is one of the keys in the thisdict dictionary&#34;)
+```
+
+# Change Values\n
+You can change the value of a specific item by referring to its key name:\n
+
+```
+# Change the &#34;year&#34; to 2018:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+thisdict[&#34;year&#34;] = 2018
+```
+Update Dictionary\n
+The ```update()``` method will update the dictionary with the items from the given argument.\n
+
+The argument must be a dictionary, or an iterable object with ```key:value``` pairs.\n
+
+```
+# Update the &#34;year&#34; of the car by using the update() method:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+thisdict.update({&#34;year&#34;: 2020})
+```
+
+# Adding Items\n
+Adding an item to the dictionary is done by using a new index key and assigning a value to it:\n
+
+```
+# thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+thisdict[&#34;color&#34;] = &#34;red&#34;
+print(thisdict)
+```
+Update Dictionary\n
+The ```update()``` method will update the dictionary with the items from a given argument. If the item does not exist, the item will be added.\n
+
+The argument must be a dictionary, or an iterable object with ```key:value``` pairs.\n
+
+```
+# Add a color item to the dictionary by using the update() method:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+thisdict.update({&#34;color&#34;: &#34;red&#34;})
+```
+
+# Removing Items\n
+There are several methods to remove items from a dictionary:\n
+
+```
+# The pop() method removes the item with the specified key name:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+thisdict.pop(&#34;model&#34;)
+print(thisdict)
+# The popitem() method removes the last inserted item (in versions before 3.7, a random item is removed instead):
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+thisdict.popitem()
+print(thisdict)
+# The del keyword removes the item with the specified key name:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+del thisdict[&#34;model&#34;]
+print(thisdict)
+# The del keyword can also delete the dictionary completely:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+del thisdict
+print(thisdict) #this will cause an error because &#34;thisdict&#34; no longer exists.
+# The clear() method empties the dictionary:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+thisdict.clear()
+print(thisdict)
+```
+# Loop Through a Dictionary\n
+You can loop through a dictionary by using a for loop.\n
+
+When looping through a dictionary, the return value are the keys of the dictionary, but there are methods to return the values as well.\n
+
+```
+# Print all key names in the dictionary, one by one:
+
+for x in thisdict:
+    print(x)
+# Print all values in the dictionary, one by one:
+
+for x in thisdict:
+    print(thisdict[x])
+# You can also use the values() method to return values of a dictionary:
+
+for x in thisdict.values():
+    print(x)
+# You can use the keys() method to return the keys of a dictionary:
+
+for x in thisdict.keys():
+    print(x)
+# Loop through both keys and values, by using the items() method:
+
+for x, y in thisdict.items():
+    print(x, y)
+```
+
+# Copy a Dictionary\n
+You cannot copy a dictionary simply by typing ```dict2 = dict1```, because: ```dict2``` will only be a reference to ```dict1```, and changes made in ```dict1``` will automatically also be made in ```dict2```.\n
+
+There are ways to make a copy, one way is to use the built-in Dictionary method ```copy()```.\n
+
+```
+# Make a copy of a dictionary with the copy() method:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+mydict = thisdict.copy()
+print(mydict)
+```
+Another way to make a copy is to use the built-in function ```dict()```.\n
+
+```
+# Make a copy of a dictionary with the dict() function:
+
+thisdict = {
+&#34;brand&#34;: &#34;Ford&#34;,
+&#34;model&#34;: &#34;Mustang&#34;,
+&#34;year&#34;: 1964
+}
+mydict = dict(thisdict)
+print(mydict)
+```
+
+# Nested Dictionaries\n
+A dictionary can contain dictionaries, this is called nested dictionaries.\n
+
+```
+# Create a dictionary that contain three dictionaries:
+
+myfamily = {
+    &#34;child1&#34; : {
+        &#34;name&#34; : &#34;Emil&#34;,
+        &#34;year&#34; : 2004
+    },
+    &#34;child2&#34; : {
+        &#34;name&#34; : &#34;Tobias&#34;,
+        &#34;year&#34; : 2007
+    },
+    &#34;child3&#34; : {
+        &#34;name&#34; : &#34;Linus&#34;,
+        &#34;year&#34; : 2011
+    }
+}
+```
+Or, if you want to add three dictionaries into a new dictionary:\n
+
+```
+# Create three dictionaries, then create one dictionary that will contain the other three dictionaries:
+
+child1 = {
+&#34;name&#34; : &#34;Emil&#34;,
+&#34;year&#34; : 2004
+}
+child2 = {
+&#34;name&#34; : &#34;Tobias&#34;,
+&#34;year&#34; : 2007
+}
+child3 = {
+&#34;name&#34; : &#34;Linus&#34;,
+&#34;year&#34; : 2011
+}
+
+myfamily = {
+&#34;child1&#34; : child1,
+&#34;child2&#34; : child2,
+&#34;child3&#34; : child3
+}
+```
+
+# Dictionary Methods\n
+Python has a set of built-in methods that you can use on dictionaries.\n
+
+```
+# Method        Description
+clear() Removes all the elements from the dictionary
+copy()  Returns a copy of the dictionary
+fromkeys()      Returns a dictionary with the specified keys and value
+get()   Returns the value of the specified key
+items() Returns a list containing a tuple for each key value pair
+keys()  Returns a list containing the dictionary&#39;s keys
+pop()   Removes the element with the specified key
+popitem()       Removes the last inserted key-value pair
+setdefault()    Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
+update()        Updates the dictionary with the specified key-value pairs
+values()        Returns a list of all the values in the dictionary
+```
+&#34;&#34;&#34;</code></pre>
 </details>
-</dd>
-</dl>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
 </section>
 <section>
 </section>
@@ -1418,25 +862,22 @@ values()    Returns a list of all the values in the dictionary
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<ul></ul>
+<ul>
+<li><a href="#dictionary-items">Dictionary Items</a></li>
+<li><a href="#accessing-items">Accessing Items</a></li>
+<li><a href="#change-values">Change Values</a></li>
+<li><a href="#adding-items">Adding Items</a></li>
+<li><a href="#removing-items">Removing Items</a></li>
+<li><a href="#loop-through-a-dictionary">Loop Through a Dictionary</a></li>
+<li><a href="#copy-a-dictionary">Copy a Dictionary</a></li>
+<li><a href="#nested-dictionaries">Nested Dictionaries</a></li>
+<li><a href="#dictionary-methods">Dictionary Methods</a></li>
+</ul>
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>
 <ul>
 <li><code><a title="ds.chunk_3" href="index.html">ds.chunk_3</a></code></li>
-</ul>
-</li>
-<li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="ds.chunk_3.dictionary.m0_dictionary_properties" href="#ds.chunk_3.dictionary.m0_dictionary_properties">m0_dictionary_properties</a></code></li>
-<li><code><a title="ds.chunk_3.dictionary.m1_access_dictionary_items" href="#ds.chunk_3.dictionary.m1_access_dictionary_items">m1_access_dictionary_items</a></code></li>
-<li><code><a title="ds.chunk_3.dictionary.m2_change_dictionary_items" href="#ds.chunk_3.dictionary.m2_change_dictionary_items">m2_change_dictionary_items</a></code></li>
-<li><code><a title="ds.chunk_3.dictionary.m3_add_dictionary_items" href="#ds.chunk_3.dictionary.m3_add_dictionary_items">m3_add_dictionary_items</a></code></li>
-<li><code><a title="ds.chunk_3.dictionary.m4_remove_dictionary_items" href="#ds.chunk_3.dictionary.m4_remove_dictionary_items">m4_remove_dictionary_items</a></code></li>
-<li><code><a title="ds.chunk_3.dictionary.m5_loop_through_dictionary_items" href="#ds.chunk_3.dictionary.m5_loop_through_dictionary_items">m5_loop_through_dictionary_items</a></code></li>
-<li><code><a title="ds.chunk_3.dictionary.m6_copy_dictionaries" href="#ds.chunk_3.dictionary.m6_copy_dictionaries">m6_copy_dictionaries</a></code></li>
-<li><code><a title="ds.chunk_3.dictionary.m7_nested_dictionaries" href="#ds.chunk_3.dictionary.m7_nested_dictionaries">m7_nested_dictionaries</a></code></li>
-<li><code><a title="ds.chunk_3.dictionary.m8_dictionary_methods" href="#ds.chunk_3.dictionary.m8_dictionary_methods">m8_dictionary_methods</a></code></li>
 </ul>
 </li>
 </ul>
