@@ -1,0 +1,495 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.9.2" />
+<title>ds.chunk_5.python_class API documentation</title>
+<meta name="description" content="Python Classes/Objects …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ds.chunk_5.python_class</code></h1>
+</header>
+<section id="section-intro">
+<h1 id="python-classesobjects">Python Classes/Objects</h1>
+<p>Python is an object oriented programming language.</p>
+<p>Almost everything in Python is an object, with its properties and methods.</p>
+<p>A Class is like an object constructor, or a "blueprint" for creating objects.</p>
+<h1 id="create-a-class">Create a Class</h1>
+<p>To create a class, use the keyword class:</p>
+<pre><code># Create a class named MyClass, with a property named x:
+
+class MyClass:
+    x = 5
+</code></pre>
+<h1 id="create-object">Create Object</h1>
+<p>Now we can use the class named MyClass to create objects:</p>
+<pre><code># Create an object named p1, and print the value of x:
+
+p1 = MyClass()
+print(p1.x)
+</code></pre>
+<h1 id="the-__init__-function">The <code>__init__()</code> Function</h1>
+<p>The examples above are classes and objects in their simplest form, and are not really useful in real life applications.</p>
+<p>To understand the meaning of classes we have to understand the built-in <code>__init__()</code> function.</p>
+<p>All classes have a function called <code>__init__()</code>, which is always executed when the class is being initiated.</p>
+<p>Use the <code>__init__()</code> function to assign values to object properties, or other operations that are necessary to do when the object is being created:</p>
+<pre><code># Create a class named Person, use the __init__() function to assign values for name and age:
+
+class Person:
+def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person(&quot;John&quot;, 36)
+
+print(p1.name)
+print(p1.age)
+</code></pre>
+<p>Note: The <code>__init__()</code> function is called automatically every time the class is being used to create a new object.</p>
+<h1 id="object-methods">Object Methods</h1>
+<p>Objects can also contain methods. Methods in objects are functions that belong to the object.</p>
+<p>Let us create a method in the Person class:</p>
+<pre><code># Insert a function that prints a greeting, and execute it on the p1 object:
+
+class Person:
+def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+def myfunc(self):
+    print(&quot;Hello my name is &quot; + self.name)
+
+p1 = Person(&quot;John&quot;, 36)
+p1.myfunc()
+</code></pre>
+<p>Note: The self parameter is a reference to the current instance of the class, and is used to access variables that belong to the class.</p>
+<h1 id="the-self-parameter">The <code>self</code> Parameter</h1>
+<p>The <code>self</code> parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.</p>
+<p>It does not have to be named <code>self</code>, you can call it whatever you like, but it has to be the first parameter of any function in the class:</p>
+<pre><code># Use the words mysillyobject and abc instead of self:
+
+class Person:
+def __init__(mysillyobject, name, age):
+    mysillyobject.name = name
+    mysillyobject.age = age
+
+def myfunc(abc):
+    print(&quot;Hello my name is &quot; + abc.name)
+
+p1 = Person(&quot;John&quot;, 36)
+p1.myfunc()
+</code></pre>
+<h1 id="modify-object-properties">Modify Object Properties</h1>
+<p>You can modify properties on objects like this:</p>
+<pre><code># Set the age of p1 to 40:
+
+p1.age = 40
+</code></pre>
+<h1 id="delete-object-properties">Delete Object Properties</h1>
+<p>You can delete properties on objects by using the del keyword:</p>
+<pre><code># Delete the age property from the p1 object:
+
+del p1.age
+</code></pre>
+<h1 id="delete-objects">Delete Objects</h1>
+<p>You can delete objects by using the del keyword:</p>
+<pre><code># Delete the p1 object:
+
+del p1
+</code></pre>
+<h1 id="the-pass-statement">The pass Statement</h1>
+<p><code>class</code> definitions cannot be empty, but if you for some reason have a class definition with no content, put in the pass statement to avoid getting an error.</p>
+<pre><code>class Person:
+    pass
+</code></pre>
+<h1 id="python-inheritance">Python Inheritance</h1>
+<p>Inheritance allows us to define a class that inherits all the methods and properties from another class.</p>
+<p><code>Parent class</code> is the class being inherited from, also called base class.</p>
+<p><code>Child class</code> is the class that inherits from another class, also called derived class.</p>
+<p>Create a Parent Class</p>
+<p>Any class can be a parent class, so the syntax is the same as creating any other class:</p>
+<pre><code># Create a class named Person, with firstname and lastname properties, and a printname method:
+
+class Person:
+def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+def printname(self):
+    print(self.firstname, self.lastname)
+
+#Use the Person class to create an object, and then execute the printname method:
+
+x = Person(&quot;John&quot;, &quot;Doe&quot;)
+x.printname()
+</code></pre>
+<h1 id="create-a-child-class">Create a Child Class</h1>
+<p>To create a class that inherits the functionality from another class, send the parent class as a parameter when creating the child class:</p>
+<pre><code># Create a class named Student, which will inherit the properties and methods from the Person class:
+
+class Student(Person):
+    pass
+</code></pre>
+<p>Note: Use the pass keyword when you do not want to add any other properties or methods to the class.</p>
+<p>Now the Student class has the same properties and methods as the Person class.</p>
+<pre><code># Use the Student class to create an object, and then execute the printname method:
+
+x = Student(&quot;Mike&quot;, &quot;Olsen&quot;)
+x.printname()
+</code></pre>
+<h1 id="add-the-__init__-function">Add the <code>__init__()</code> Function</h1>
+<p>So far we have created a child class that inherits the properties and methods from its parent.</p>
+<p>We want to add the <code>__init__()</code> function to the child class (instead of the pass keyword).</p>
+<p>Note: The <code>__init__()</code> function is called automatically every time the class is being used to create a new object.</p>
+<pre><code># Add the __init__() function to the Student class:
+
+class Student(Person):
+    def __init__(self, fname, lname):
+        #add properties etc.
+</code></pre>
+<p>When you add the <code>__init__()</code> function, the child class will no longer inherit the parent's <code>__init__()</code> function.</p>
+<p>Note: The child's <code>__init__()</code> function overrides the inheritance of the parent's <code>__init__()</code> function.</p>
+<p>To keep the inheritance of the parent's <code>__init__()</code> function, add a call to the parent's <code>__init__()</code> function:</p>
+<pre><code># class Student(Person):
+    def __init__(self, fname, lname):
+        Person.__init__(self, fname, lname)
+</code></pre>
+<p>Now we have successfully added the <strong>init</strong>() function, and kept the inheritance of the parent class, and we are ready to add functionality in the <code>__init__()</code> function.</p>
+<h1 id="use-the-super-function">Use the <code>super()</code> Function</h1>
+<p>Python also has a <code>super()</code> function that will make the child class inherit all the methods and properties from its parent:</p>
+<pre><code># class Student(Person):
+def __init__(self, fname, lname):
+    super().__init__(fname, lname)
+</code></pre>
+<p>By using the <code>super()</code> function, you do not have to use the name of the parent element, it will automatically inherit the methods and properties from its parent.</p>
+<h1 id="add-properties">Add Properties</h1>
+<pre><code># Add a property called graduationyear to the Student class:
+
+class Student(Person):
+def __init__(self, fname, lname):
+    super().__init__(fname, lname)
+    self.graduationyear = 2019
+</code></pre>
+<p>In the example below, the year 2019 should be a variable, and passed into the Student class when creating student objects. To do so, add another parameter in the <code>__init__()</code> function:</p>
+<pre><code># Add a year parameter, and pass the correct year when creating objects:
+
+class Student(Person):
+def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)
+    self.graduationyear = year
+
+x = Student(&quot;Mike&quot;, &quot;Olsen&quot;, 2019)
+</code></pre>
+<h1 id="add-methods">Add Methods</h1>
+<pre><code># Add a method called welcome to the Student class:
+
+class Student(Person):
+def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)
+    self.graduationyear = year
+
+def welcome(self):
+    print(&quot;Welcome&quot;, self.firstname, self.lastname, &quot;to the class of&quot;, self.graduationyear)
+</code></pre>
+<p>If you add a method in the child class with the same name as a function in the parent class, the inheritance of the parent method will be overridden.</p>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;
+# Python Classes/Objects\n
+Python is an object oriented programming language.\n
+
+Almost everything in Python is an object, with its properties and methods.\n
+
+A Class is like an object constructor, or a &#34;blueprint&#34; for creating objects.\n
+
+# Create a Class\n
+To create a class, use the keyword class:\n
+
+```
+# Create a class named MyClass, with a property named x:
+
+class MyClass:
+    x = 5
+```
+# Create Object\n
+Now we can use the class named MyClass to create objects:\n
+
+```
+# Create an object named p1, and print the value of x:
+
+p1 = MyClass()
+print(p1.x)
+```
+# The ```__init__()``` Function\n
+The examples above are classes and objects in their simplest form, and are not really useful in real life applications.\n
+
+To understand the meaning of classes we have to understand the built-in ```__init__()``` function.\n
+
+All classes have a function called ```__init__()```, which is always executed when the class is being initiated.\n
+
+Use the ```__init__()``` function to assign values to object properties, or other operations that are necessary to do when the object is being created:\n
+
+```
+# Create a class named Person, use the __init__() function to assign values for name and age:
+
+class Person:
+def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+p1 = Person(&#34;John&#34;, 36)
+
+print(p1.name)
+print(p1.age)
+```
+Note: The ```__init__()``` function is called automatically every time the class is being used to create a new object.\n
+
+# Object Methods\n
+Objects can also contain methods. Methods in objects are functions that belong to the object.\n
+
+Let us create a method in the Person class:\n
+
+```
+# Insert a function that prints a greeting, and execute it on the p1 object:
+
+class Person:
+def __init__(self, name, age):
+    self.name = name
+    self.age = age
+
+def myfunc(self):
+    print(&#34;Hello my name is &#34; + self.name)
+
+p1 = Person(&#34;John&#34;, 36)
+p1.myfunc()
+```
+Note: The self parameter is a reference to the current instance of the class, and is used to access variables that belong to the class.\n
+
+# The ```self``` Parameter\n
+The ```self``` parameter is a reference to the current instance of the class, and is used to access variables that belongs to the class.\n
+
+It does not have to be named ```self```, you can call it whatever you like, but it has to be the first parameter of any function in the class:\n
+
+```
+# Use the words mysillyobject and abc instead of self:
+
+class Person:
+def __init__(mysillyobject, name, age):
+    mysillyobject.name = name
+    mysillyobject.age = age
+
+def myfunc(abc):
+    print(&#34;Hello my name is &#34; + abc.name)
+
+p1 = Person(&#34;John&#34;, 36)
+p1.myfunc()
+```
+# Modify Object Properties\n
+You can modify properties on objects like this:\n
+
+```
+# Set the age of p1 to 40:
+
+p1.age = 40
+```
+# Delete Object Properties\n
+You can delete properties on objects by using the del keyword:\n
+
+```
+# Delete the age property from the p1 object:
+
+del p1.age
+```
+# Delete Objects\n
+You can delete objects by using the del keyword:\n
+
+```
+# Delete the p1 object:
+
+del p1
+```
+# The pass Statement\n
+```class``` definitions cannot be empty, but if you for some reason have a class definition with no content, put in the pass statement to avoid getting an error.\n
+
+```
+class Person:
+    pass
+```
+
+# Python Inheritance\n
+Inheritance allows us to define a class that inherits all the methods and properties from another class.\n
+
+```Parent class``` is the class being inherited from, also called base class.\n
+
+```Child class``` is the class that inherits from another class, also called derived class.\n
+Create a Parent Class\n
+Any class can be a parent class, so the syntax is the same as creating any other class:\n
+
+```
+# Create a class named Person, with firstname and lastname properties, and a printname method:
+
+class Person:
+def __init__(self, fname, lname):
+    self.firstname = fname
+    self.lastname = lname
+
+def printname(self):
+    print(self.firstname, self.lastname)
+
+#Use the Person class to create an object, and then execute the printname method:
+
+x = Person(&#34;John&#34;, &#34;Doe&#34;)
+x.printname()
+```
+# Create a Child Class\n
+To create a class that inherits the functionality from another class, send the parent class as a parameter when creating the child class:\n
+
+```
+# Create a class named Student, which will inherit the properties and methods from the Person class:
+
+class Student(Person):
+    pass
+```
+Note: Use the pass keyword when you do not want to add any other properties or methods to the class.\n
+
+Now the Student class has the same properties and methods as the Person class.\n
+
+```
+# Use the Student class to create an object, and then execute the printname method:
+
+x = Student(&#34;Mike&#34;, &#34;Olsen&#34;)
+x.printname()
+```
+# Add the ```__init__()``` Function\n
+So far we have created a child class that inherits the properties and methods from its parent.\n
+
+We want to add the ```__init__()``` function to the child class (instead of the pass keyword).\n
+
+Note: The ```__init__()``` function is called automatically every time the class is being used to create a new object.\n
+
+```
+# Add the __init__() function to the Student class:
+
+class Student(Person):
+    def __init__(self, fname, lname):
+        #add properties etc.
+```
+When you add the ```__init__()``` function, the child class will no longer inherit the parent&#39;s ```__init__()``` function.\n
+
+Note: The child&#39;s ```__init__()``` function overrides the inheritance of the parent&#39;s ```__init__()``` function.\n
+
+To keep the inheritance of the parent&#39;s ```__init__()``` function, add a call to the parent&#39;s ```__init__()``` function:\n
+
+```
+# class Student(Person):
+    def __init__(self, fname, lname):
+        Person.__init__(self, fname, lname)
+```
+Now we have successfully added the __init__() function, and kept the inheritance of the parent class, and we are ready to add functionality in the ``__init__()`` function.\n
+
+# Use the ```super()``` Function\n
+Python also has a ```super()``` function that will make the child class inherit all the methods and properties from its parent:\n
+
+```
+# class Student(Person):
+def __init__(self, fname, lname):
+    super().__init__(fname, lname)
+```
+By using the ```super()``` function, you do not have to use the name of the parent element, it will automatically inherit the methods and properties from its parent.\n
+
+# Add Properties\n
+```
+# Add a property called graduationyear to the Student class:
+
+class Student(Person):
+def __init__(self, fname, lname):
+    super().__init__(fname, lname)
+    self.graduationyear = 2019
+```
+In the example below, the year 2019 should be a variable, and passed into the Student class when creating student objects. To do so, add another parameter in the ```__init__()``` function:\n
+
+```
+# Add a year parameter, and pass the correct year when creating objects:
+
+class Student(Person):
+def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)
+    self.graduationyear = year
+
+x = Student(&#34;Mike&#34;, &#34;Olsen&#34;, 2019)
+```
+# Add Methods\n
+```
+# Add a method called welcome to the Student class:
+
+class Student(Person):
+def __init__(self, fname, lname, year):
+    super().__init__(fname, lname)
+    self.graduationyear = year
+
+def welcome(self):
+    print(&#34;Welcome&#34;, self.firstname, self.lastname, &#34;to the class of&#34;, self.graduationyear)
+```
+If you add a method in the child class with the same name as a function in the parent class, the inheritance of the parent method will be overridden.\n
+&#34;&#34;&#34;</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#python-classesobjects">Python Classes/Objects</a></li>
+<li><a href="#create-a-class">Create a Class</a></li>
+<li><a href="#create-object">Create Object</a></li>
+<li><a href="#the-__init__-function">The __init__() Function</a></li>
+<li><a href="#object-methods">Object Methods</a></li>
+<li><a href="#the-self-parameter">The self Parameter</a></li>
+<li><a href="#modify-object-properties">Modify Object Properties</a></li>
+<li><a href="#delete-object-properties">Delete Object Properties</a></li>
+<li><a href="#delete-objects">Delete Objects</a></li>
+<li><a href="#the-pass-statement">The pass Statement</a></li>
+<li><a href="#python-inheritance">Python Inheritance</a></li>
+<li><a href="#create-a-child-class">Create a Child Class</a></li>
+<li><a href="#add-the-__init__-function">Add the __init__() Function</a></li>
+<li><a href="#use-the-super-function">Use the super() Function</a></li>
+<li><a href="#add-properties">Add Properties</a></li>
+<li><a href="#add-methods">Add Methods</a></li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ds.chunk_5" href="index.html">ds.chunk_5</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc"><cite>pdoc</cite> 0.9.2</a>.</p>
+</footer>
+</body>
+</html>
