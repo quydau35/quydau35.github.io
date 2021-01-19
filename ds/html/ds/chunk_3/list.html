@@ -23,405 +23,15 @@
 </header>
 <section id="section-intro">
 <p>Lists are used to store multiple items in a single variable.</p>
-<<<<<<< HEAD
-<p>Lists are one of 4 built-in data types in Python used to store collections of data, the other 3 are Tuple, Set, and Dictionary, all with different qualities and usage.</p>
-=======
 <p><code>Lists</code> are one of 4 built-in data types in Python used to store collections of data, the other 3 are <code>Tuple</code>, <code>Set</code>, and <code>Dictionary</code>, all with different qualities and usage.</p>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 <p>There are four collection data types in the Python programming language:</p>
 <p>List is a collection which is ordered and changeable. Allows duplicate members.</p>
 <p>Tuple is a collection which is ordered and unchangeable. Allows duplicate members.</p>
 <p>Set is a collection which is unordered and unindexed. No duplicate members.</p>
 <p>Dictionary is a collection which is unordered and changeable. No duplicate members.</p>
 <p>When choosing a collection type, it is useful to understand the properties of that type. Choosing the right type for a particular data set could mean retention of meaning, and, it could mean an increase in efficiency or security.</p>
-<<<<<<< HEAD
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">&#34;&#34;&#34;
-Lists are used to store multiple items in a single variable.\n
-Lists are one of 4 built-in data types in Python used to store collections of data, the other 3 are Tuple, Set, and Dictionary, all with different qualities and usage.\n
-There are four collection data types in the Python programming language:\n
-
-List is a collection which is ordered and changeable. Allows duplicate members.\n
-Tuple is a collection which is ordered and unchangeable. Allows duplicate members.\n
-Set is a collection which is unordered and unindexed. No duplicate members.\n
-Dictionary is a collection which is unordered and changeable. No duplicate members.\n
-When choosing a collection type, it is useful to understand the properties of that type. Choosing the right type for a particular data set could mean retention of meaning, and, it could mean an increase in efficiency or security.\n
-&#34;&#34;&#34;
-
-def m1_list_initiation():
-    &#34;&#34;&#34;
-    Create a List:\n
-    ```
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    print(thislist)
-    ```
-
-    List items are ordered, changeable, and allow duplicate values.\n
-    List items are indexed, the first item has index ```[0]```, the second item has index ``[1]`` etc \n
-
-    When we say that lists are ordered, it means that the items have a defined order, and that order will not change.\n
-    If you add new items to a list, the new items will be placed at the end of the list.\n
-
-    The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.\n
-
-    Since lists are indexed, lists can have items with the same value:\n
-    ```
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;, &#34;cherry&#34;]
-    print(thislist)
-    ```
-
-    To determine how many items a list has, use the ```len()``` function:\n
-    ```
-    # Print the number of items in the list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    print(len(thislist))
-    ```
-
-    List items can be of any data type:\n
-    ```
-    String, int and boolean data types:
-    list1 = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    list2 = [1, 5, 7, 9, 3]
-    list3 = [True, False, False]
-    ```
-    A list can contain different data types:\n
-    ```
-    # A list with strings, integers and boolean values:
-    list1 = [&#34;abc&#34;, 34, True, 40, &#34;male&#34;]
-    ```
-
-    From Python&#39;s perspective, lists are defined as objects with the data type &#39;list&#39;:\n
-    ```
-    &lt;class &#39;list&#39;&gt;
-    ```
-
-    The ```list()``` Constructor
-    ```
-    # Using the list() constructor to make a List:
-    thislist = list((&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)) # note the double round-brackets
-    print(thislist)
-    ```
-    &#34;&#34;&#34;
-
-def m2_access_list_items():
-    &#34;&#34;&#34;
-    Print the second item of the list:\n
-    ```
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    print(thislist[1])
-    ```
-    Negative indexing means start from the end ```-1``` refers to the last item, ```-2``` refers to the second last item etc.\n
-
-    You can specify a range of indexes by specifying where to start and where to end the range.\n
-    When specifying a range, the return value will be a new list with the specified items.\n
-    ```
-    # Return the third, fourth, and fifth item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;]
-    print(thislist[2:5])
-    ```
-    Note: The search will start at index 2 (included) and end at index 5 (not included).\n
-    Remember that the first item has index 0.\n
-    By leaving out the start value, the range will start at the first item:\n
-    ```
-    # This example returns the items from the beginning to, but NOT including, &#34;kiwi&#34;:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;]
-    print(thislist[:4])
-    ```
-    By leaving out the end value, the range will go on to the end of the list:\n
-    ```
-    # This example returns the items from &#34;cherry&#34; to the end:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;]
-    print(thislist[2:])
-    ```
-    Range of Negative Indexes:\n
-    ```
-    # This example returns the items from &#34;orange&#34; (-4) to, but NOT including &#34;mango&#34; (-1):
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;]
-    print(thislist[-4:-1])
-    ```
-    To determine if a specified item is present in a list use the ```in``` keyword:\n
-    ```
-    # Check if &#34;apple&#34; is present in the list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    if &#34;apple&#34; in thislist:
-        print(&#34;Yes, &#39;apple&#39; is in the fruits list&#34;)
-    ```
-    &#34;&#34;&#34;
-
-def m3_change_list_item():
-    &#34;&#34;&#34;
-    To change the value of a specific item, refer to the index number:\n
-    ```
-    # Change the second item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist[1] = &#34;blackcurrant&#34;
-    print(thislist)
-    ```
-    To change the value of items within a specific range, define a list with the new values, and refer to the range of index numbers where you want to insert the new values:\n
-    ```
-    # Change the values &#34;banana&#34; and &#34;cherry&#34; with the values &#34;blackcurrant&#34; and &#34;watermelon&#34;:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;mango&#34;]
-    thislist[1:3] = [&#34;blackcurrant&#34;, &#34;watermelon&#34;]
-    print(thislist)
-    ```
-    If you insert more items than you replace, the new items will be inserted where you specified, and the remaining items will move accordingly:\n
-    ```
-    # Change the second value by replacing it with two new values:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist[1:2] = [&#34;blackcurrant&#34;, &#34;watermelon&#34;]
-    print(thislist)
-    ```
-    Note: The length of the list will change when the number of items inserted does not match the number of items replaced.\n
-    If you insert less items than you replace, the new items will be inserted where you specified, and the remaining items will move accordingly:\n
-    ```
-    # Change the second and third value by replacing it with one value:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist[1:3] = [&#34;watermelon&#34;]
-    print(thislist)
-    ```
-
-    To insert a new list item, without replacing any of the existing values, we can use the ```insert()``` method.\n
-    The ```insert()``` method inserts an item at the specified index:\n
-    ```
-    Insert &#34;watermelon&#34; as the third item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.insert(2, &#34;watermelon&#34;)
-    print(thislist)
-    ```
-    Note: As a result of the example above, the list will now contain 4 items.\n
-    &#34;&#34;&#34;
-
-def m4_add_list_items():
-    &#34;&#34;&#34;
-    Append Items\n
-    To add an item to the end of the list, use the ```append()``` method:\n
-    ```
-    # Using the append() method to append an item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.append(&#34;orange&#34;)
-    print(thislist)
-    ```
-    Insert Items\n
-    To insert a list item at a specified index, use the ```insert()``` method.\n
-    The ```insert()``` method inserts an item at the specified index:\n
-    ```
-    # Insert an item as the second position:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.insert(1, &#34;orange&#34;)
-    print(thislist)
-    ```
-    Note: As a result of the examples above, the lists will now contain 4 items.\n
-    Extend List\n
-    To append elements from another list to the current list, use the ```extend()``` method.\n
-    ```
-    # Add the elements of tropical to thislist:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    tropical = [&#34;mango&#34;, &#34;pineapple&#34;, &#34;papaya&#34;]
-    thislist.extend(tropical)
-    print(thislist)
-    ```
-    The elements will be added to the end of the list.\n
-    Add Any Iterable\n
-    The ```extend()``` method does not have to append lists, you can add any iterable object (```tuples```, ```sets```, ```dictionaries``` etc.).\n
-    ```
-    # Add elements of a tuple to a list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thistuple = (&#34;kiwi&#34;, &#34;orange&#34;)
-    thislist.extend(thistuple)
-    print(thislist)
-    ```
-    &#34;&#34;&#34;
-
-def m5_remove_list_items():
-    &#34;&#34;&#34;
-    Remove Specified Item
-    The ```remove()``` method removes the specified item.\n
-    ```
-    # Remove &#34;banana&#34;:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.remove(&#34;banana&#34;)
-    print(thislist)
-    ```
-    Remove Specified Index\n
-    The ```pop()``` method removes the specified index.\n
-    ```
-    # Remove the second item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.pop(1)
-    print(thislist)
-    ```
-    If you do not specify the index, the ```pop()``` method removes the last item.\n
-    ```
-    # Remove the last item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.pop()
-    print(thislist)
-    ```
-    The ```del``` keyword also removes the specified index:\n
-    ```
-    # Remove the first item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    del thislist[0]
-    print(thislist)
-    ```
-    The ```del``` keyword can also delete the list completely.\n
-    ```
-    # Delete the entire list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    del thislist
-    ```
-    Clear the List\n
-    The ```clear()``` method empties the list.\n
-    The list still remains, but it has no content.\n
-    ```
-    # Clear the list content:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.clear()
-    print(thislist)
-    ```
-    &#34;&#34;&#34;
-
-def m6_loop_lists():
-    &#34;&#34;&#34;
-    Loop Through a List\n
-    You can loop through the list items by using a ```for``` loop:\n
-    ```
-    # Print all items in the list, one by one:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    for x in thislist:
-    print(x)
-    ```
-    Learn more about ```for``` loops in Python ```For``` Loops Chapter.\n
-    Loop Through the Index Numbers\n
-    You can also loop through the list items by referring to their index number.\n
-    Use the ```range()``` and ```len()``` functions to create a suitable iterable.\n
-    ```
-    # Print all items by referring to their index number:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    for i in range(len(thislist)):
-    print(thislist[i])
-    ```
-    The iterable created in the example above is ```[0, 1, 2]```.\n
-
-    Using a While Loop\n
-    You can loop through the list items by using a ```while``` loop.\n
-
-    Use the ```len()``` function to determine the length of the list, then start at 0 and loop your way through the list items by refering to their indexes.\n
-
-    Remember to increase the index by 1 after each iteration.\n
-    ```
-    # Print all items, using a while loop to go through all the index numbers
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    i = 0
-    while i &lt; len(thislist):
-        print(thislist[i])
-        i = i + 1
-    ```
-    Learn more about ```while``` loops in Python ```While``` Loops Chapter.\n
-
-    Looping Using List Comprehension\n
-    List Comprehension offers the shortest syntax for looping through lists:\n
-    ```
-    # A short hand for loop that will print all items in a list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    [print(x) for x in thislist]
-    ```
-    &#34;&#34;&#34;
-
-def m7_list_comprehension():
-    &#34;&#34;&#34;
-    List Comprehension\n
-    List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.\n
-    Example:\n
-    Based on a list of fruits, you want a new list, containing only the fruits with the letter &#34;a&#34; in the name.\n
-    Without list comprehension you will have to write a for statement with a conditional test inside:\n
-    ```
-    fruits = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;kiwi&#34;, &#34;mango&#34;]
-    newlist = []
-
-    for x in fruits:
-    if &#34;a&#34; in x:
-        newlist.append(x)
-
-    print(newlist)
-    ```
-    With list comprehension you can do all that with only one line of code:\n
-    ```
-    fruits = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;kiwi&#34;, &#34;mango&#34;]
-    newlist = [x for x in fruits if &#34;a&#34; in x]
-    print(newlist)
-    ```
-    The Syntax\n
-    ```
-    newlist = [expression for item in iterable if condition == True]
-    ```
-    The return value is a new list, leaving the old list unchanged.\n
-
-    Condition\n
-    The condition is like a filter that only accepts the items that valuate to ```True```.\n
-    ```
-    # Only accept items that are not &#34;apple&#34;:
-    newlist = [x for x in fruits if x != &#34;apple&#34;]
-    ```
-    The condition ```if x != &#34;apple&#34;``` will return ```True``` for all elements other than &#34;apple&#34;, making the new list contain all fruits except &#34;apple&#34;.\n
-
-    The condition is optional and can be omitted:\n
-    ```
-    # With no if statement:
-    newlist = [x for x in fruits]
-    ```
-    Iterable\n
-    The iterable can be any iterable object, like a list, tuple, set etc.\n
-    ```
-    # You can use the range() function to create an iterable:
-    newlist = [x for x in range(10)]
-    ```
-    Same example, but with a condition:\n
-    ```
-    # Accept only numbers lower than 5:
-    newlist = [x for x in range(10) if x &lt; 5]
-    ```
-    Expression\n
-    The expression is the current item in the iteration, but it is also the outcome, which you can manipulate before it ends up like a list item in the new list:\n
-    ```
-    # Set the values in the new list to upper case:
-    newlist = [x.upper() for x in fruits]
-    ```
-    You can set the outcome to whatever you like:\n
-    ```
-    # Set all values in the new list to &#39;hello&#39;:
-    newlist = [&#39;hello&#39; for x in fruits]
-    ```
-    The expression can also contain conditions, not like a filter, but as a way to manipulate the outcome:\n
-    ```
-    # Return &#34;orange&#34; instead of &#34;banana&#34;:
-    newlist = [x if x != &#34;banana&#34; else &#34;orange&#34; for x in fruits]
-    ```
-    The expression in the example above says:\n
-
-    &#34;Return the item if is not banana, if it is banana return orange&#34;.\n
-    &#34;&#34;&#34;</code></pre>
-</details>
-</section>
-<section>
-</section>
-<section>
-</section>
-<section>
-<h2 class="section-title" id="header-functions">Functions</h2>
-<dl>
-<dt id="ds.chunk_3.list.m1_list_initiation"><code class="name flex">
-<span>def <span class="ident">m1_list_initiation</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Create a List:</p>
-=======
 <h1 id="list-initiation">List initiation</h1>
 <p>Create a List:</p>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 <pre><code>thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
 print(thislist)
 </code></pre>
@@ -456,78 +66,9 @@ list1 = [&quot;abc&quot;, 34, True, 40, &quot;male&quot;]
 <pre><code># Using the list() constructor to make a List:
 thislist = list((&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;)) # note the double round-brackets
 print(thislist)
-<<<<<<< HEAD
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m1_list_initiation():
-    &#34;&#34;&#34;
-    Create a List:\n
-    ```
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    print(thislist)
-    ```
-
-    List items are ordered, changeable, and allow duplicate values.\n
-    List items are indexed, the first item has index ```[0]```, the second item has index ``[1]`` etc \n
-
-    When we say that lists are ordered, it means that the items have a defined order, and that order will not change.\n
-    If you add new items to a list, the new items will be placed at the end of the list.\n
-
-    The list is changeable, meaning that we can change, add, and remove items in a list after it has been created.\n
-
-    Since lists are indexed, lists can have items with the same value:\n
-    ```
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;apple&#34;, &#34;cherry&#34;]
-    print(thislist)
-    ```
-
-    To determine how many items a list has, use the ```len()``` function:\n
-    ```
-    # Print the number of items in the list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    print(len(thislist))
-    ```
-
-    List items can be of any data type:\n
-    ```
-    String, int and boolean data types:
-    list1 = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    list2 = [1, 5, 7, 9, 3]
-    list3 = [True, False, False]
-    ```
-    A list can contain different data types:\n
-    ```
-    # A list with strings, integers and boolean values:
-    list1 = [&#34;abc&#34;, 34, True, 40, &#34;male&#34;]
-    ```
-
-    From Python&#39;s perspective, lists are defined as objects with the data type &#39;list&#39;:\n
-    ```
-    &lt;class &#39;list&#39;&gt;
-    ```
-
-    The ```list()``` Constructor
-    ```
-    # Using the list() constructor to make a List:
-    thislist = list((&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;)) # note the double round-brackets
-    print(thislist)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.list.m2_access_list_items"><code class="name flex">
-<span>def <span class="ident">m2_access_list_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Print the second item of the list:</p>
-=======
 </code></pre>
 <h1 id="access-list-items">Access List Items</h1>
 <p>Print the second item of the list:</p>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 <pre><code>thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
 print(thislist[1])
 </code></pre>
@@ -560,68 +101,9 @@ print(thislist[-4:-1])
 thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
 if &quot;apple&quot; in thislist:
     print(&quot;Yes, 'apple' is in the fruits list&quot;)
-<<<<<<< HEAD
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m2_access_list_items():
-    &#34;&#34;&#34;
-    Print the second item of the list:\n
-    ```
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    print(thislist[1])
-    ```
-    Negative indexing means start from the end ```-1``` refers to the last item, ```-2``` refers to the second last item etc.\n
-
-    You can specify a range of indexes by specifying where to start and where to end the range.\n
-    When specifying a range, the return value will be a new list with the specified items.\n
-    ```
-    # Return the third, fourth, and fifth item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;]
-    print(thislist[2:5])
-    ```
-    Note: The search will start at index 2 (included) and end at index 5 (not included).\n
-    Remember that the first item has index 0.\n
-    By leaving out the start value, the range will start at the first item:\n
-    ```
-    # This example returns the items from the beginning to, but NOT including, &#34;kiwi&#34;:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;]
-    print(thislist[:4])
-    ```
-    By leaving out the end value, the range will go on to the end of the list:\n
-    ```
-    # This example returns the items from &#34;cherry&#34; to the end:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;]
-    print(thislist[2:])
-    ```
-    Range of Negative Indexes:\n
-    ```
-    # This example returns the items from &#34;orange&#34; (-4) to, but NOT including &#34;mango&#34; (-1):
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;melon&#34;, &#34;mango&#34;]
-    print(thislist[-4:-1])
-    ```
-    To determine if a specified item is present in a list use the ```in``` keyword:\n
-    ```
-    # Check if &#34;apple&#34; is present in the list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    if &#34;apple&#34; in thislist:
-        print(&#34;Yes, &#39;apple&#39; is in the fruits list&#34;)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.list.m3_change_list_item"><code class="name flex">
-<span>def <span class="ident">m3_change_list_item</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>To change the value of a specific item, refer to the index number:</p>
-=======
 </code></pre>
 <h1 id="change-list-items">Change list Items</h1>
 <p>To change the value of a specific item, refer to the index number:</p>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 <pre><code># Change the second item:
 thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
 thislist[1] = &quot;blackcurrant&quot;
@@ -653,66 +135,9 @@ thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
 thislist.insert(2, &quot;watermelon&quot;)
 print(thislist)
 </code></pre>
-<<<<<<< HEAD
-<p>Note: As a result of the example above, the list will now contain 4 items.</p></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m3_change_list_item():
-    &#34;&#34;&#34;
-    To change the value of a specific item, refer to the index number:\n
-    ```
-    # Change the second item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist[1] = &#34;blackcurrant&#34;
-    print(thislist)
-    ```
-    To change the value of items within a specific range, define a list with the new values, and refer to the range of index numbers where you want to insert the new values:\n
-    ```
-    # Change the values &#34;banana&#34; and &#34;cherry&#34; with the values &#34;blackcurrant&#34; and &#34;watermelon&#34;:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;orange&#34;, &#34;kiwi&#34;, &#34;mango&#34;]
-    thislist[1:3] = [&#34;blackcurrant&#34;, &#34;watermelon&#34;]
-    print(thislist)
-    ```
-    If you insert more items than you replace, the new items will be inserted where you specified, and the remaining items will move accordingly:\n
-    ```
-    # Change the second value by replacing it with two new values:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist[1:2] = [&#34;blackcurrant&#34;, &#34;watermelon&#34;]
-    print(thislist)
-    ```
-    Note: The length of the list will change when the number of items inserted does not match the number of items replaced.\n
-    If you insert less items than you replace, the new items will be inserted where you specified, and the remaining items will move accordingly:\n
-    ```
-    # Change the second and third value by replacing it with one value:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist[1:3] = [&#34;watermelon&#34;]
-    print(thislist)
-    ```
-
-    To insert a new list item, without replacing any of the existing values, we can use the ```insert()``` method.\n
-    The ```insert()``` method inserts an item at the specified index:\n
-    ```
-    Insert &#34;watermelon&#34; as the third item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.insert(2, &#34;watermelon&#34;)
-    print(thislist)
-    ```
-    Note: As a result of the example above, the list will now contain 4 items.\n
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.list.m4_add_list_items"><code class="name flex">
-<span>def <span class="ident">m4_add_list_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Append Items</p>
-=======
 <p>Note: As a result of the example above, the list will now contain 4 items.</p>
 <h1 id="add-list-items">Add list Items</h1>
 <p>Append Items</p>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 <p>To add an item to the end of the list, use the <code>append()</code> method:</p>
 <pre><code># Using the append() method to append an item:
 thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
@@ -744,64 +169,9 @@ thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
 thistuple = (&quot;kiwi&quot;, &quot;orange&quot;)
 thislist.extend(thistuple)
 print(thislist)
-<<<<<<< HEAD
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m4_add_list_items():
-    &#34;&#34;&#34;
-    Append Items\n
-    To add an item to the end of the list, use the ```append()``` method:\n
-    ```
-    # Using the append() method to append an item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.append(&#34;orange&#34;)
-    print(thislist)
-    ```
-    Insert Items\n
-    To insert a list item at a specified index, use the ```insert()``` method.\n
-    The ```insert()``` method inserts an item at the specified index:\n
-    ```
-    # Insert an item as the second position:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.insert(1, &#34;orange&#34;)
-    print(thislist)
-    ```
-    Note: As a result of the examples above, the lists will now contain 4 items.\n
-    Extend List\n
-    To append elements from another list to the current list, use the ```extend()``` method.\n
-    ```
-    # Add the elements of tropical to thislist:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    tropical = [&#34;mango&#34;, &#34;pineapple&#34;, &#34;papaya&#34;]
-    thislist.extend(tropical)
-    print(thislist)
-    ```
-    The elements will be added to the end of the list.\n
-    Add Any Iterable\n
-    The ```extend()``` method does not have to append lists, you can add any iterable object (```tuples```, ```sets```, ```dictionaries``` etc.).\n
-    ```
-    # Add elements of a tuple to a list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thistuple = (&#34;kiwi&#34;, &#34;orange&#34;)
-    thislist.extend(thistuple)
-    print(thislist)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.list.m5_remove_list_items"><code class="name flex">
-<span>def <span class="ident">m5_remove_list_items</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Remove Specified Item
-=======
 </code></pre>
 <h1 id="remove-list-items">Remove list items</h1>
 <p>Remove Specified Item
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 The <code>remove()</code> method removes the specified item.</p>
 <pre><code># Remove &quot;banana&quot;:
 thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
@@ -839,72 +209,9 @@ del thislist
 thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
 thislist.clear()
 print(thislist)
-<<<<<<< HEAD
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m5_remove_list_items():
-    &#34;&#34;&#34;
-    Remove Specified Item
-    The ```remove()``` method removes the specified item.\n
-    ```
-    # Remove &#34;banana&#34;:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.remove(&#34;banana&#34;)
-    print(thislist)
-    ```
-    Remove Specified Index\n
-    The ```pop()``` method removes the specified index.\n
-    ```
-    # Remove the second item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.pop(1)
-    print(thislist)
-    ```
-    If you do not specify the index, the ```pop()``` method removes the last item.\n
-    ```
-    # Remove the last item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.pop()
-    print(thislist)
-    ```
-    The ```del``` keyword also removes the specified index:\n
-    ```
-    # Remove the first item:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    del thislist[0]
-    print(thislist)
-    ```
-    The ```del``` keyword can also delete the list completely.\n
-    ```
-    # Delete the entire list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    del thislist
-    ```
-    Clear the List\n
-    The ```clear()``` method empties the list.\n
-    The list still remains, but it has no content.\n
-    ```
-    # Clear the list content:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    thislist.clear()
-    print(thislist)
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.list.m6_loop_lists"><code class="name flex">
-<span>def <span class="ident">m6_loop_lists</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>Loop Through a List</p>
-=======
 </code></pre>
 <h1 id="loop-through-list-items">Loop through list items</h1>
 <p>Loop Through a List</p>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 <p>You can loop through the list items by using a <code>for</code> loop:</p>
 <pre><code># Print all items in the list, one by one:
 thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
@@ -938,69 +245,8 @@ while i &lt; len(thislist):
 <pre><code># A short hand for loop that will print all items in a list:
 thislist = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]
 [print(x) for x in thislist]
-<<<<<<< HEAD
-</code></pre></div>
-<details class="source">
-<summary>
-<span>Expand source code</span>
-</summary>
-<pre><code class="python">def m6_loop_lists():
-    &#34;&#34;&#34;
-    Loop Through a List\n
-    You can loop through the list items by using a ```for``` loop:\n
-    ```
-    # Print all items in the list, one by one:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    for x in thislist:
-    print(x)
-    ```
-    Learn more about ```for``` loops in Python ```For``` Loops Chapter.\n
-    Loop Through the Index Numbers\n
-    You can also loop through the list items by referring to their index number.\n
-    Use the ```range()``` and ```len()``` functions to create a suitable iterable.\n
-    ```
-    # Print all items by referring to their index number:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    for i in range(len(thislist)):
-    print(thislist[i])
-    ```
-    The iterable created in the example above is ```[0, 1, 2]```.\n
-
-    Using a While Loop\n
-    You can loop through the list items by using a ```while``` loop.\n
-
-    Use the ```len()``` function to determine the length of the list, then start at 0 and loop your way through the list items by refering to their indexes.\n
-
-    Remember to increase the index by 1 after each iteration.\n
-    ```
-    # Print all items, using a while loop to go through all the index numbers
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    i = 0
-    while i &lt; len(thislist):
-        print(thislist[i])
-        i = i + 1
-    ```
-    Learn more about ```while``` loops in Python ```While``` Loops Chapter.\n
-
-    Looping Using List Comprehension\n
-    List Comprehension offers the shortest syntax for looping through lists:\n
-    ```
-    # A short hand for loop that will print all items in a list:
-    thislist = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;]
-    [print(x) for x in thislist]
-    ```
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-<dt id="ds.chunk_3.list.m7_list_comprehension"><code class="name flex">
-<span>def <span class="ident">m7_list_comprehension</span></span>(<span>)</span>
-</code></dt>
-<dd>
-<div class="desc"><p>List Comprehension</p>
-=======
 </code></pre>
 <h1 id="list-comprehension">List Comprehension</h1>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 <p>List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.</p>
 <p>Example:</p>
 <p>Based on a list of fruits, you want a new list, containing only the fruits with the letter "a" in the name.</p>
@@ -1056,9 +302,6 @@ newlist = ['hello' for x in fruits]
 newlist = [x if x != &quot;banana&quot; else &quot;orange&quot; for x in fruits]
 </code></pre>
 <p>The expression in the example above says:</p>
-<<<<<<< HEAD
-<p>"Return the item if is not banana, if it is banana return orange".</p></div>
-=======
 <p>"Return the item if is not banana, if it is banana return orange".</p>
 <h1 id="sort-list-alphanumerically">Sort List Alphanumerically</h1>
 <p>List objects have a <code>sort()</code> method that will sort the list alphanumerically, ascending, by default:</p>
@@ -1174,89 +417,10 @@ remove()        Removes the item with the specified value
 reverse()       Reverses the order of the list
 sort()          Sorts the list
 </code></pre>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 <details class="source">
 <summary>
 <span>Expand source code</span>
 </summary>
-<<<<<<< HEAD
-<pre><code class="python">def m7_list_comprehension():
-    &#34;&#34;&#34;
-    List Comprehension\n
-    List comprehension offers a shorter syntax when you want to create a new list based on the values of an existing list.\n
-    Example:\n
-    Based on a list of fruits, you want a new list, containing only the fruits with the letter &#34;a&#34; in the name.\n
-    Without list comprehension you will have to write a for statement with a conditional test inside:\n
-    ```
-    fruits = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;kiwi&#34;, &#34;mango&#34;]
-    newlist = []
-
-    for x in fruits:
-    if &#34;a&#34; in x:
-        newlist.append(x)
-
-    print(newlist)
-    ```
-    With list comprehension you can do all that with only one line of code:\n
-    ```
-    fruits = [&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;kiwi&#34;, &#34;mango&#34;]
-    newlist = [x for x in fruits if &#34;a&#34; in x]
-    print(newlist)
-    ```
-    The Syntax\n
-    ```
-    newlist = [expression for item in iterable if condition == True]
-    ```
-    The return value is a new list, leaving the old list unchanged.\n
-
-    Condition\n
-    The condition is like a filter that only accepts the items that valuate to ```True```.\n
-    ```
-    # Only accept items that are not &#34;apple&#34;:
-    newlist = [x for x in fruits if x != &#34;apple&#34;]
-    ```
-    The condition ```if x != &#34;apple&#34;``` will return ```True``` for all elements other than &#34;apple&#34;, making the new list contain all fruits except &#34;apple&#34;.\n
-
-    The condition is optional and can be omitted:\n
-    ```
-    # With no if statement:
-    newlist = [x for x in fruits]
-    ```
-    Iterable\n
-    The iterable can be any iterable object, like a list, tuple, set etc.\n
-    ```
-    # You can use the range() function to create an iterable:
-    newlist = [x for x in range(10)]
-    ```
-    Same example, but with a condition:\n
-    ```
-    # Accept only numbers lower than 5:
-    newlist = [x for x in range(10) if x &lt; 5]
-    ```
-    Expression\n
-    The expression is the current item in the iteration, but it is also the outcome, which you can manipulate before it ends up like a list item in the new list:\n
-    ```
-    # Set the values in the new list to upper case:
-    newlist = [x.upper() for x in fruits]
-    ```
-    You can set the outcome to whatever you like:\n
-    ```
-    # Set all values in the new list to &#39;hello&#39;:
-    newlist = [&#39;hello&#39; for x in fruits]
-    ```
-    The expression can also contain conditions, not like a filter, but as a way to manipulate the outcome:\n
-    ```
-    # Return &#34;orange&#34; instead of &#34;banana&#34;:
-    newlist = [x if x != &#34;banana&#34; else &#34;orange&#34; for x in fruits]
-    ```
-    The expression in the example above says:\n
-
-    &#34;Return the item if is not banana, if it is banana return orange&#34;.\n
-    &#34;&#34;&#34;</code></pre>
-</details>
-</dd>
-</dl>
-=======
 <pre><code class="python">&#34;&#34;&#34;
 Lists are used to store multiple items in a single variable.\n
 ```Lists``` are one of 4 built-in data types in Python used to store collections of data, the other 3 are ```Tuple```, ```Set```, and ```Dictionary```, all with different qualities and usage.\n
@@ -1744,7 +908,6 @@ sort()          Sorts the list
 <section>
 </section>
 <section>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 </section>
 <section>
 </section>
@@ -1752,9 +915,6 @@ sort()          Sorts the list
 <nav id="sidebar">
 <h1>Index</h1>
 <div class="toc">
-<<<<<<< HEAD
-<ul></ul>
-=======
 <ul>
 <li><a href="#list-initiation">List initiation</a></li>
 <li><a href="#access-list-items">Access List Items</a></li>
@@ -1768,7 +928,6 @@ sort()          Sorts the list
 <li><a href="#join-two-lists">Join Two Lists</a></li>
 <li><a href="#list-methods">List Methods</a></li>
 </ul>
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 </div>
 <ul id="index">
 <li><h3>Super-module</h3>
@@ -1776,20 +935,6 @@ sort()          Sorts the list
 <li><code><a title="ds.chunk_3" href="index.html">ds.chunk_3</a></code></li>
 </ul>
 </li>
-<<<<<<< HEAD
-<li><h3><a href="#header-functions">Functions</a></h3>
-<ul class="">
-<li><code><a title="ds.chunk_3.list.m1_list_initiation" href="#ds.chunk_3.list.m1_list_initiation">m1_list_initiation</a></code></li>
-<li><code><a title="ds.chunk_3.list.m2_access_list_items" href="#ds.chunk_3.list.m2_access_list_items">m2_access_list_items</a></code></li>
-<li><code><a title="ds.chunk_3.list.m3_change_list_item" href="#ds.chunk_3.list.m3_change_list_item">m3_change_list_item</a></code></li>
-<li><code><a title="ds.chunk_3.list.m4_add_list_items" href="#ds.chunk_3.list.m4_add_list_items">m4_add_list_items</a></code></li>
-<li><code><a title="ds.chunk_3.list.m5_remove_list_items" href="#ds.chunk_3.list.m5_remove_list_items">m5_remove_list_items</a></code></li>
-<li><code><a title="ds.chunk_3.list.m6_loop_lists" href="#ds.chunk_3.list.m6_loop_lists">m6_loop_lists</a></code></li>
-<li><code><a title="ds.chunk_3.list.m7_list_comprehension" href="#ds.chunk_3.list.m7_list_comprehension">m7_list_comprehension</a></code></li>
-</ul>
-</li>
-=======
->>>>>>> edd7e647ccd56854d175f33b548312c84e4fed8b
 </ul>
 </nav>
 </main>
