@@ -37,9 +37,9 @@ Use the ```__init__()``` function to assign values to object properties, or othe
 # Create a class named Person, use the __init__() function to assign values for name and age:
 
 class Person:
-def __init__(self, name, age):
-    self.name = name
-    self.age = age
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
 p1 = Person("John", 36)
 
@@ -57,12 +57,12 @@ Let us create a method in the Person class:\n
 # Insert a function that prints a greeting, and execute it on the p1 object:
 
 class Person:
-def __init__(self, name, age):
-    self.name = name
-    self.age = age
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-def myfunc(self):
-    print("Hello my name is " + self.name)
+    def myfunc(self):
+        print("Hello my name is " + self.name)
 
 p1 = Person("John", 36)
 p1.myfunc()
@@ -78,12 +78,12 @@ It does not have to be named ```self```, you can call it whatever you like, but 
 # Use the words mysillyobject and abc instead of self:
 
 class Person:
-def __init__(mysillyobject, name, age):
-    mysillyobject.name = name
-    mysillyobject.age = age
+    def __init__(mysillyobject, name, age):
+        mysillyobject.name = name
+        mysillyobject.age = age
 
-def myfunc(abc):
-    print("Hello my name is " + abc.name)
+    def myfunc(abc):
+        print("Hello my name is " + abc.name)
 
 p1 = Person("John", 36)
 p1.myfunc()
@@ -133,12 +133,12 @@ Any class can be a parent class, so the syntax is the same as creating any other
 # Create a class named Person, with firstname and lastname properties, and a printname method:
 
 class Person:
-def __init__(self, fname, lname):
-    self.firstname = fname
-    self.lastname = lname
+    def __init__(self, fname, lname):
+        self.firstname = fname
+        self.lastname = lname
 
-def printname(self):
-    print(self.firstname, self.lastname)
+    def printname(self):
+        print(self.firstname, self.lastname)
 
 #Use the Person class to create an object, and then execute the printname method:
 
@@ -195,9 +195,9 @@ Now we have successfully added the __init__() function, and kept the inheritance
 Python also has a ```super()``` function that will make the child class inherit all the methods and properties from its parent:\n
 
 ```
-# class Student(Person):
-def __init__(self, fname, lname):
-    super().__init__(fname, lname)
+class Student(Person):
+    def __init__(self, fname, lname):
+        super().__init__(fname, lname)
 ```
 By using the ```super()``` function, you do not have to use the name of the parent element, it will automatically inherit the methods and properties from its parent.\n
 
@@ -206,9 +206,9 @@ By using the ```super()``` function, you do not have to use the name of the pare
 # Add a property called graduationyear to the Student class:
 
 class Student(Person):
-def __init__(self, fname, lname):
-    super().__init__(fname, lname)
-    self.graduationyear = 2019
+    def __init__(self, fname, lname):
+        super().__init__(fname, lname)
+        self.graduationyear = 2019
 ```
 In the example below, the year 2019 should be a variable, and passed into the Student class when creating student objects. To do so, add another parameter in the ```__init__()``` function:\n
 
@@ -216,9 +216,9 @@ In the example below, the year 2019 should be a variable, and passed into the St
 # Add a year parameter, and pass the correct year when creating objects:
 
 class Student(Person):
-def __init__(self, fname, lname, year):
-    super().__init__(fname, lname)
-    self.graduationyear = year
+    def __init__(self, fname, lname, year):
+        super().__init__(fname, lname)
+        self.graduationyear = year
 
 x = Student("Mike", "Olsen", 2019)
 ```
@@ -227,12 +227,12 @@ x = Student("Mike", "Olsen", 2019)
 # Add a method called welcome to the Student class:
 
 class Student(Person):
-def __init__(self, fname, lname, year):
-    super().__init__(fname, lname)
-    self.graduationyear = year
+    def __init__(self, fname, lname, year):
+        super().__init__(fname, lname)
+        self.graduationyear = year
 
-def welcome(self):
-    print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear)
+    def welcome(self):
+        print("Welcome", self.firstname, self.lastname, "to the class of", self.graduationyear)
 ```
 If you add a method in the child class with the same name as a function in the parent class, the inheritance of the parent method will be overridden.\n
 """
