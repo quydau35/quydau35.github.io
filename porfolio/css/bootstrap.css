@@ -6578,7 +6578,8 @@ button.bg-dark:hover {
 
 .d-flex {
     display: -ms-flexbox !important;
-    display: flex !important
+    display: flex !important;
+    max-width: 260px;
 }
 
 .d-inline-flex {
