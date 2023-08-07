@@ -222,6 +222,7 @@ figure {
 }
 
 img {
+    max-height: inherit;
     vertical-align: middle;
     border-style: none
 }
@@ -4201,6 +4202,7 @@ input[type=submit].btn-block {
     padding-bottom: .3125rem;
     margin-right: 1rem;
     font-size: 1.25rem;
+    max-height: 128px;
     line-height: inherit;
     white-space: nowrap
 }
