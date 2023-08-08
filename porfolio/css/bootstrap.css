@@ -6584,6 +6584,11 @@ button.bg-dark:hover {
     max-width: 260px;
 }
 
+.d-flex-img {
+    display: -ms-flexbox !important;
+    display: flex !important;
+}
+
 .d-inline-flex {
     display: -ms-inline-flexbox !important;
     display: inline-flex !important
